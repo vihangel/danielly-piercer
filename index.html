@@ -23,9 +23,10 @@ LAYOUT: palco 3D fixo nas primeiras dobras; depois cortinas creme e verde cobrem
   --mist:#c9d3bc;
   --cream:#f3eee4;
   --paper:#fbf8f2;
-  --ink:#1d3426;
-  --ink-soft:#3d5545;
-  --leaf:#3f7a35;
+  --ink:#132a1d;
+  --ink-soft:#26392d;
+  --leaf:#30642a;
+  --terra-deep:#5c2410;
   --terra:#b65a39;
   --gold:#b48b3b;
   --display:"Fraunces",Georgia,"Times New Roman",serif;
@@ -89,7 +90,7 @@ main a,main button,main ul,main input,main label,.solid-sec{pointer-events:auto}
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(180,139,59,.25)}
 h1,h2,h3{margin:0;font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:400;text-wrap:balance;letter-spacing:-.01em}
 h2{font-size:clamp(40px,5vw,64px);line-height:1.02}
-h2 em{color:var(--paper)}
+h2 em{color:var(--terra-deep)}
 .pin p{margin:18px 0 0;max-width:40ch;color:var(--ink-soft)}
 .principles{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:16px}
 .principles li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font-size:16px;line-height:1.5}
@@ -158,11 +159,11 @@ h2 em{color:var(--paper)}
 .portrait a{color:var(--ink);font-weight:600;font-size:14px;text-align:center;padding:14px}
 .dani h2{font-size:clamp(44px,5.6vw,80px)}
 .dani h2 em{color:#f1d58f}
-.dani p{color:rgba(243,238,228,.88);max-width:46ch}
+.dani p{color:var(--cream);max-width:46ch}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
-.fact{border-top:1px solid rgba(243,238,228,.35);padding-top:14px}
+.fact{border-top:1px solid rgba(243,238,228,.5);padding-top:14px}
 .fact b{display:block;font:400 40px/1 var(--display);font-variation-settings:"SOFT" 100}
-.fact span{font-size:14px;color:rgba(243,238,228,.8)}
+.fact span{font-size:14px;color:var(--cream)}
 
 .offer{background:var(--cream);padding-block:clamp(72px,10vw,130px)}
 .offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -180,7 +181,7 @@ h2 em{color:var(--paper)}
 
 .book{background:var(--sage);padding-block:clamp(80px,11vw,150px) 0}
 .book h2{font-size:clamp(52px,8vw,128px);line-height:.95}
-.book h2 em{color:var(--paper)}
+.book h2 em{color:var(--terra-deep)}
 .book-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
 .book-info{display:grid;gap:18px}
 .book-info dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px}
@@ -488,7 +489,7 @@ const DEF=[
  ['transversal','orelha','Transversal','Uma barra só que atravessa a cartilagem de cima em dois pontos. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]]],
  ['scapha','orelha','Scapha','Na canaleta entre a borda da orelha e a cartilagem interna. Fica lindo com pingente.','ponto','ouro',1.1,[[-.0844,.8489,-.0047,-.961,.102,.259]]],
  ['helix','orelha','Hélix','Borda de cima da cartilagem. Aceita argola ou ponto de luz e combina com outros furos na mesma linha.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DLkTsySMzjr'],
- ['midhelix','orelha','Mid hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]]],
+ ['midhelix','orelha','Midi hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]]],
  ['forward','orelha','Forward hélix','Na frente da borda, pertinho do rosto. Costuma ser feito em dupla ou trio.','ponto','ouro',.85,[[-.001,.8618,.0313,-.622,.067,.78],[-.001,.8564,.0326,-.495,.271,.826]]],
  ['rook','orelha','Rook','A dobra interna logo acima do daith. Normalmente com barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]]],
  ['daith','orelha','Daith','A dobra mais interna, acima do canal do ouvido. Clássico com argola.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]]],
@@ -497,12 +498,18 @@ const DEF=[
  ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]]],
  ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]]],
  ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1.2,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DJ7mylYPDiA'],
- ['narina','rosto','Narina','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par.','ponto','ouro',1.1,[[.1632,.767,.0599,.732,.055,.679]],'DLVNwIGsMWO'],
+ ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.1632,.767,.0599,.732,.055,.679]],'DLVNwIGsMWO'],
  ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DYhnv3MEZXR'],
  ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]]],
- ['sobrancelha','rosto','Sobrancelha','Barra curva no fim da sobrancelha. Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]]],
- ['labio','rosto','Lábio','Argola ou labret no lábio. Combina com várias posições de boca.','argola','ouro',1,[[.1248,.7178,.0684,.176,.091,.98]],'Dd7O7xujjfe'],
+ ['sobrancelha','rosto','Supercílio','Barra curva no fim da sobrancelha (supercílio). Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]]],
+ ['labio','rosto','Labret','Ponto de luz logo abaixo do lábio inferior, no centro ou mais para o lado.','ponto','prata',1.1,[[.1114,.696,.0522,.303,-.096,.948]],'Dd7O7xujjfe'],
+ ['vertical','rosto','Vertical labret','Uma barra curva que atravessa o lábio inferior de cima para baixo. As duas pontas ficam à vista.','barra','ouro',1,[[.1215,.72,.0684,.019,.222,.975],[.127,.6977,.0459,.363,-.743,.563]]],
+ ['angelfangs','rosto','Angel fangs','Dois vertical labrets, um de cada lado do lábio inferior, lembrando dentinhos.','ponto','prata',1,[[.1052,.7217,.0666,-.031,.559,.828],[.1335,.7211,.0618,.611,.544,.575]]],
+ ['lingua','rosto','Língua','Barra reta no centro da língua. Na escultura a boca está fechada, então esse ponto aparece só na lista.','barra','prata',1,[]],
  ['microdermal','rosto','Microdermal','A base fica sob a pele e só o topo aparece. Na maçã do rosto, fica lindo em dupla.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'Df4tSKFFkRw'],
+ ['surface','corpo','Surface','Perfuração de superfície, com a barra passando por baixo da pele. Na escultura, no centro do peito.','barra','prata',1.2,[[.0149,.5666,.0865,.176,.78,.601],[.0169,.5342,.1059,.356,.203,.912]]],
+ ['mamilos','corpo','Mamilos','Barra reta atravessando o mamilo, em um lado ou nos dois. Não aparece na escultura.','barra','prata',1,[]],
+ ['vulva','corpo','Vulva (íntimo)','Perfurações íntimas, com atendimento reservado e todo o cuidado. Não aparece na escultura.','ponto','ouro',1,[]],
  ['umbigo','corpo','Umbigo','Barra curva na dobra de cima do umbigo, com pingente ou ponto de luz.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DaMMnvAETTa']
 ].map(([id,r,n,d,j,m,t,pos,ig])=>({id,r,n,d,j,m,t,pos,ig:ig||''}));
 const clone=l=>l.map(p=>({...p,pos:p.pos.map(a=>a.slice())}));
@@ -556,7 +563,7 @@ const close=document.getElementById('close'),shot=document.getElementById('c-sho
 let lastFocus=null,editing=false,onEditPick=null;
 function fill(p,s){
   document.getElementById('c-name').textContent=p.n;
-  document.getElementById('c-jewel').textContent='Na escultura: '+JOIAS[p.j].toLowerCase()+' de '+METAIS[p.m].toLowerCase()+(p.pos.length>1&&p.j!=='barra'&&p.j!=='umbigo'?' ('+p.pos.length+' furos)':'')+'.';
+  document.getElementById('c-jewel').textContent=!p.pos.length?'Este ponto não aparece na escultura.':'Na escultura: '+JOIAS[p.j].toLowerCase()+' de '+METAIS[p.m].toLowerCase()+(p.pos.length>1&&p.j!=='barra'&&p.j!=='umbigo'?' ('+p.pos.length+' furos)':'')+'.';
   const cw=document.getElementById('c-works');cw.dataset.r=p.r;cw.textContent='Ver trabalhos de '+REG[p.r].toLowerCase();
   document.getElementById('c-region').textContent=REG[p.r];
   document.getElementById('c-desc').textContent=p.d;
