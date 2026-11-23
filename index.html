@@ -128,6 +128,7 @@ h2 em{color:var(--paper)}
 .ig a{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none}
 .ig a small{color:var(--ink-soft);font-weight:500}
 .ig a:hover{background:rgba(29,52,38,.05)}
+.swipe-hint{display:none;font-size:13px;color:var(--ink-soft);margin:10px 0 0}
 .ig-more{display:inline-flex;margin-top:22px;font-weight:600;color:var(--leaf)}
 .tile{all:unset;box-sizing:border-box;cursor:pointer;position:relative;aspect-ratio:4/5;max-width:100%;border-radius:14px;overflow:hidden;background:var(--c1);transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s}
 .tile .ph{position:absolute;inset:0;background:radial-gradient(85% 70% at var(--x) var(--y),var(--c2),var(--c1) 62%)}
@@ -152,8 +153,9 @@ h2 em{color:var(--paper)}
 .dani{background:var(--leaf);color:var(--cream);padding-block:clamp(80px,11vw,150px);position:relative;overflow:hidden}
 .dani .wall-logo{position:absolute;right:-4vw;bottom:-3vw;width:min(900px,80vw);color:rgba(243,238,228,.12);pointer-events:none}
 .dani-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center;position:relative}
-.portrait{aspect-ratio:4/5;max-width:100%;border-radius:200px 200px 18px 18px;background:radial-gradient(80% 60% at 50% 38%,#a8693f,#5d3420 70%);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:22px}
-.portrait small{background:rgba(29,52,38,.7);padding:6px 12px;border-radius:99px;font-size:13px}
+.portrait{max-width:440px;width:100%;margin:0 auto;background:var(--paper);border-radius:220px 220px 22px 22px;overflow:hidden;display:flex;flex-direction:column;padding:26px 14px 0;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.portrait iframe{display:block;width:100%;aspect-ratio:9/15;border:0;border-radius:14px;background:var(--mist)}
+.portrait a{color:var(--ink);font-weight:600;font-size:14px;text-align:center;padding:14px}
 .dani h2{font-size:clamp(44px,5.6vw,80px)}
 .dani h2 em{color:#f1d58f}
 .dani p{color:rgba(243,238,228,.88);max-width:46ch}
@@ -173,6 +175,7 @@ h2 em{color:var(--paper)}
 .card .go:hover{background:currentColor}
 .card.j .go:hover{color:var(--ink);background:var(--cream)}
 .card.c .go:hover{color:var(--cream);background:var(--ink)}
+.card>div,.card .go{position:relative;z-index:1}
 .card svg.deco{position:absolute;right:-30px;top:-30px;width:220px;height:220px;opacity:.9}
 
 .book{background:var(--sage);padding-block:clamp(80px,11vw,150px) 0}
@@ -251,6 +254,13 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 @media (max-width:760px){.editor{top:auto;height:52vh;width:100vw;border-left:0;border-top:1px solid rgba(29,52,38,.15);border-radius:18px 18px 0 0}}
 
 @media (max-width:900px){
+  .stage{min-height:150vh;padding-bottom:4vh}
+  .stage>.wrap{display:flex;flex-direction:column;justify-content:flex-end}
+  .pin{top:auto;bottom:0;margin-top:58vh;padding:22px max(24px,env(safe-area-inset-right,0px)) 18px max(24px,env(safe-area-inset-left,0px));margin-inline:calc(-1 * max(24px,env(safe-area-inset-left,0px)));max-width:none;background:linear-gradient(rgba(147,169,131,0),var(--sage) 18%)}
+  .right .pin{margin-left:0}
+  .hero-meta p{background:rgba(243,238,228,.9);padding:10px 14px;border-radius:14px}
+  .scroll-cue{display:none}
+  .pts{max-width:560px}
   nav a:not(.book){display:none}
   .works-grid,.dani-grid,.book-grid{grid-template-columns:minmax(0,1fr)}
   .works-side{position:static}
@@ -259,21 +269,21 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   .filters button{width:auto;min-height:44px;padding:0 16px;border:1px solid rgba(29,52,38,.2);border-radius:99px;font-size:18px}
   .filters button small{display:none}
   .filters button[aria-pressed="true"]{padding-left:16px;background:var(--ink);color:var(--cream)}
-  .portrait{max-width:420px}
 }
 @media (max-width:640px){
   body{font-size:16px}
   .hero-logo{top:calc(env(safe-area-inset-top,0px) + 78px)}
   .hero-meta{top:calc(100vh - 128px);font-size:14px}
   .scroll-cue{display:none}
-  .hero-meta p{background:rgba(243,238,228,.9);padding:10px 14px;border-radius:14px}
-  .stage{min-height:150vh;padding-bottom:4vh}
-  .stage>.wrap{display:flex;flex-direction:column;justify-content:flex-end}
-  .pin{top:auto;bottom:0;margin-top:58vh;padding:22px 0 18px;background:linear-gradient(rgba(147,169,131,0),var(--sage) 18%)}
-  .right .pin{margin-left:0}
   .offer-grid,.facts{grid-template-columns:minmax(0,1fr)}
   .close{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
   .card{min-height:280px}
+  .card svg.deco{width:120px;height:120px;right:-24px;top:-24px;opacity:.55}
+  .tiles{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-24px;padding:4px 24px 8px;scrollbar-width:none}
+  .tiles::-webkit-scrollbar{display:none}
+  .ig{flex:0 0 82%;scroll-snap-align:center}
+  .swipe-hint{display:block}
+  .portrait{max-width:330px}
 }
 @media (prefers-reduced-motion:reduce){
   .hot::after,.scroll-cue i::after{animation:none}
@@ -360,6 +370,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
       </div>
       <div>
         <div class="tiles" id="tiles"></div>
+        <p class="swipe-hint">Deslize para ver mais</p>
         <a class="ig-more" href="https://www.instagram.com/daniperfuraaqui/">Ver todos os trabalhos em @daniperfuraaqui</a>
       </div>
     </div>
@@ -374,7 +385,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   <section class="dani solid-sec" id="s-dani">
     <svg class="wall-logo" viewBox="0 0 440 215" aria-hidden="true"><use href="#logo"/></svg>
     <div class="wrap dani-grid">
-      <div class="portrait"><small>Retrato da Dani no estúdio</small></div>
+      <div class="portrait"><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed" loading="lazy" title="Reel da Dani: sou piercer há quase 6 anos" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
       <div>
         <p class="eyebrow">Conheça a Dani</p>
         <h2>Quase seis anos <em>furando Cuiabá.</em></h2>
@@ -604,7 +615,7 @@ const works=document.getElementById('s-trabalhos');
 let anchors=[],worksTop=0,wordNow='';
 function measure(){anchors=stageSecs.map(s=>s.getBoundingClientRect().top+scrollY);worksTop=works.getBoundingClientRect().top+scrollY}
 function setWord(w){if(w===wordNow)return;wordNow=w;word.classList.add('out');setTimeout(()=>{if(wordNow!==w)return;word.textContent=w;if(w)word.classList.remove('out')},350)}
-function onScroll(){const y=scrollY;head.classList.toggle('past',y>innerHeight*.35);head.classList.toggle('solid',y>worksTop-80)}
+function onScroll(){const y=scrollY;head.classList.toggle('past',y>innerHeight*.35);head.classList.toggle('solid',y>=worksTop-90)}
 addEventListener('scroll',onScroll,{passive:true});
 let lastY=scrollY,dirY=1,snapTm=null,snapping=false;
 let userScroll=false;const touchUser=()=>{userScroll=true};
@@ -762,7 +773,7 @@ function viewOffset(){
   else camera.clearViewOffset();
   camera.updateProjectionMatrix();
 }
-function resize(){W=innerWidth;H=innerHeight;mobile=W<=640;renderer.setSize(W,H,false);camera.aspect=W/H;viewOffset();measure();onScroll()}
+function resize(){W=innerWidth;H=innerHeight;mobile=W<=900;renderer.setSize(W,H,false);camera.aspect=W/H;viewOffset();measure();onScroll()}
 addEventListener('resize',resize);resize();addEventListener('load',measure);
 rebuild();
 
@@ -780,7 +791,7 @@ function scrollGoal(){
   goalP.copy(a.p).lerp(b.p,e);goalT.copy(a.t).lerp(b.t,e);
   if(camera.aspect<1){const f=cl((i===0?.72+.08*e:.8)/camera.aspect,1,1.85);goalP.sub(goalT).multiplyScalar(f).add(goalT)}
   const s=a.s+(b.s-a.s)*e,dist=goalP.distanceTo(goalT),half=dist*Math.tan(THREE.MathUtils.degToRad(15));
-  if(mobile){goalT.addScaledVector(up,-half*.32*(i===0?e:1)+(i===0?half*.1*(1-e):0))}
+  if(mobile){goalT.addScaledVector(up,-half*.46*(i===0?e:1)+(i===0?half*.1*(1-e):0))}
   else{right.subVectors(goalT,goalP).cross(up).normalize();goalT.addScaledVector(right,s*half*camera.aspect)}
   return e<.5?i:Math.min(i+1,K.length-1);
 }
