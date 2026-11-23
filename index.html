@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Danielly Paixão, body piercing em Cuiabá-MT. Perfuração, joias e cursos com hora marcada.">
+<title>Prévia Danielly Piercer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Quicksand:wght@400;500;600&display=swap">
+<style>
+/*
+VOICE: carinhosa, didática e segura, como as legendas da Dani ("mais que perfurações, experiências").
+IDEA: o estúdio dela: parede verde com a logo gótica pintada, e uma escultura de terracota no centro, como no Monolith.
+PICTURE: logo gigante no topo, busto 3D na frente; a rolagem percorre o Mapa das Perfurações (orelha, rosto, umbigo).
+COLOUR and TYPE: sálvia dos carrosséis, creme, verde-folha da parede, tinta verde-escura da logo, terracota e ouro das joias; Fraunces macia + Quicksand.
+LAYOUT: palco 3D fixo nas primeiras dobras; depois cortinas creme e verde cobrem a cena com trabalhos, depoimentos, a Dani e agenda.
+*/
+:root{
+  color-scheme:light;
+  --sage:#93a983;
+  --sage-deep:#7d9670;
+  --mist:#c9d3bc;
+  --cream:#f3eee4;
+  --paper:#fbf8f2;
+  --ink:#1d3426;
+  --ink-soft:#3d5545;
+  --leaf:#3f7a35;
+  --terra:#b65a39;
+  --gold:#b48b3b;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Quicksand","Avenir Next","Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;min-width:0}
+html{touch-action:pan-y;scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--sage);color:var(--ink);font:500 17px/1.6 var(--body);overflow-x:clip;transition:background-color .8s}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.12;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .35 0 0 0 0 .28 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.fr{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:400}
+em{font-style:italic}
+
+/* palco */
+.hero-logo{position:absolute;top:calc(env(safe-area-inset-top,0px) + 74px);left:50%;transform:translateX(-50%);width:min(1320px,94vw);color:var(--ink);z-index:0;pointer-events:none}
+.hero-logo svg{display:block;width:100%;height:auto}
+.ghost{position:fixed;inset:0;display:grid;place-items:center;z-index:0;pointer-events:none;overflow:hidden}
+.ghost span{font:italic 300 clamp(110px,22vw,400px)/.8 var(--display);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--sage-deep);white-space:nowrap;transition:opacity .6s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.ghost span.out{opacity:0;transform:translateY(5vh)}
+#scene{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;opacity:0;transition:opacity 1.4s}
+#scene.ready{opacity:1}
+#hs{position:fixed;inset:0;z-index:3;pointer-events:none}
+
+/* topo */
+header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:calc(env(safe-area-inset-top,0px) + 14px) max(24px,env(safe-area-inset-right,0px)) 14px max(24px,env(safe-area-inset-left,0px));
+  transition:background-color .4s,box-shadow .4s}
+header.solid{background:rgba(243,238,228,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(29,52,38,.1)}
+.brand{display:block;width:108px;color:var(--ink);opacity:0;transition:opacity .4s}
+header.solid .brand,header.past .brand{opacity:1}
+.brand svg{display:block;width:100%;height:auto}
+nav{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-size:15px;font-weight:600;padding:10px 12px;border-radius:99px;transition:background .2s}
+nav a:hover{background:rgba(29,52,38,.08)}
+nav a.book{background:var(--ink);color:var(--cream);margin-left:8px;padding:10px 18px}
+nav a.book:hover{background:var(--leaf)}
+
+main{position:relative;z-index:4;pointer-events:none}
+main a,main button,main ul,main input,main label,.solid-sec{pointer-events:auto}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(24px,env(safe-area-inset-left,0px)) max(24px,env(safe-area-inset-right,0px))}
+
+/* hero */
+.hero{height:118vh;position:relative}
+.hero-meta{position:absolute;top:calc(100vh - 150px);left:max(24px,env(safe-area-inset-left,0px));right:max(24px,env(safe-area-inset-right,0px));display:flex;justify-content:space-between;align-items:end;gap:20px;font-size:15px;line-height:1.45}
+.hero-meta p{margin:0;max-width:24ch}
+.hero-meta strong{font-weight:600}
+.scroll-cue{display:flex;align-items:center;gap:10px;text-align:right}
+.scroll-cue i{display:block;width:1px;height:38px;background:var(--ink);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--cream);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{to{top:100%}}
+
+/* blocos sobre a escultura */
+.stage{min-height:140vh;position:relative;display:flex;flex-direction:column}
+.stage>.wrap{flex:1;width:100%}
+.pin{position:sticky;top:24vh;max-width:440px}
+.right .pin{margin-left:auto}
+.eyebrow{font-size:14px;font-weight:600;margin:0 0 14px;display:flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(180,139,59,.25)}
+h1,h2,h3{margin:0;font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:400;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(40px,5vw,64px);line-height:1.02}
+h2 em{color:var(--paper)}
+.pin p{margin:18px 0 0;max-width:40ch;color:var(--ink-soft)}
+.principles{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:16px}
+.principles li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font-size:16px;line-height:1.5}
+.principles svg{width:24px;height:24px;margin-top:1px}
+.pts{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pts button{all:unset;box-sizing:border-box;cursor:pointer;min-height:44px;padding:0 18px;display:inline-flex;align-items:center;border-radius:99px;background:rgba(251,248,242,.55);border:1px solid rgba(29,52,38,.18);font-weight:600;font-size:15px;transition:background .2s,color .2s,transform .2s}
+.pts button:hover,.pts button:focus-visible{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.tiny{font-size:13px;color:var(--ink-soft);margin-top:16px}
+
+/* hotspots */
+.hot{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;padding:0;background:none;cursor:pointer;pointer-events:none;opacity:0;transition:opacity .35s}
+.hot.on{opacity:1;pointer-events:auto}
+.hot::before{content:"";position:absolute;inset:16px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 3px rgba(29,52,38,.55)}
+.hot::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid var(--paper);animation:ring 2.2s ease-out infinite}
+.hot span{position:absolute;left:38px;top:50%;transform:translateY(-50%);white-space:nowrap;font:italic 400 19px/1 var(--display);background:var(--paper);padding:6px 10px;border-radius:99px;opacity:0;transition:opacity .2s;pointer-events:none}
+.hot:hover span,.hot:focus-visible span,.hot.hi span{opacity:1}
+.hot:hover::before,.hot.hi::before{background:var(--gold)}
+@keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.3);opacity:0}}
+
+/* seções sólidas */
+.solid-sec{position:relative;z-index:5}
+.works{background:var(--cream);padding-block:clamp(72px,10vw,140px)}
+.works-grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.works h2{font-size:clamp(48px,6vw,84px)}
+.works-side{position:sticky;top:110px}
+.works-side p{color:var(--ink-soft);margin:16px 0 28px}
+.filters{list-style:none;margin:0;padding:0;border-top:1px solid rgba(29,52,38,.15)}
+.filters button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;min-height:54px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(29,52,38,.15);font:400 26px/1 var(--display);font-variation-settings:"SOFT" 100;color:var(--ink-soft);transition:color .2s,padding .3s}
+.filters button small{font:600 13px/1 var(--body);color:var(--ink-soft)}
+.filters button[aria-pressed="true"]{color:var(--ink);font-style:italic;padding-left:14px}
+.filters button:hover{color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
+.ig{background:var(--paper);border-radius:16px;overflow:hidden;border:1px solid rgba(29,52,38,.1);display:flex;flex-direction:column}
+.ig.hide{display:none}
+.ig iframe{display:block;width:100%;aspect-ratio:4/5.9;max-width:100%;border:0;background:var(--mist)}
+.ig a{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none}
+.ig a small{color:var(--ink-soft);font-weight:500}
+.ig a:hover{background:rgba(29,52,38,.05)}
+.ig-more{display:inline-flex;margin-top:22px;font-weight:600;color:var(--leaf)}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;position:relative;aspect-ratio:4/5;max-width:100%;border-radius:14px;overflow:hidden;background:var(--c1);transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s}
+.tile .ph{position:absolute;inset:0;background:radial-gradient(85% 70% at var(--x) var(--y),var(--c2),var(--c1) 62%)}
+.tile .gem{position:absolute;left:var(--x);top:var(--y);width:26px;height:26px;margin:-13px;border-radius:50%;border:3px solid #e3c27a;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.25)}
+.tile .gem.dot{width:12px;height:12px;margin:-6px;border:0;background:radial-gradient(circle at 35% 35%,#fff7dc,#d8b25c 60%,#8d6a24)}
+.tile .cap{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:end;gap:8px;color:#fff8ee}
+.tile .cap b{font:italic 400 24px/1 var(--display)}
+.tile .cap small{font-size:12px;opacity:.85}
+.tile:hover{transform:translateY(-4px)}
+.tile.hide{display:none}
+.ph-note{font-size:13px;color:var(--ink-soft);margin:14px 0 0}
+
+.voices{background:var(--cream);padding-block:0 clamp(72px,10vw,140px);overflow:hidden}
+.voices h2{font-size:clamp(36px,4.4vw,56px);margin-bottom:28px}
+.marquee{display:flex;gap:16px;width:max-content;animation:roll 48s linear infinite}
+.marquee:hover{animation-play-state:paused}
+@keyframes roll{to{transform:translateX(calc(-50% - 8px))}}
+.quote{width:min(360px,78vw);flex:none;background:var(--paper);border-radius:18px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;border:1px solid rgba(29,52,38,.08)}
+.quote q{font:400 23px/1.25 var(--display);font-variation-settings:"SOFT" 100;quotes:"“" "”"}
+.quote span{font-size:14px;font-weight:600;color:var(--leaf)}
+
+.dani{background:var(--leaf);color:var(--cream);padding-block:clamp(80px,11vw,150px);position:relative;overflow:hidden}
+.dani .wall-logo{position:absolute;right:-4vw;bottom:-3vw;width:min(900px,80vw);color:rgba(243,238,228,.12);pointer-events:none}
+.dani-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center;position:relative}
+.portrait{aspect-ratio:4/5;max-width:100%;border-radius:200px 200px 18px 18px;background:radial-gradient(80% 60% at 50% 38%,#a8693f,#5d3420 70%);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:22px}
+.portrait small{background:rgba(29,52,38,.7);padding:6px 12px;border-radius:99px;font-size:13px}
+.dani h2{font-size:clamp(44px,5.6vw,80px)}
+.dani h2 em{color:#f1d58f}
+.dani p{color:rgba(243,238,228,.88);max-width:46ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
+.fact{border-top:1px solid rgba(243,238,228,.35);padding-top:14px}
+.fact b{display:block;font:400 40px/1 var(--display);font-variation-settings:"SOFT" 100}
+.fact span{font-size:14px;color:rgba(243,238,228,.8)}
+
+.offer{background:var(--cream);padding-block:clamp(72px,10vw,130px)}
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{border-radius:24px;padding:clamp(24px,3.4vw,44px);min-height:340px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;position:relative;overflow:hidden}
+.card.j{background:var(--ink);color:var(--cream)}
+.card.c{background:var(--mist)}
+.card h3{font-size:clamp(34px,3.6vw,50px);line-height:1.02}
+.card p{margin:12px 0 0;max-width:36ch;opacity:.85}
+.card .go{align-self:flex-start;display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:99px;text-decoration:none;font-weight:600;border:1px solid currentColor}
+.card .go:hover{background:currentColor}
+.card.j .go:hover{color:var(--ink);background:var(--cream)}
+.card.c .go:hover{color:var(--cream);background:var(--ink)}
+.card svg.deco{position:absolute;right:-30px;top:-30px;width:220px;height:220px;opacity:.9}
+
+.book{background:var(--sage);padding-block:clamp(80px,11vw,150px) 0}
+.book h2{font-size:clamp(52px,8vw,128px);line-height:.95}
+.book h2 em{color:var(--paper)}
+.book-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
+.book-info{display:grid;gap:18px}
+.book-info dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px}
+.book-info dt{font-weight:600}
+.book-info dd{margin:0;color:var(--ink-soft)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;border-radius:99px;background:var(--ink);color:var(--cream);text-decoration:none;font-weight:600;font-size:16px;transition:transform .2s,background .2s}
+.btn:hover{background:var(--leaf);transform:translateY(-2px)}
+.btn.light{background:transparent;color:var(--ink);border:1px solid rgba(29,52,38,.35)}
+.btn.light:hover{background:rgba(29,52,38,.08)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.foot-logo{margin-top:clamp(60px,9vw,120px);color:var(--ink);padding-bottom:8px}
+.foot-logo svg{display:block;width:100%;height:auto}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft);padding-block:18px 28px;border-top:1px solid rgba(29,52,38,.2)}
+
+.wa{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:35;width:58px;height:58px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;box-shadow:0 8px 24px rgba(29,52,38,.3);transition:transform .2s}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:28px;height:28px;fill:var(--cream)}
+
+/* close */
+.close{position:fixed;inset:0;z-index:50;background:var(--cream);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);clip-path:circle(0 at var(--cx,50%) var(--cy,50%));visibility:hidden;transition:clip-path .8s cubic-bezier(.7,0,.2,1),visibility 0s .8s}
+.close.open{clip-path:circle(150% at var(--cx,50%) var(--cy,50%));visibility:visible;transition:clip-path .9s cubic-bezier(.7,0,.2,1)}
+.close .shot{position:relative;background:radial-gradient(80% 65% at 46% 44%,var(--c2,#c98a62),var(--c1,#6b3d27) 68%);overflow:hidden}
+.close .shot{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,3vw,40px);background:var(--mist)}
+.close .shot iframe{width:min(420px,100%);flex:1;min-height:0;max-height:640px;border:0;border-radius:14px;background:var(--paper)}
+.c-iglink{margin-top:12px;font-weight:600;font-size:14px;color:var(--ink)}
+.close .shot .gem{position:absolute;left:46%;top:44%;width:64px;height:64px;margin:-32px;border-radius:50%;border:7px solid #e3c27a;box-shadow:inset 0 0 0 3px rgba(0,0,0,.15),0 6px 18px rgba(0,0,0,.3)}
+.close .shot small{position:absolute;left:20px;bottom:20px;background:rgba(29,52,38,.75);color:var(--cream);font-size:13px;padding:7px 12px;border-radius:99px}
+.close .txt{padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;gap:14px;overflow:auto}
+.close h3{font-size:clamp(56px,7vw,104px);line-height:.95;font-style:italic}
+.close .txt p{margin:0;color:var(--ink-soft);max-width:42ch}
+.close .x{all:unset;cursor:pointer;align-self:flex-end;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(29,52,38,.3);font-size:22px}
+.close .x:hover{background:var(--ink);color:var(--cream)}
+.close .c-act{margin-top:auto}
+.close .c-jewel{font-weight:600;color:var(--ink)}
+button.btn{border:0;cursor:pointer;font-family:inherit}
+button.btn.light{border:1px solid rgba(29,52,38,.35)}
+.close[hidden]{display:none}
+.flip{position:fixed;z-index:49;border-radius:14px;overflow:hidden;pointer-events:none;transition:all .65s cubic-bezier(.7,0,.2,1)}
+
+/* editor de pontos */
+.editing main,.editing .hero-logo,.editing .ghost,.editing header nav,.editing .wa,.editing header .brand{display:none}
+.editing .hot span{opacity:1;font-size:15px;padding:4px 8px}
+.editing .hot.sel::before{background:var(--gold);inset:13px}
+.editor{position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);z-index:45;background:var(--paper);border-left:1px solid rgba(29,52,38,.12);display:flex;flex-direction:column;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 18px) max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 18px) 18px;overflow:auto;font-size:15px}
+.editor[hidden],.ed-form[hidden]{display:none}
+.editor>*{flex-shrink:0}
+.ed-head{display:flex;justify-content:space-between;align-items:center}
+.ed-head b{font:400 26px/1 var(--display);font-variation-settings:"SOFT" 100}
+.ed-focus{display:flex;flex-wrap:wrap;gap:6px}
+.ed-focus button,.ed-btn{font:600 14px/1 var(--body);min-height:40px;padding:0 14px;border-radius:99px;border:1px solid rgba(29,52,38,.22);background:transparent;color:var(--ink);cursor:pointer}
+.ed-focus button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.ed-btn:hover,.ed-focus button:hover{border-color:var(--ink)}
+.ed-btn.warn,.ed-del.warn{background:#a8321c;color:#fff;border-color:#a8321c}
+.ed-list{list-style:none;margin:0;padding:0;max-height:30vh;min-height:120px;overflow:auto;border-top:1px solid rgba(29,52,38,.12)}
+.ed-grp{font-size:12px;font-weight:600;color:var(--ink-soft);padding:10px 0 4px}
+.ed-item{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:10px}
+.ed-item small{color:var(--ink-soft)}
+.ed-item:hover{background:rgba(29,52,38,.06)}
+.ed-item[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.ed-item[aria-pressed="true"] small{color:var(--mist)}
+.ed-form{display:grid;gap:6px;border-top:1px solid rgba(29,52,38,.12);padding-top:12px}
+.ed-form label{font-size:13px;font-weight:600;margin-top:4px}
+.ed-form input:not([type=range]),.ed-form select,.ed-form textarea,#ed-json{font:500 16px/1.3 var(--body);padding:9px 11px;border-radius:10px;border:1px solid rgba(29,52,38,.25);background:#fff;color:var(--ink);width:100%}
+.ed-form input[type=range]{accent-color:var(--leaf);width:100%}
+.ed-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.ed-hint{font-size:13px;color:var(--ink-soft);margin:6px 0}
+.ed-foot{margin-top:auto;display:grid;gap:8px;border-top:1px solid rgba(29,52,38,.12);padding-top:12px}
+.ed-foot .btn{justify-content:center;min-height:48px}
+.ed-status{font-size:13px;color:var(--ink-soft);margin:0;min-height:1.3em}
+.edit-link{color:var(--ink);font-weight:600}
+@media (max-width:760px){.editor{top:auto;height:52vh;width:100vw;border-left:0;border-top:1px solid rgba(29,52,38,.15);border-radius:18px 18px 0 0}}
+
+@media (max-width:900px){
+  nav a:not(.book){display:none}
+  .works-grid,.dani-grid,.book-grid{grid-template-columns:minmax(0,1fr)}
+  .works-side{position:static}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;border:0}
+  .filters li{flex:none}
+  .filters button{width:auto;min-height:44px;padding:0 16px;border:1px solid rgba(29,52,38,.2);border-radius:99px;font-size:18px}
+  .filters button small{display:none}
+  .filters button[aria-pressed="true"]{padding-left:16px;background:var(--ink);color:var(--cream)}
+  .portrait{max-width:420px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero-logo{top:calc(env(safe-area-inset-top,0px) + 78px)}
+  .hero-meta{top:calc(100vh - 128px);font-size:14px}
+  .scroll-cue{display:none}
+  .hero-meta p{background:rgba(243,238,228,.9);padding:10px 14px;border-radius:14px}
+  .stage{min-height:150vh;padding-bottom:4vh}
+  .stage>.wrap{display:flex;flex-direction:column;justify-content:flex-end}
+  .pin{top:auto;bottom:0;margin-top:58vh;padding:22px 0 18px;background:linear-gradient(rgba(147,169,131,0),var(--sage) 18%)}
+  .right .pin{margin-left:0}
+  .offer-grid,.facts{grid-template-columns:minmax(0,1fr)}
+  .close{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
+  .card{min-height:280px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hot::after,.scroll-cue i::after{animation:none}
+  .marquee{animation:none;flex-wrap:wrap;width:auto;padding-inline:24px}
+  .close,.close.open{transition:none}
+  .flip{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 440 215"><path fill="currentColor" fill-rule="evenodd" d="M83.78 204.67C83.03 203.82 82.08 202.39 81.65 201.50L80.88 199.88L80.92 194.88C80.94 191.71 81.15 188.21 81.48 185.33C81.77 182.77 82.07 178.08 82.16 174.55C82.33 168.44 82.32 168.31 81.82 168.15C81.51 168.05 80.86 168.23 80.10 168.62C77.82 169.79 75.19 170.31 72.40 170.13C71.04 170.04 69.46 169.80 68.90 169.59C68.34 169.39 67.53 169.13 67.12 169.02C64.90 168.45 59.20 164.03 53.75 158.65C50.22 155.17 49.37 154.47 47.88 153.77C46.91 153.32 45.96 152.85 45.75 152.72C45.34 152.47 44.59 152.13 43.62 151.76C42.83 151.44 42.83 150.89 43.66 149.70C44.27 148.82 44.29 148.72 43.92 148.17C43.48 147.48 39.70 143.98 37.12 141.86C35.23 140.31 30.32 137.00 29.89 137.00C29.74 137.00 29.29 136.82 28.88 136.61C27.59 135.94 24.31 135.44 22.25 135.60C19.48 135.81 17.97 136.10 17.12 136.56C16.71 136.79 15.96 137.16 15.44 137.39C13.82 138.11 12.38 139.59 11.79 141.13C11.14 142.83 11.13 143.16 11.67 144.83C12.30 146.79 13.43 148.66 14.92 150.18C16.37 151.67 16.52 152.00 15.73 152.00C14.52 152.00 10.90 148.87 9.73 146.81C8.95 145.45 8.91 145.24 8.89 142.75C8.88 140.32 8.94 139.97 9.73 138.04C11.50 133.71 14.86 130.29 20.75 126.83C21.57 126.34 23.40 125.53 26.00 124.51C28.02 123.70 30.96 123.00 32.29 123.00C33.76 123.00 35.92 123.78 38.26 125.15C40.48 126.45 41.01 126.15 40.24 124.00C39.53 122.02 38.70 120.05 37.18 116.75C36.38 115.01 35.46 112.88 34.59 110.75C33.96 109.21 33.51 107.16 33.50 105.88C33.50 103.96 34.70 100.52 35.63 99.75C35.83 99.58 36.00 99.28 36.00 99.08C36.00 98.55 40.60 94.06 42.88 92.38C43.98 91.57 45.90 90.36 47.16 89.69C49.22 88.61 49.55 88.33 50.47 86.93C51.59 85.22 53.00 83.71 57.95 78.92C61.84 75.16 62.50 74.98 61.38 78.00C60.50 80.34 60.64 87.16 61.62 89.88C61.82 90.42 61.98 91.28 61.99 91.78C62.00 92.62 62.78 95.06 63.64 96.91C63.84 97.35 64.00 97.84 64.00 98.00C64.00 98.27 66.30 103.80 67.51 106.44C67.78 107.03 68.00 107.65 68.01 107.82C68.01 107.99 68.23 108.58 68.50 109.12C68.77 109.67 68.99 110.24 68.99 110.37C69.00 110.51 69.21 111.18 69.47 111.87C69.73 112.56 70.08 113.63 70.24 114.25C70.39 114.87 70.63 115.77 70.76 116.25C71.23 117.95 71.49 122.16 71.22 123.79C70.94 125.55 70.50 126.37 68.57 128.78C67.85 129.69 67.25 130.51 67.25 130.60C67.25 130.78 68.97 129.53 72.38 126.88C74.94 124.87 75.00 124.83 78.38 122.59C79.75 121.68 81.30 120.65 81.81 120.31L82.75 119.68L82.75 116.31L82.75 112.94L81.47 111.78C79.96 110.42 77.00 106.07 77.00 105.21C77.00 105.02 77.74 104.13 78.64 103.24C80.52 101.38 81.67 99.70 82.29 97.90C82.68 96.78 82.73 95.57 82.74 88.08C82.75 78.05 83.22 79.26 78.77 77.86C77.18 77.36 75.37 76.78 74.75 76.58C74.13 76.38 73.17 76.12 72.62 76.00C72.08 75.88 71.21 75.61 70.70 75.39C70.18 75.18 69.53 75.00 69.23 75.00C68.94 75.00 68.35 74.83 67.91 74.63C67.48 74.42 66.56 74.09 65.88 73.90C64.39 73.48 62.67 72.87 61.59 72.36C61.15 72.16 60.59 72.00 60.34 72.00C60.08 72.00 59.54 71.77 59.12 71.50C58.71 71.23 58.23 71.00 58.04 71.00C57.86 71.00 56.73 70.51 55.53 69.92C53.65 68.98 52.49 68.28 49.25 66.08C47.55 64.93 46.40 63.82 45.33 62.33C43.70 60.05 43.39 58.26 43.90 54.21C44.10 52.61 44.55 50.47 44.90 49.46C45.25 48.45 45.70 47.07 45.90 46.38C46.43 44.52 50.21 37.85 51.46 36.57C52.57 35.43 53.04 35.32 52.57 36.31C51.13 39.40 50.62 43.32 51.40 45.38C51.61 45.92 51.88 46.69 52.00 47.07C52.62 49.04 56.78 53.57 59.88 55.65C61.63 56.83 65.69 59.04 66.62 59.32C66.90 59.40 67.80 59.76 68.62 60.12C71.96 61.56 74.95 62.67 77.75 63.50C78.78 63.81 80.10 64.23 80.68 64.43C81.26 64.62 81.99 64.75 82.31 64.71L82.88 64.62L83.01 53.75C83.12 45.29 83.25 42.32 83.57 40.38C83.80 39.00 84.10 37.20 84.23 36.38C85.08 31.19 86.63 26.84 89.09 22.80C90.83 19.94 95.92 15.63 98.18 15.10C98.56 15.01 99.14 14.77 99.47 14.57C99.79 14.37 100.86 14.10 101.84 13.97C102.82 13.84 104.13 13.63 104.75 13.49C106.27 13.17 108.34 13.49 108.45 14.07C108.51 14.38 108.26 14.62 107.58 14.90C103.97 16.37 100.40 19.01 97.35 22.47C94.90 25.24 91.81 30.24 90.99 32.75C90.88 33.09 90.41 34.27 89.94 35.38C89.48 36.48 88.84 38.33 88.52 39.50C88.20 40.67 87.78 42.16 87.59 42.82C87.18 44.21 86.61 47.15 86.12 50.50C85.93 51.81 85.65 53.61 85.51 54.50C85.08 57.18 84.73 64.74 85.00 65.25C85.14 65.50 85.72 65.82 86.31 65.96C87.79 66.31 91.82 67.71 93.62 68.51C94.17 68.75 95.35 69.26 96.23 69.63C98.44 70.57 100.49 71.80 102.98 73.67C105.15 75.31 105.72 75.51 106.25 74.87C106.63 74.42 110.27 72.34 111.50 71.88C111.98 71.70 113.16 71.25 114.12 70.88C115.09 70.52 116.35 70.11 116.93 69.99C117.52 69.87 118.28 69.58 118.62 69.35C119.13 69.02 119.32 69.00 119.63 69.25C120.24 69.76 120.09 70.91 119.34 71.43C116.97 73.06 115.23 76.33 114.77 80.05C114.36 83.34 114.59 85.89 116.38 98.12C116.60 99.64 116.88 101.83 116.99 103.00C117.77 110.69 117.98 111.78 118.62 111.26C118.81 111.10 119.04 110.62 119.14 110.20C119.24 109.71 120.00 108.73 121.22 107.50C122.76 105.95 123.46 105.44 124.88 104.87L126.62 104.15L140.88 104.00C148.71 103.91 155.32 103.76 155.56 103.65C156.19 103.36 156.50 101.94 156.50 99.32L156.50 97.02L157.62 95.75C158.24 95.05 158.75 94.37 158.75 94.24C158.75 93.78 157.79 94.01 156.34 94.82C154.04 96.10 148.14 98.82 145.12 100.00C143.61 100.58 141.87 101.26 141.25 101.50C139.60 102.14 136.20 102.59 134.32 102.42C131.32 102.13 129.45 100.43 128.99 97.54C128.69 95.68 129.11 88.05 129.61 86.25C129.82 85.49 130.00 84.48 130.00 84.00C130.01 83.46 130.47 82.24 131.20 80.83C132.66 77.99 134.20 76.57 136.70 75.76C139.56 74.85 142.95 75.02 151.38 76.49C156.62 77.41 158.52 77.56 161.17 77.25C163.92 76.93 166.58 76.21 168.22 75.33C168.83 75.01 169.54 74.75 169.81 74.75C170.22 74.75 170.28 74.86 170.13 75.44C170.04 75.82 169.82 76.29 169.65 76.50C169.48 76.71 168.79 78.00 168.12 79.38C165.04 85.69 163.26 88.02 160.50 89.31C158.93 90.04 158.79 90.06 156.38 89.92C155.00 89.84 152.81 89.61 151.50 89.41C144.25 88.28 138.04 87.97 136.28 88.65C133.27 89.79 131.30 92.22 130.59 95.65C130.20 97.54 130.20 97.67 130.65 98.62C131.31 100.00 132.69 100.74 134.59 100.75C137.20 100.75 142.45 99.28 146.66 97.36C147.10 97.16 147.52 97.00 147.62 97.00C147.71 97.00 148.73 96.55 149.89 96.00C151.05 95.45 152.93 94.56 154.06 94.02C155.20 93.48 157.29 92.42 158.72 91.65C160.14 90.89 161.53 90.19 161.81 90.11C162.08 90.02 162.69 89.69 163.16 89.37C163.63 89.05 164.49 88.56 165.07 88.29C170.51 85.71 171.55 85.25 171.74 85.37C171.85 85.44 171.56 86.22 171.10 87.10C170.10 88.97 169.64 91.70 169.26 97.97C169.00 102.33 169.07 102.94 169.84 103.14C170.14 103.21 173.41 103.15 177.12 103.01C183.85 102.75 183.88 102.75 184.31 103.28C184.55 103.57 184.75 103.95 184.75 104.12C184.75 104.97 184.10 105.04 177.02 105.01C170.15 104.98 170.01 104.99 169.48 105.52L168.93 106.07L169.09 125.85C169.17 136.72 169.31 146.13 169.38 146.75C169.93 151.08 170.87 154.31 171.88 155.25C172.69 156.01 174.23 156.30 175.95 156.02C177.45 155.78 179.61 154.95 180.25 154.38C180.46 154.19 180.92 153.97 181.28 153.88C182.47 153.58 182.31 154.35 180.78 156.30C177.78 160.11 174.54 162.93 170.98 164.85C169.02 165.90 168.69 166.00 167.09 166.00C165.43 166.00 165.27 165.95 163.49 164.78C160.63 162.89 157.56 158.65 157.11 155.95C156.82 154.24 156.73 154.00 156.39 154.00C156.20 154.00 154.70 155.49 153.06 157.31C149.61 161.14 148.06 162.52 145.62 163.93C143.42 165.20 141.52 165.57 138.96 165.21C136.66 164.90 135.24 164.06 131.61 160.88C128.75 158.37 126.02 154.16 124.64 150.12C124.05 148.42 123.52 144.78 123.51 142.44C123.50 140.21 124.13 136.21 124.65 135.21C124.84 134.83 125.00 134.32 125.01 134.07C125.01 133.83 125.23 133.18 125.50 132.62C125.77 132.07 125.99 131.41 125.99 131.15C126.01 129.85 131.19 119.17 134.07 114.48C135.91 111.48 137.13 109.58 137.42 109.23C137.60 109.01 137.75 108.57 137.75 108.25C137.75 107.67 137.75 107.67 135.19 107.83C130.27 108.14 125.41 110.53 121.30 114.66C118.47 117.51 118.21 118.15 117.99 122.88C117.80 126.96 117.24 131.13 116.51 133.88C116.25 134.84 115.93 136.07 115.80 136.62C115.66 137.18 115.32 138.22 115.03 138.94C114.74 139.66 114.29 140.78 114.03 141.44C113.39 143.07 112.58 144.74 112.06 145.54C111.82 145.91 111.24 146.86 110.78 147.67C108.00 152.47 101.72 158.09 95.53 161.30C94.24 161.97 93.00 162.22 93.00 161.81C93.00 161.70 93.85 160.77 94.90 159.74C97.01 157.66 98.56 155.62 99.73 153.38C100.16 152.55 100.61 151.71 100.73 151.50C101.29 150.50 102.00 148.78 102.00 148.40C102.00 148.17 102.16 147.66 102.36 147.28C102.98 146.09 103.91 142.11 104.62 137.60C105.00 135.20 105.04 133.60 104.94 125.73C104.81 116.31 104.48 112.17 103.48 107.31C103.22 106.03 103.00 104.68 103.00 104.31C103.01 103.20 102.01 98.00 101.49 96.38C101.22 95.55 101.00 94.73 101.00 94.55C101.00 94.09 99.34 90.57 98.56 89.38C97.48 87.73 95.48 85.78 93.62 84.57C90.12 82.29 85.96 80.18 85.16 80.30C84.63 80.37 84.62 80.38 84.62 88.52L84.62 96.66L85.47 98.27C85.93 99.15 86.90 100.78 87.63 101.88C89.37 104.53 90.06 105.93 89.88 106.49C89.80 106.75 88.66 107.94 87.35 109.14C86.05 110.34 84.81 111.64 84.61 112.02C84.35 112.52 84.25 113.59 84.25 115.74C84.25 119.21 84.19 119.15 86.75 118.25C88.41 117.66 90.68 117.60 91.42 118.12C92.04 118.55 92.75 120.46 92.75 121.68C92.75 123.37 91.70 127.21 90.47 130.05C89.08 133.25 86.74 136.16 86.35 135.15C86.27 134.95 86.33 134.57 86.47 134.30C87.12 133.09 87.53 131.39 87.38 130.58C87.29 130.11 86.82 129.28 86.33 128.74C85.31 127.60 84.38 127.42 84.17 128.31C84.09 128.62 84.02 135.47 84.01 143.53C83.99 155.71 84.05 158.23 84.33 158.47C84.58 158.67 85.10 158.69 86.15 158.52C90.04 157.91 91.70 156.99 94.96 153.65C96.24 152.33 97.40 151.25 97.52 151.25C97.92 151.25 96.92 153.09 95.33 155.25C93.24 158.10 89.28 162.34 87.14 164.01C83.77 166.66 83.89 166.51 83.85 168.29C83.56 180.58 83.92 197.36 84.51 198.91C84.64 199.25 84.82 200.34 84.90 201.33C84.98 202.32 85.26 203.65 85.52 204.29C86.00 205.46 85.95 206.27 85.41 206.23C85.25 206.22 84.52 205.52 83.78 204.67ZM249.38 201.10C248.12 200.64 246.25 198.82 245.47 197.29C244.93 196.22 244.88 195.83 244.88 192.62C244.89 189.18 244.90 189.10 245.68 187.59C246.62 185.79 247.85 184.69 249.70 183.99C251.38 183.37 252.21 183.37 254.29 184.03C256.01 184.57 256.21 184.56 257.17 183.86C257.67 183.49 257.75 183.50 258.23 183.98C258.68 184.43 258.75 184.81 258.75 186.77C258.75 189.29 258.51 190.00 257.65 190.00C256.92 190.00 256.41 189.40 256.04 188.08C255.65 186.72 254.83 186.10 253.15 185.89C251.30 185.66 250.05 186.05 248.96 187.18C247.61 188.59 247.20 189.59 247.06 191.88C246.83 195.63 248.33 198.48 250.94 199.22C252.23 199.59 254.44 199.23 256.34 198.35C257.85 197.66 258.62 197.84 258.62 198.88C258.62 200.73 252.43 202.22 249.38 201.10ZM117.05 200.95C116.23 200.13 116.94 199.25 118.42 199.25C119.23 199.25 119.55 199.13 119.76 198.74C120.07 198.15 120.05 186.73 119.73 186.22C119.62 186.04 119.00 185.84 118.36 185.76C117.13 185.62 116.55 185.12 116.82 184.43C117.04 183.85 120.56 183.64 124.88 183.95L128.52 184.21L129.62 185.10C130.50 185.82 130.82 186.33 131.26 187.67L131.82 189.34L131.27 191.06C130.39 193.77 128.81 194.68 124.38 194.97L122.12 195.12L122.05 196.84C121.96 198.99 122.16 199.25 123.92 199.25C125.47 199.25 126.25 199.57 126.25 200.21C126.25 201.15 125.78 201.25 121.50 201.25C118.61 201.25 117.26 201.16 117.05 200.95ZM150.55 200.95C150.10 200.50 150.19 199.80 150.73 199.51C151.00 199.37 152.01 199.25 152.97 199.25C153.93 199.25 154.79 199.14 154.87 199.00C154.96 198.86 155.03 195.92 155.04 192.47C155.05 187.45 154.98 186.14 154.71 185.96C154.53 185.84 153.81 185.75 153.12 185.77C151.23 185.83 151.04 185.79 150.75 185.26C150.54 184.86 150.59 184.66 150.99 184.26C151.47 183.78 151.82 183.75 156.11 183.75C160.91 183.75 162.00 183.92 162.00 184.69C162.00 185.49 161.46 185.75 159.82 185.75C157.21 185.75 157.25 185.63 157.25 192.61C157.25 199.56 157.13 199.25 159.88 199.25C161.48 199.25 161.77 199.32 162.00 199.75C162.19 200.11 162.19 200.39 162.00 200.75C161.74 201.23 161.48 201.25 156.29 201.25C152.39 201.25 150.76 201.16 150.55 200.95ZM180.76 200.89C180.28 200.30 180.57 199.65 181.44 199.36C181.89 199.22 182.36 198.99 182.50 198.85C182.67 198.68 182.73 196.35 182.69 192.38L182.62 186.17L181.58 185.82C180.41 185.43 180.05 184.85 180.62 184.27C180.96 183.94 182.00 183.86 187.41 183.80C195.33 183.71 195.00 183.59 195.00 186.60C195.00 188.86 194.76 189.36 193.70 189.21C193.20 189.14 193.11 188.96 193.05 187.88C192.92 185.86 192.71 185.75 188.89 185.75C186.66 185.75 185.50 185.85 185.30 186.05C185.11 186.24 185.00 187.19 185.00 188.65C185.00 191.22 185.02 191.25 186.83 191.25C188.14 191.24 188.52 191.00 188.86 189.96C189.14 189.09 189.80 188.77 190.35 189.23C190.77 189.58 191.04 193.57 190.70 194.53C190.25 195.83 188.75 195.61 188.75 194.23C188.75 193.50 188.11 193.22 186.58 193.30L185.12 193.38L185.12 196.25L185.12 199.12L189.00 199.12L192.88 199.12L193.02 197.29C193.16 195.46 193.40 195.01 194.26 195.00C195.06 195.00 195.25 195.57 195.25 198.03C195.25 199.91 195.16 200.55 194.86 200.86C194.29 201.42 181.23 201.45 180.76 200.89ZM212.55 200.95C211.79 200.19 212.52 199.25 213.85 199.25C214.22 199.25 214.59 199.05 214.74 198.77C214.90 198.47 215.00 195.98 215.00 192.41C215.00 185.87 214.97 185.75 213.37 185.75C212.28 185.75 211.72 184.93 212.36 184.28C212.98 183.67 221.97 183.72 223.28 184.35C225.48 185.39 226.48 187.43 226.01 189.94C225.78 191.16 224.83 192.26 223.56 192.76C222.87 193.04 222.84 193.66 223.50 194.21C223.78 194.44 224.49 195.57 225.08 196.73C225.99 198.51 226.29 198.88 227.00 199.12C228.90 199.76 228.63 201.16 226.62 201.08C225.06 201.02 224.49 200.45 222.88 197.32C222.19 195.99 221.34 194.70 221.00 194.45C220.18 193.85 217.90 193.57 217.38 194.00C217.09 194.23 217.00 194.85 217.00 196.48C217.00 198.86 217.19 199.25 218.30 199.25C219.28 199.25 220.10 200.10 219.75 200.76C219.50 201.21 219.21 201.25 216.17 201.25C213.92 201.25 212.75 201.15 212.55 200.95ZM276.30 200.95C275.64 200.29 276.15 199.25 277.12 199.25C278.20 199.25 278.25 198.96 278.25 192.46C278.25 186.59 278.22 186.25 277.77 186.01C277.50 185.87 277.05 185.75 276.77 185.75C276.16 185.75 275.77 184.63 276.23 184.17C276.44 183.96 278.46 183.85 283.01 183.80L289.50 183.73L290.12 184.35C290.67 184.90 290.74 185.18 290.72 186.67C290.69 188.67 290.45 189.25 289.63 189.25C288.70 189.25 288.18 188.57 288.36 187.60C288.48 186.96 288.40 186.65 288.01 186.26C287.55 185.80 287.19 185.75 284.48 185.75C282.82 185.75 281.25 185.87 280.98 186.01C280.56 186.23 280.50 186.55 280.50 188.46C280.50 189.83 280.61 190.76 280.80 190.95C281.17 191.32 283.11 191.34 283.77 190.99C284.03 190.85 284.25 190.53 284.25 190.28C284.25 190.03 284.46 189.64 284.71 189.41C285.81 188.42 286.28 189.17 286.37 192.05C286.41 193.33 286.34 194.58 286.21 194.83C285.90 195.40 284.76 195.30 284.46 194.69C284.35 194.45 284.15 194.05 284.04 193.81C283.78 193.29 281.79 193.08 281.01 193.50C280.55 193.74 280.50 194.01 280.50 196.21C280.50 197.77 280.61 198.76 280.80 198.95C281.01 199.16 282.23 199.25 284.67 199.25C288.75 199.25 288.75 199.25 288.75 197.03C288.75 195.18 289.78 194.37 290.61 195.56C290.89 195.95 291.00 196.72 291.00 198.27C291.00 201.43 291.47 201.25 283.34 201.25C278.43 201.25 276.52 201.17 276.30 200.95ZM308.10 200.89C308.02 200.70 308.00 200.28 308.04 199.96C308.11 199.49 308.30 199.36 309.00 199.29C309.48 199.25 309.98 199.11 310.11 198.99C310.47 198.63 310.55 186.31 310.19 186.09C310.03 185.99 309.49 185.84 309.01 185.76C308.33 185.65 308.11 185.48 308.04 185.05C308.00 184.73 308.11 184.29 308.29 184.07C308.58 183.73 309.21 183.69 313.33 183.83C317.41 183.96 318.19 184.05 319.13 184.50C320.42 185.13 321.35 186.27 321.74 187.73C322.26 189.66 321.42 191.46 319.49 192.56C318.38 193.20 318.24 193.77 319.06 194.31C319.37 194.52 320.05 195.54 320.57 196.58C321.52 198.49 322.23 199.25 323.06 199.25C323.31 199.25 323.64 199.53 323.79 199.87C324.34 201.06 323.23 201.57 321.28 201.01C320.25 200.71 320.03 200.44 318.65 197.62C317.25 194.78 316.50 194.04 314.80 193.83C312.91 193.61 312.75 193.83 312.75 196.65L312.75 198.99L313.44 199.14C315.16 199.51 315.72 200.18 314.95 200.95C314.48 201.42 308.28 201.37 308.10 200.89ZM345.64 195.25C345.11 195.18 344.62 195.00 344.57 194.84C344.46 194.50 348.88 191.00 349.42 191.00C349.51 191.00 350.17 190.60 350.90 190.12C353.02 188.71 355.16 188.14 358.38 188.13C361.74 188.12 364.72 188.78 373.88 191.55C380.11 193.43 381.02 193.67 383.25 193.98C389.69 194.87 394.68 194.28 398.50 192.16C400.28 191.17 403.13 188.34 404.56 186.12C405.96 183.96 407.60 180.84 408.01 179.57C408.18 179.05 408.39 178.51 408.49 178.38C408.59 178.24 408.98 177.11 409.36 175.88C409.75 174.64 410.23 173.12 410.42 172.50C410.90 171.01 411.46 164.63 411.33 162.12C411.08 157.06 410.73 152.80 410.52 152.06C410.39 151.61 410.15 150.15 410.00 148.81C409.84 147.47 409.60 146.26 409.46 146.12C409.13 145.78 408.55 146.60 408.24 147.87C407.11 152.45 403.65 158.54 400.03 162.30C397.67 164.77 396.26 165.75 394.20 166.39C392.85 166.81 392.68 166.81 391.26 166.42C390.43 166.19 389.55 166.00 389.29 166.00C388.77 166.00 386.38 164.91 384.27 163.72C382.29 162.61 378.77 159.53 376.72 157.13C375.74 155.97 374.77 154.96 374.56 154.89C374.36 154.81 373.47 155.20 372.59 155.76C370.66 156.97 368.28 157.76 367.13 157.58C366.45 157.47 366.24 157.54 366.01 157.98C365.42 159.08 361.74 162.85 360.33 163.79C356.87 166.10 353.66 166.02 351.50 163.56C350.40 162.32 349.00 160.02 349.00 159.47C349.00 159.28 348.83 158.80 348.62 158.41C348.12 157.44 347.31 154.00 347.10 151.94C346.98 150.74 346.83 150.25 346.58 150.25C346.39 150.25 345.67 150.70 344.97 151.25C344.27 151.80 343.55 152.25 343.36 152.25C342.44 152.25 342.52 150.68 343.60 147.62C344.00 146.48 344.79 143.11 345.39 140.00C346.35 135.01 346.40 127.73 345.73 92.25C345.59 84.62 345.39 71.51 345.29 63.12L345.10 47.88L344.47 46.50C344.12 45.74 343.53 44.77 343.15 44.33C342.46 43.51 339.76 42.00 338.99 42.00C338.75 42.00 338.44 41.85 338.29 41.67C337.89 41.19 339.40 39.15 339.97 39.39C343.48 40.87 345.27 41.07 347.41 40.26C348.90 39.69 349.53 39.27 353.89 35.88C355.65 34.50 357.34 33.21 357.64 33.00C360.85 30.78 362.15 30.12 363.76 29.88C364.62 29.75 364.98 29.80 365.21 30.07C365.65 30.61 365.36 31.10 363.81 32.38C361.54 34.24 358.82 37.60 358.14 39.38C357.20 41.83 356.94 74.81 357.61 105.38C358.42 142.05 358.60 146.06 359.64 149.69C360.59 153.05 361.91 154.86 363.59 155.11C365.84 155.44 368.58 154.25 368.89 152.80C368.97 152.43 369.25 151.39 369.50 150.50C371.11 144.94 371.63 132.11 371.26 107.75C371.12 98.88 370.89 90.95 370.75 90.12C370.10 86.27 369.44 85.00 368.09 85.00C367.28 85.00 367.11 84.43 367.60 83.40C367.82 82.93 368.00 82.48 368.00 82.39C368.00 82.30 368.21 81.92 368.46 81.55C368.72 81.18 369.44 80.09 370.08 79.12C370.71 78.16 371.80 76.81 372.50 76.12C373.76 74.89 373.79 74.88 375.25 74.92C376.07 74.94 377.05 75.13 377.43 75.33C377.81 75.54 378.72 76.00 379.45 76.36C381.23 77.24 383.10 78.61 383.66 79.44C384.11 80.10 384.13 81.28 384.13 107.62C384.13 134.68 384.14 135.19 384.69 139.25C385.56 145.68 386.54 148.44 388.87 150.95C391.12 153.38 394.49 155.00 397.30 155.00C400.89 155.00 404.52 151.52 407.98 144.78C409.18 142.46 409.14 143.04 408.40 137.75C407.15 128.77 406.22 115.89 406.23 107.83C406.24 101.03 406.83 93.50 407.62 90.25C409.34 83.13 410.29 81.27 413.21 79.32C414.98 78.13 417.19 77.00 417.73 77.00C417.95 77.00 418.36 76.84 418.63 76.65C418.90 76.46 419.74 76.14 420.50 75.93C422.00 75.52 423.17 75.13 424.47 74.58C425.71 74.06 425.95 74.47 425.20 75.79C424.25 77.48 424.09 77.81 423.75 78.75C422.18 83.15 421.23 87.08 420.74 91.25C420.58 92.56 420.33 94.36 420.19 95.25C419.84 97.43 419.86 115.37 420.22 118.88C420.37 120.39 420.62 123.20 420.77 125.12C420.91 127.05 421.25 130.82 421.52 133.50C421.78 136.18 422.00 139.03 422.00 139.82C422.00 140.62 422.17 142.08 422.37 143.07C422.86 145.44 423.18 148.39 423.53 153.82C423.77 157.68 423.76 158.56 423.41 160.48C423.18 161.70 423.00 163.10 423.00 163.59C423.00 164.08 422.66 165.47 422.23 166.68C421.81 167.89 421.31 169.37 421.11 169.96C420.64 171.42 420.08 172.30 417.23 176.12C413.65 180.91 402.27 193.32 400.20 194.69L399.25 195.32L372.94 195.35C358.46 195.36 346.18 195.32 345.64 195.25ZM127.12 192.53C128.76 191.78 129.12 191.19 129.12 189.33C129.12 187.79 129.08 187.67 128.22 186.88C127.39 186.12 127.13 186.03 125.19 185.87C121.99 185.61 122.00 185.59 122.00 189.33C122.00 191.39 122.10 192.50 122.30 192.70C122.78 193.18 125.95 193.07 127.12 192.53ZM222.24 191.25C223.50 190.61 224.00 189.88 224.00 188.66C224.00 187.87 223.84 187.53 223.15 186.88C222.36 186.14 222.13 186.07 220.11 185.92C217.02 185.71 217.00 185.73 217.00 188.71C217.00 190.27 217.11 191.26 217.30 191.45C217.81 191.96 221.11 191.83 222.24 191.25ZM317.96 191.27C319.67 190.40 320.03 188.37 318.74 186.91C318.03 186.09 317.87 186.03 315.90 185.87C312.83 185.61 312.75 185.69 312.75 188.71C312.75 190.27 312.86 191.26 313.05 191.45C313.55 191.95 316.86 191.83 317.96 191.27ZM196.36 165.16C194.66 164.78 193.94 164.26 192.62 162.47C189.42 158.12 188.39 153.51 188.14 142.38C188.07 138.94 187.94 125.72 187.87 113.00C187.75 93.51 187.67 89.45 187.33 87.16C187.00 84.98 186.80 84.30 186.29 83.69C185.69 82.99 185.57 82.95 184.33 83.08L183.00 83.21L183.02 82.42C183.04 81.19 185.69 76.98 187.94 74.56C188.97 73.47 189.32 73.25 190.04 73.25C191.65 73.25 195.76 75.16 197.92 76.90C199.67 78.32 199.74 78.75 199.95 88.10C200.08 94.20 200.20 96.36 200.43 96.43C200.60 96.49 200.80 96.23 200.88 95.83C201.16 94.54 202.93 88.47 203.31 87.50C203.45 87.16 203.76 86.20 204.00 85.38C204.25 84.55 204.59 83.48 204.76 83.00C204.94 82.52 205.28 81.56 205.53 80.88C206.82 77.28 207.35 75.96 208.17 74.31C208.67 73.32 209.23 72.50 209.40 72.50C209.58 72.50 209.87 72.79 210.05 73.16C210.31 73.69 210.82 73.95 212.75 74.55C214.06 74.96 215.52 75.44 216.00 75.62C216.83 75.93 219.08 76.45 223.62 77.39C224.89 77.66 227.41 77.85 230.49 77.93C235.21 78.06 235.38 78.05 236.40 77.48C237.27 77.01 237.53 76.96 237.84 77.22C238.33 77.63 238.16 78.04 236.76 79.83C236.14 80.64 235.46 81.54 235.25 81.84C235.04 82.14 234.38 83.00 233.78 83.76L232.68 85.12L232.85 108.89C232.98 125.79 232.94 134.35 232.74 138.52C232.48 143.74 232.49 144.62 232.86 146.62C233.72 151.24 234.61 153.29 236.21 154.38C237.39 155.19 238.19 155.16 240.00 154.25C242.65 152.91 242.81 153.34 240.79 156.36C237.92 160.65 234.59 164.48 233.12 165.18C232.34 165.55 231.99 165.56 230.19 165.30C228.84 165.10 227.87 164.81 227.35 164.44C226.33 163.71 224.52 161.26 223.70 159.50C222.44 156.76 222.24 156.19 221.99 154.55C221.85 153.63 221.62 152.31 221.49 151.62C221.36 150.94 221.14 144.58 221.00 137.50C220.87 130.42 220.65 119.11 220.52 112.38L220.28 100.12L221.75 97.38C222.56 95.86 223.62 94.06 224.11 93.38C224.60 92.69 225.00 92.01 225.00 91.86C225.00 91.71 224.07 91.45 222.94 91.28C221.80 91.11 220.20 90.76 219.38 90.50C214.88 89.08 214.41 88.99 211.52 89.00C208.96 89.00 208.55 89.06 207.39 89.65C205.48 90.62 203.89 92.95 202.66 96.62C202.07 98.35 201.09 102.14 200.87 103.50C200.77 104.11 200.55 105.02 200.37 105.51C200.13 106.18 200.04 111.21 199.98 126.51L199.90 146.62L200.49 149.00C200.81 150.31 201.35 151.90 201.68 152.54C202.37 153.88 203.83 155.00 204.89 155.00C205.67 155.00 208.57 153.74 208.86 153.27C208.95 153.12 209.19 153.00 209.39 153.00C209.81 153.00 209.88 153.89 209.48 154.13C209.34 154.22 209.12 154.57 208.99 154.89C208.63 155.84 204.47 161.21 202.57 163.18C201.62 164.17 200.53 165.10 200.15 165.24C199.31 165.56 198.02 165.53 196.36 165.16ZM295.88 165.23C294.14 164.89 292.42 164.54 290.40 164.11C286.15 163.21 280.08 158.72 276.50 153.81C275.72 152.75 274.97 152.76 273.34 153.86C272.63 154.34 271.73 154.81 271.34 154.90C270.95 155.00 270.37 155.24 270.06 155.44C269.28 155.95 268.75 155.67 268.75 154.75C268.75 154.18 269.03 153.69 269.81 152.88C272.13 150.50 272.91 145.76 272.80 134.88C272.74 130.29 272.62 127.52 272.45 127.32C272.31 127.14 272.01 127.00 271.78 127.00C271.56 127.00 270.78 126.72 270.06 126.38C268.90 125.84 268.75 125.69 268.75 125.01C268.75 124.00 269.53 123.25 270.58 123.25C271.03 123.25 271.61 123.10 271.85 122.92C272.28 122.61 272.30 121.65 272.20 103.11L272.09 83.62L271.52 82.12C270.89 80.48 270.45 80.00 269.58 80.00C269.18 80.00 269.00 79.85 269.00 79.53C269.00 78.96 269.60 78.55 271.75 77.64C272.64 77.26 273.75 76.79 274.22 76.59C275.31 76.12 278.58 75.50 279.95 75.50C282.02 75.50 283.42 76.51 284.12 78.50C284.47 79.48 284.48 80.51 284.23 87.77C284.02 93.55 284.02 96.07 284.20 96.40C284.44 96.83 284.51 96.78 284.88 95.90C285.31 94.87 286.68 89.82 286.99 88.12C287.48 85.40 289.78 79.49 291.28 77.11C292.63 74.97 294.06 73.88 295.50 73.88C296.55 73.88 296.83 74.04 299.75 76.40C303.88 79.73 304.93 80.44 307.75 81.82C311.84 83.81 314.07 84.50 316.42 84.50C318.30 84.50 318.20 84.78 314.86 88.75C313.39 90.51 306.47 98.81 303.63 102.23C303.22 102.72 301.76 104.41 300.38 105.99C299.00 107.56 296.94 109.92 295.79 111.24C294.64 112.55 293.38 113.98 292.98 114.42C292.10 115.40 288.08 119.99 286.81 121.46C285.09 123.46 285.13 123.91 286.97 123.63C288.33 123.43 288.71 123.40 294.62 123.03C297.10 122.87 299.74 122.58 300.49 122.37C301.24 122.17 302.18 122.00 302.58 122.00C303.26 122.00 303.68 121.85 306.18 120.70C307.52 120.08 308.63 118.81 309.56 116.82C310.35 115.13 310.65 114.91 310.89 115.84C311.19 117.04 310.11 124.09 309.41 125.43C309.19 125.87 309.00 126.38 309.00 126.57C309.00 127.23 306.51 130.47 305.44 131.20C303.59 132.46 302.31 132.72 296.50 133.00C289.67 133.34 285.55 133.87 284.89 134.52C284.44 134.95 284.42 135.11 284.70 136.45C284.86 137.25 285.00 138.14 285.00 138.42C285.00 139.03 286.03 142.24 286.67 143.64C287.38 145.21 289.42 148.16 290.70 149.48C291.96 150.78 294.65 152.69 295.87 153.17C298.24 154.08 298.84 154.24 300.53 154.39C302.93 154.60 306.15 154.03 308.27 153.03C311.05 151.72 314.68 148.30 315.87 145.88C316.22 145.15 317.50 143.77 317.50 144.11C317.50 145.01 316.84 148.25 316.35 149.75C313.91 157.23 308.23 163.60 302.75 165.02C301.37 165.37 297.25 165.50 295.88 165.23ZM329.57 165.09C328.91 164.85 328.12 164.27 327.50 163.56C326.40 162.32 325.00 160.02 325.00 159.47C325.00 159.28 324.83 158.80 324.62 158.41C324.12 157.44 323.31 154.00 323.10 151.94C322.90 149.91 322.70 149.85 320.94 151.25C319.52 152.38 319.52 152.38 318.86 151.90C318.44 151.58 318.42 151.45 318.69 150.69C318.86 150.22 319.00 149.68 319.01 149.48C319.01 149.29 319.23 148.68 319.50 148.12C319.77 147.57 319.99 146.96 319.99 146.75C319.99 146.54 320.21 145.47 320.47 144.38C322.25 136.93 322.37 134.40 322.02 110.50C321.86 99.71 321.67 87.84 321.60 84.12C321.52 80.41 321.38 70.73 321.28 62.60L321.10 47.82L320.29 46.18C319.80 45.16 319.11 44.23 318.52 43.76C317.47 42.93 315.62 42.01 314.97 42.01C314.11 41.99 313.98 41.38 314.63 40.49C315.48 39.35 315.87 39.16 316.56 39.58C317.68 40.27 319.97 40.80 321.31 40.68C323.79 40.47 324.50 40.07 329.91 35.87C331.68 34.50 333.41 33.18 333.75 32.94C334.09 32.71 334.85 32.18 335.44 31.76C338.32 29.72 341.75 29.13 341.32 30.75C341.25 31.02 340.58 31.74 339.82 32.37C338.14 33.75 335.18 37.24 334.49 38.67C333.95 39.76 333.93 39.93 333.48 47.88C332.90 58.08 333.24 95.13 334.25 132.50C334.65 147.14 335.34 151.32 337.81 154.16C338.83 155.32 340.00 155.41 343.31 154.61C344.40 154.34 344.19 155.12 342.59 157.25C337.52 164.00 333.44 166.46 329.57 165.09ZM254.46 158.78C253.84 158.38 253.10 157.68 252.81 157.22C252.25 156.29 252.20 154.75 251.87 129.88C251.80 124.38 251.69 117.40 251.62 114.38C251.56 111.35 251.44 104.49 251.35 99.12C251.27 93.76 251.16 88.31 251.12 87.00C251.04 84.55 251.31 81.16 251.77 78.75C252.69 73.98 253.56 70.92 254.20 70.19C255.51 68.68 256.60 70.63 258.13 77.26C259.09 81.42 259.22 83.00 259.36 91.55C259.43 95.85 259.55 102.69 259.62 106.75C259.78 115.52 259.94 125.53 260.14 139.00C260.22 144.43 260.32 150.38 260.37 152.22C260.45 155.50 260.14 157.58 259.45 158.43C259.19 158.75 256.84 159.50 256.07 159.50C255.81 159.50 255.09 159.18 254.46 158.78ZM81.94 157.94C82.09 157.75 82.25 154.34 82.35 149.62C82.44 145.22 82.57 138.50 82.66 134.69C82.77 129.35 82.74 127.66 82.50 127.37C82.29 127.12 81.72 127.00 80.75 127.00C77.28 127.00 70.68 130.56 65.00 135.49C64.11 136.26 62.05 137.95 60.44 139.24C58.37 140.89 57.50 141.74 57.50 142.11C57.50 142.45 58.42 143.49 60.16 145.13C64.88 149.55 66.64 151.00 70.68 153.83C74.79 156.70 81.09 159.00 81.94 157.94ZM255.52 156.69C255.55 156.07 255.45 149.59 255.38 148.12C255.34 147.30 255.22 141.84 255.13 135.99C254.97 126.42 254.99 125.32 255.35 125.02C255.68 124.74 255.84 124.75 256.29 125.05C256.80 125.39 256.83 125.62 256.90 129.39C256.98 133.99 257.30 148.24 257.38 151.00C257.42 152.03 257.46 153.69 257.47 154.69C257.49 156.06 257.59 156.50 257.85 156.50C258.44 156.50 258.50 155.88 258.38 150.80C258.31 148.09 258.20 140.03 258.13 132.88C258.00 120.48 257.85 110.67 257.63 100.03C257.58 97.36 257.44 95.09 257.33 94.98C257.21 94.86 256.95 94.87 256.75 95.00C256.43 95.20 256.38 96.30 256.38 102.23C256.38 108.66 256.34 109.27 255.92 109.68C255.49 110.11 255.45 110.10 254.98 109.53C254.55 109.00 254.50 108.50 254.47 104.53C254.43 97.26 254.37 95.90 254.04 95.31C253.26 93.89 253.19 95.00 253.36 106.84C253.46 113.32 253.58 120.00 253.63 121.69C253.68 123.37 253.78 130.91 253.86 138.44C253.99 151.17 254.15 156.35 254.42 156.81C254.60 157.12 255.50 157.02 255.52 156.69ZM150.79 153.06C152.62 152.13 155.30 149.72 155.75 148.60C156.02 147.93 156.14 137.63 156.08 120.27C156.04 108.94 155.97 106.36 155.69 106.08C154.76 105.15 147.84 105.55 144.51 106.72C142.84 107.31 142.59 107.49 141.95 108.54C140.71 110.57 140.00 113.47 138.25 123.62C138.13 124.31 137.89 127.71 137.73 131.17C137.49 135.99 137.49 137.95 137.71 139.55C137.87 140.69 138.00 142.19 138.00 142.88C138.00 143.58 138.18 144.82 138.40 145.63C138.62 146.45 138.89 147.49 139.00 147.93C139.35 149.36 141.36 151.87 143.06 152.98C144.58 153.97 144.67 154.00 146.78 154.00C148.79 154.00 149.08 153.93 150.79 153.06ZM55.81 137.94C56.28 137.22 56.99 135.72 57.39 134.62C58.09 132.71 58.12 132.46 58.10 128.62C58.07 125.25 57.99 124.38 57.54 123.03C57.24 122.15 57.00 121.30 57.00 121.13C57.00 120.73 55.41 115.86 54.50 113.50C54.26 112.88 53.93 111.98 53.76 111.50C53.59 111.02 53.00 109.39 52.46 107.88C49.93 100.79 49.06 97.54 48.85 94.31C48.74 92.63 48.58 91.75 48.39 91.75C47.56 91.75 45.48 94.80 44.71 97.15C44.17 98.79 44.16 98.81 44.62 100.71C45.28 103.45 46.02 105.25 49.65 112.92C50.87 115.48 51.49 117.05 51.67 118.03C51.79 118.65 50.90 122.36 50.50 122.88C50.40 123.01 50.23 123.38 50.14 123.70C49.98 124.21 48.87 125.93 46.75 128.95C46.34 129.54 46.00 130.18 46.00 130.38C46.00 130.80 54.24 139.24 54.66 139.25C54.82 139.25 55.34 138.66 55.81 137.94ZM286.72 118.25C287.66 117.28 289.26 115.57 290.27 114.43C291.28 113.30 292.34 112.15 292.64 111.88C293.22 111.34 303.03 100.24 306.57 96.12C308.84 93.48 309.02 92.83 307.27 93.62C305.72 94.32 303.13 94.22 301.39 93.39C299.42 92.46 298.43 91.74 295.91 89.42C293.25 86.97 292.92 86.77 291.61 86.76C289.84 86.74 288.75 88.46 287.40 93.38C287.02 94.75 286.61 96.16 286.48 96.50C286.36 96.84 286.09 97.86 285.89 98.75C285.69 99.64 285.42 100.83 285.29 101.38C284.69 103.84 283.89 118.70 284.31 119.56C284.42 119.80 284.63 120.00 284.76 120.00C284.89 120.00 285.78 119.21 286.72 118.25ZM256.62 91.38C257.36 89.90 257.37 89.81 257.36 86.12C257.34 83.01 257.22 81.83 256.64 79.12C255.93 75.86 255.45 74.50 254.99 74.50C254.58 74.50 254.25 75.66 253.57 79.38C253.03 82.41 252.96 83.31 253.09 86.12C253.25 89.48 253.60 90.99 254.54 92.31C254.82 92.70 255.24 92.99 255.46 92.95C255.69 92.91 256.21 92.20 256.62 91.38ZM252.74 60.79C250.68 59.22 250.47 58.98 248.03 55.35C246.81 53.53 246.00 52.07 246.00 51.68C246.00 51.20 246.52 50.57 248.14 49.11C251.39 46.15 253.17 43.75 253.85 41.40C254.28 39.90 254.95 40.00 255.49 41.65C255.74 42.41 256.51 43.66 257.41 44.77C260.75 48.89 262.01 50.98 262.08 52.54C262.12 53.55 262.06 53.64 260.25 55.18C259.22 56.06 258.08 56.94 257.71 57.13C256.58 57.74 255.40 59.46 255.26 60.73C255.17 61.49 255.00 61.89 254.74 61.94C254.52 61.98 253.62 61.47 252.74 60.79Z"/></symbol></svg>
+
+<div class="hero-logo" aria-hidden="true"><svg viewBox="0 0 440 215"><use href="#logo"/></svg></div>
+<div class="ghost" aria-hidden="true"><span id="word" class="out"></span></div>
+<canvas id="scene" aria-label="Escultura de terracota de uma mulher negra com tranças nagô, com piercings na orelha, no rosto e no umbigo. Arraste para girar."></canvas>
+<div id="hs"></div>
+
+<header id="top">
+  <a class="brand" href="#s-hero"><svg viewBox="0 0 440 215" role="img" aria-label="Danielly Piercer"><use href="#logo"/></svg></a>
+  <nav>
+    <a href="#s-orelha">Mapa das perfurações</a>
+    <a href="#s-trabalhos">Trabalhos</a>
+    <a href="#s-dani">A Dani</a>
+    <a href="#s-cursos">Joias e cursos</a>
+    <a class="book" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Agendar</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="s-hero" data-k="0">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Danielly Piercer, body piercing em Cuiabá-MT</h1>
+    <div class="hero-meta">
+      <p><strong>Danielly Paixão</strong><br>Body piercing em Cuiabá-MT.<br>Perfuração, joias e cursos.</p>
+      <div class="scroll-cue"><span>Role para explorar<br>ou arraste a peça</span><i></i></div>
+    </div>
+  </section>
+
+  <section class="stage right" id="s-exp" data-k="1">
+    <div class="wrap"><div class="pin">
+      <p class="eyebrow">O jeito da Dani</p>
+      <h2>Mais que perfurações, <em>experiências.</em></h2>
+      <ul class="principles">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg><span>A joia, o ângulo, a anatomia e o cuidado fazem toda a diferença.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19 19 5M8 5h11v11"/></svg><span>Nem toda perfuração combina com toda anatomia. Às vezes o cuidado é dizer não.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Biossegurança em cada etapa, do material à joia.</span></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="stage" id="s-orelha" data-k="2" data-region="orelha" data-word="orelha">
+    <div class="wrap"><div class="pin">
+      <p class="eyebrow">Mapa das perfurações</p>
+      <h2>Orelha</h2>
+      <p>Cartilagem e lóbulo pedem joias e ângulos diferentes. Toque num ponto da peça para ver um trabalho da Dani.</p>
+      <ul class="pts" data-region="orelha"></ul>
+    </div></div>
+  </section>
+
+  <section class="stage" id="s-rosto" data-k="3" data-region="rosto" data-word="rosto">
+    <div class="wrap"><div class="pin">
+      <p class="eyebrow">Mapa das perfurações</p>
+      <h2>Rosto</h2>
+      <p>Nariz, boca e sobrancelha mudam a expressão. A posição certa segue o desenho de cada rosto.</p>
+      <ul class="pts" data-region="rosto"></ul>
+    </div></div>
+  </section>
+
+  <section class="stage" id="s-umbigo" data-k="4" data-region="corpo" data-word="umbigo">
+    <div class="wrap"><div class="pin">
+      <p class="eyebrow">Mapa das perfurações</p>
+      <h2>Umbigo</h2>
+      <p>Todo corpo tem o seu umbigo. A Dani avalia o formato antes e escolhe a joia com você.</p>
+      <ul class="pts" data-region="corpo"></ul>
+      <p class="tiny">Ela também faz microdermal, alargador e íntimo.</p>
+    </div></div>
+  </section>
+
+  <section class="works solid-sec" id="s-trabalhos">
+    <div class="wrap works-grid">
+      <div class="works-side">
+        <h2>Trabalhos</h2>
+        <p>Trabalhos direto do Instagram da Dani. Escolha a região e toque num post para abrir no perfil dela.</p>
+        <ul class="filters" id="filters"></ul>
+      </div>
+      <div>
+        <div class="tiles" id="tiles"></div>
+        <a class="ig-more" href="https://www.instagram.com/daniperfuraaqui/">Ver todos os trabalhos em @daniperfuraaqui</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices solid-sec" aria-labelledby="v-title">
+    <div class="wrap"><h2 id="v-title">Quem passou <em>pela agulha</em></h2></div>
+    <div class="marquee" id="marquee"></div>
+    <div class="wrap"><p class="ph-note">Comentários públicos no Instagram da Dani. Confirmar o uso com cada pessoa.</p></div>
+  </section>
+
+  <section class="dani solid-sec" id="s-dani">
+    <svg class="wall-logo" viewBox="0 0 440 215" aria-hidden="true"><use href="#logo"/></svg>
+    <div class="wrap dani-grid">
+      <div class="portrait"><small>Retrato da Dani no estúdio</small></div>
+      <div>
+        <p class="eyebrow">Conheça a Dani</p>
+        <h2>Quase seis anos <em>furando Cuiabá.</em></h2>
+        <p>Danielly Paixão é piercer em Cuiabá-MT. Atende com hora marcada, explica cada etapa e só fura quando a anatomia ajuda. Também vende joias e ensina o ofício em cursos.</p>
+        <p>Em 2026 ela esteve no Congresso Colab Piercing, trocando técnica com piercers do país inteiro.</p>
+        <div class="facts">
+          <div class="fact"><b>~6</b><span>anos como piercer</span></div>
+          <div class="fact"><b>8</b><span>regiões no destaque do perfil</span></div>
+          <div class="fact"><b>seg–sáb</b><span>por agendamento</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer solid-sec" id="s-cursos">
+    <div class="wrap offer-grid">
+      <article class="card j">
+        <svg class="deco" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="70" fill="none" stroke="#d9b261" stroke-width="10"/><circle cx="110" cy="40" r="12" fill="#f1d58f"/></svg>
+        <div><h3>Joias</h3><p>Pontos de luz, argolas e peças para composição. A Dani ajuda a escolher pelo furo e pelo seu estilo.</p></div>
+        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20das%20joias%20dispon%C3%ADveis.">Perguntar das joias</a>
+      </article>
+      <article class="card c">
+        <svg class="deco" viewBox="0 0 220 220" aria-hidden="true"><path d="M40 180 180 40" stroke="#1d3426" stroke-width="6" stroke-linecap="round"/><path d="M170 50l14-14" stroke="#b48b3b" stroke-width="10" stroke-linecap="round"/><circle cx="60" cy="160" r="8" fill="#1d3426"/></svg>
+        <div><h3>Cursos</h3><p>Para quem quer começar ou se aprimorar em body piercing, com prática e biossegurança.</p></div>
+        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20dos%20cursos%20de%20body%20piercing.">Quero saber dos cursos</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="book solid-sec" id="s-agenda">
+    <div class="wrap">
+      <div class="book-grid">
+        <h2>Vamos viver novas <em>experiências?</em></h2>
+        <div class="book-info">
+          <dl>
+            <dt>Onde</dt><dd>Cuiabá-MT</dd>
+            <dt>Quando</dt><dd>Segunda a sábado, com agendamento</dd>
+            <dt>WhatsApp</dt><dd>(65) 99250-7788</dd>
+            <dt>Instagram</dt><dd>@daniperfuraaqui</dd>
+          </dl>
+          <div class="row"><a class="btn" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Agendar pelo WhatsApp</a><a class="btn light" href="https://www.instagram.com/daniperfuraaqui/">Instagram</a></div>
+        </div>
+      </div>
+      <div class="foot-logo"><svg viewBox="0 0 440 215" role="img" aria-label="Danielly Piercer"><use href="#logo"/></svg></div>
+      <footer><span>Danielly Paixão · Danielly Piercer · Cuiabá-MT</span><span>Prévia de estudo. Textos, fotos e posições das joias a confirmar com a Dani. <a class="edit-link" href="#editar">Editar pontos do mapa</a></span></footer>
+    </div>
+  </section>
+</main>
+
+<a class="wa" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing." aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+
+<aside class="editor" id="editor" hidden aria-label="Editor de pontos de piercing">
+  <div class="ed-head"><b>Pontos do mapa</b><button type="button" class="ed-btn" id="ed-x">Sair</button></div>
+  <div class="ed-focus" role="group" aria-label="Enquadrar"><button type="button" data-focus="orelha">Orelha</button><button type="button" data-focus="rosto">Rosto</button><button type="button" data-focus="corpo">Corpo</button><button type="button" data-focus="tudo">Inteira</button></div>
+  <ul class="ed-list" id="ed-list"></ul>
+  <button type="button" class="ed-btn ed-new" id="ed-new">+ Novo ponto</button>
+  <div class="ed-form" id="ed-form" hidden>
+    <label for="ed-nome">Nome</label><input id="ed-nome" maxlength="40">
+    <div class="ed-2"><div><label for="ed-reg">Região</label><select id="ed-reg"></select></div><div><label for="ed-metal">Metal</label><select id="ed-metal"></select></div></div>
+    <label for="ed-joia">Joia</label><select id="ed-joia"></select>
+    <label for="ed-tam">Tamanho da joia <span id="ed-tam-v"></span></label><input type="range" id="ed-tam" min=".5" max="2" step=".05">
+    <label for="ed-ig">Post do Instagram (link)</label><input id="ed-ig" placeholder="https://www.instagram.com/p/...">
+    <label for="ed-desc">Descrição</label><textarea id="ed-desc" rows="3" maxlength="400"></textarea>
+    <p class="ed-hint">Clique na escultura para adicionar uma posição a este ponto. Barra usa duas posições. Arraste para girar e use a roda do mouse para aproximar.</p>
+    <div class="ed-2"><button type="button" class="ed-btn" id="ed-undo">Desfazer posição</button><button type="button" class="ed-btn" id="ed-clear">Limpar posições</button></div>
+    <button type="button" class="ed-btn ed-del" id="ed-del">Excluir ponto</button>
+  </div>
+  <div class="ed-foot">
+    <button type="button" class="btn" id="ed-save">Salvar no site</button>
+    <div class="ed-2"><button type="button" class="ed-btn" id="ed-copy">Copiar JSON</button><button type="button" class="ed-btn" id="ed-reset">Restaurar padrão</button></div>
+    <p class="ed-status" id="ed-status" role="status"></p>
+    <textarea id="ed-json" rows="3" hidden aria-label="JSON dos pontos"></textarea>
+  </div>
+</aside>
+
+<div class="close" id="close" role="dialog" aria-modal="true" aria-labelledby="c-name" hidden>
+  <div class="shot" id="c-shot"><iframe id="c-ig" title="Trabalho da Dani no Instagram" loading="lazy"></iframe><a class="c-iglink" id="c-iglink" href="https://www.instagram.com/daniperfuraaqui/">Abrir no Instagram</a></div>
+  <div class="txt">
+    <button class="x" id="c-x" aria-label="Fechar">×</button>
+    <p class="eyebrow" id="c-region"></p>
+    <h3 id="c-name"></h3>
+    <p id="c-desc"></p>
+    <p class="c-jewel" id="c-jewel"></p>
+    <div class="row c-act"><a class="btn" id="c-book" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Quero esse, bora agendar</a><button type="button" class="btn light" id="c-works">Ver trabalhos</button></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+{
+const cl=(v,a,b)=>Math.min(b,Math.max(a,v)),sm=t=>t*t*(3-2*t);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- pontos de piercing: dados (posições em coordenadas do modelo) ---------- */
+const REG={orelha:'Orelha',rosto:'Rosto',corpo:'Corpo'};
+const JOIAS={ponto:'Ponto de luz',argola:'Argola',barra:'Barra',micro:'Microdermal',umbigo:'Umbigo com pingente'};
+const METAIS={ouro:'Ouro',prata:'Prata'};
+const DEF=[
+ ['transversal','orelha','Transversal','Uma barra só que atravessa a cartilagem de cima em dois pontos. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]]],
+ ['scapha','orelha','Scapha','Na canaleta entre a borda da orelha e a cartilagem interna. Fica lindo com pingente.','ponto','ouro',1.1,[[-.0844,.8489,-.0047,-.961,.102,.259]]],
+ ['helix','orelha','Hélix','Borda de cima da cartilagem. Aceita argola ou ponto de luz e combina com outros furos na mesma linha.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DLkTsySMzjr'],
+ ['midhelix','orelha','Mid hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]]],
+ ['forward','orelha','Forward hélix','Na frente da borda, pertinho do rosto. Costuma ser feito em dupla ou trio.','ponto','ouro',.85,[[-.001,.8618,.0313,-.622,.067,.78],[-.001,.8564,.0326,-.495,.271,.826]]],
+ ['rook','orelha','Rook','A dobra interna logo acima do daith. Normalmente com barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]]],
+ ['daith','orelha','Daith','A dobra mais interna, acima do canal do ouvido. Clássico com argola.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]]],
+ ['conch','orelha','Conch','O centro da concha. Ponto de luz ou argola abraçando a borda.','ponto','prata',1.3,[[-.0368,.827,.0088,-.634,-.228,.739]],'Dayrvd4kRJl'],
+ ['tragus','orelha','Trágus','A pequena cartilagem na frente do canal do ouvido.','ponto','ouro',1,[[-.0211,.8076,.0223,-.175,-.076,.982]]],
+ ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]]],
+ ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]]],
+ ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1.2,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DJ7mylYPDiA'],
+ ['narina','rosto','Narina','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par.','ponto','ouro',1.1,[[.1632,.767,.0599,.732,.055,.679]],'DLVNwIGsMWO'],
+ ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DYhnv3MEZXR'],
+ ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]]],
+ ['sobrancelha','rosto','Sobrancelha','Barra curva no fim da sobrancelha. Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]]],
+ ['labio','rosto','Lábio','Argola ou labret no lábio. Combina com várias posições de boca.','argola','ouro',1,[[.1248,.7178,.0684,.176,.091,.98]],'Dd7O7xujjfe'],
+ ['microdermal','rosto','Microdermal','A base fica sob a pele e só o topo aparece. Na maçã do rosto, fica lindo em dupla.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'Df4tSKFFkRw'],
+ ['umbigo','corpo','Umbigo','Barra curva na dobra de cima do umbigo, com pingente ou ponto de luz.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DaMMnvAETTa']
+].map(([id,r,n,d,j,m,t,pos,ig])=>({id,r,n,d,j,m,t,pos,ig:ig||''}));
+const clone=l=>l.map(p=>({...p,pos:p.pos.map(a=>a.slice())}));
+let PTS=clone(DEF),byId={};
+const hooks=[];
+
+function clean(list){
+  if(!Array.isArray(list))return null;const out=[];
+  for(const x of list.slice(0,80)){
+    if(!x||typeof x!=='object')continue;
+    const id=String(x.id||'').replace(/[^a-z0-9_-]/gi,'').slice(0,40);if(!id||out.some(o=>o.id===id))continue;
+    const pos=(Array.isArray(x.pos)?x.pos:[]).slice(0,6).map(q=>q&&[q.x,q.y,q.z,q.nx,q.ny,q.nz].map(Number)).filter(a=>a&&a.every(Number.isFinite));
+    out.push({id,r:REG[x.regiao]?x.regiao:'orelha',n:String(x.nome||id).slice(0,40),d:String(x.desc||'').slice(0,400),
+      j:JOIAS[x.joia]?x.joia:'ponto',m:METAIS[x.metal]?x.metal:'ouro',t:cl(+x.tam||1,.5,2),pos,ig:igCode(x.post)});
+  }
+  return out;
+}
+const igCode=v=>{const m=String(v||'').match(/(?:instagram\.com\/(?:p|reel)\/)?([A-Za-z0-9_-]{6,20})\/?(?:\?.*)?$/);return m?m[1]:''};
+const r5=v=>Math.round(v*1e5)/1e5;
+const toDoc=l=>l.map(p=>({id:p.id,nome:p.n,regiao:p.r,desc:p.d,joia:p.j,metal:p.m,tam:p.t,post:p.ig,pos:p.pos.map(a=>({x:r5(a[0]),y:r5(a[1]),z:r5(a[2]),nx:r5(a[3]),ny:r5(a[4]),nz:r5(a[5])}))}));
+
+/* listas da página */
+const SKIN=[['#6b3d27','#c98a62'],['#4a2a1b','#9a6343'],['#8a5a3c','#e0ac84'],['#3b2418','#87563a'],['#9d6b4c','#efc3a0'],['#5a3322','#b47a55']];
+const IG=[['Dayrvd4kRJl','orelha','Composição de orelha'],['DLkTsySMzjr','orelha','Hélix'],['DaoTz-xkdf9','orelha','Cartilagem em ouro'],['DVcD1tVkuBL','orelha','Hélix com verde'],['DJ7mylYPDiA','orelha','Alargador e cartilagem'],
+ ['DZ8fso0EcrE','rosto','Paired nostril'],['DLVNwIGsMWO','rosto','Narina'],['Df4tSKFFkRw','rosto','Microdermal duplo'],['DYhnv3MEZXR','rosto','Septo com opalas'],['DKu6wxDPJYE','rosto','Septo'],['Dd7O7xujjfe','rosto','Lábio'],
+ ['DaMMnvAETTa','corpo','Umbigo'],['DJFnqicvywQ','corpo','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com barra']];
+const IG_DEF={orelha:'Dayrvd4kRJl',rosto:'DZ8fso0EcrE',corpo:'DJFnqicvywQ'};
+const igUrl=c=>'https://www.instagram.com/p/'+encodeURIComponent(c)+'/';
+const tiles=document.getElementById('tiles'),filters=document.getElementById('filters');
+let filt='todos';
+function renderLists(){
+  for(const ul of document.querySelectorAll('.pts'))
+    ul.innerHTML=PTS.filter(p=>p.r===ul.dataset.region).map(p=>`<li><button type="button" data-id="${esc(p.id)}">${esc(p.n)}</button></li>`).join('');
+  if(!tiles.dataset.done){tiles.dataset.done=1;
+    tiles.innerHTML=IG.map(([c,r,t])=>`<article class="ig" data-r="${r}"><iframe src="${igUrl(c)}embed" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
+  tiles.querySelectorAll('.ig').forEach(x=>x.classList.toggle('hide',filt!=='todos'&&x.dataset.r!==filt));
+  filters.innerHTML=[['todos','Tudo'],['orelha','Orelha'],['rosto','Rosto'],['corpo','Corpo']].map(([k,n])=>`<li><button type="button" data-f="${k}" aria-pressed="${k===filt}">${n}<small>${k==='todos'?IG.length:IG.filter(w=>w[1]===k).length}</small></button></li>`).join('');
+}
+function setPoints(list){PTS=list;byId=Object.fromEntries(PTS.map(p=>[p.id,p]));renderLists();hooks.forEach(f=>f())}
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;filt=b.dataset.f;renderLists()});
+setPoints(PTS);
+
+/* depoimentos reais (comentários públicos) */
+const VO=[['Recomendo de olhos fechados!!! Inclusive já quero fazer outros piercings.','@laricabraw'],['Perfeição é o nome. Parabéns pelo trabalho, Dani!','@debsdcsouza'],['Assim que eu tiver mais dinheiro ela vai me furar de novo.','@_psicodelika'],['Parabéns para as mãos de fada.','@fernandahitomy'],['A melhor que nós temos!','@pedrohlfg'],['Arrasou, super indico!','@mariellegaivaesteticista'],['Você é incrível em tudo que faz.','@leticiacajango']];
+const qh=VO.map(([q,a])=>`<figure class="quote"><q>${q}</q><span>${a}</span></figure>`).join('');
+document.getElementById('marquee').innerHTML=qh+qh.replace(/<figure /g,'<figure aria-hidden="true" ');
+
+/* close: argola que abre (círculo) ou foto que cresce (FLIP) */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const close=document.getElementById('close'),shot=document.getElementById('c-shot');
+let lastFocus=null,editing=false,onEditPick=null;
+function fill(p,s){
+  document.getElementById('c-name').textContent=p.n;
+  document.getElementById('c-jewel').textContent='Na escultura: '+JOIAS[p.j].toLowerCase()+' de '+METAIS[p.m].toLowerCase()+(p.pos.length>1&&p.j!=='barra'&&p.j!=='umbigo'?' ('+p.pos.length+' furos)':'')+'.';
+  const cw=document.getElementById('c-works');cw.dataset.r=p.r;cw.textContent='Ver trabalhos de '+REG[p.r].toLowerCase();
+  document.getElementById('c-region').textContent=REG[p.r];
+  document.getElementById('c-desc').textContent=p.d;
+  const code=p.ig||IG_DEF[p.r];document.getElementById('c-ig').src=igUrl(code)+'embed';document.getElementById('c-iglink').href=igUrl(code);
+  document.getElementById('c-book').href='https://wa.me/5565992507788?text='+encodeURIComponent('Oi, Dani! Vim pelo site e quero agendar um piercing: '+p.n+'.');
+}
+function openClose(id,src){
+  const p=byId[id];if(!p)return;lastFocus=document.activeElement;
+  const r=src.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  fill(p,src.classList.contains('tile')?+src.dataset.s:undefined);
+  close.style.setProperty('--cx',cx+'px');close.style.setProperty('--cy',cy+'px');
+  close.hidden=false;
+  if(src.classList.contains('tile')&&!reduce){
+    const f=src.cloneNode(true);f.className='tile flip';f.removeAttribute('data-id');
+    Object.assign(f.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});
+    document.body.appendChild(f);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      const tr=innerWidth<=640?{w:innerWidth,h:innerHeight*.42}:{w:innerWidth*.524,h:innerHeight};
+      Object.assign(f.style,{left:'0px',top:'0px',width:tr.w+'px',height:tr.h+'px',borderRadius:'0px'});
+      setTimeout(()=>{close.style.transition='none';close.classList.add('open');requestAnimationFrame(()=>{close.style.transition='';f.style.opacity='0';setTimeout(()=>f.remove(),300)})},650);
+    }));
+  }else requestAnimationFrame(()=>requestAnimationFrame(()=>close.classList.add('open')));
+  document.documentElement.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('c-x').focus({preventScroll:true}),reduce?0:500);
+}
+function shut(){
+  close.classList.remove('open');if(!editing)document.documentElement.style.overflow='';
+  setTimeout(()=>{if(!close.classList.contains('open')){close.hidden=true;document.getElementById('c-ig').removeAttribute('src')}},reduce?0:820);
+  if(lastFocus)lastFocus.focus({preventScroll:true});
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b||close.contains(b))return;
+  if(editing){if(onEditPick)onEditPick(b.dataset.id);return}openClose(b.dataset.id,b)});
+document.getElementById('c-x').addEventListener('click',shut);
+document.getElementById('c-works').addEventListener('click',e=>{filt=e.currentTarget.dataset.r||'todos';renderLists();shut();
+  setTimeout(()=>document.getElementById('s-trabalhos').scrollIntoView({behavior:reduce?'auto':'smooth'}),reduce?0:300)});
+const atPoint=(x,y)=>({getBoundingClientRect:()=>({left:x,top:y,width:0,height:0}),classList:{contains:()=>false}});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&close.classList.contains('open'))shut()});
+
+/* banco de dados: os pontos salvos substituem os padrões para todo mundo */
+let dbDoc=null,dirty=false;
+async function connectDb(){
+  try{
+    if(!window.claude||!window.claude.use)return false;
+    const db=await window.claude.use('db');if(!db)return true;
+    dbDoc=db.doc('mapa/pontos');
+    dbDoc.onSnapshot(s=>{if(!s.exists||dirty)return;const l=clean((s.data()||{}).pontos);if(l&&l.length)setPoints(l)},()=>{});
+  }catch(e){}
+  return true;
+}
+connectDb().then(ok=>{if(!ok)addEventListener('load',connectDb,{once:true})});
+
+/* cabeçalho, palavra fantasma */
+const head=document.getElementById('top'),word=document.getElementById('word');
+const stageSecs=[...document.querySelectorAll('main section[data-k]')];
+const works=document.getElementById('s-trabalhos');
+let anchors=[],worksTop=0,wordNow='';
+function measure(){anchors=stageSecs.map(s=>s.getBoundingClientRect().top+scrollY);worksTop=works.getBoundingClientRect().top+scrollY}
+function setWord(w){if(w===wordNow)return;wordNow=w;word.classList.add('out');setTimeout(()=>{if(wordNow!==w)return;word.textContent=w;if(w)word.classList.remove('out')},350)}
+function onScroll(){const y=scrollY;head.classList.toggle('past',y>innerHeight*.35);head.classList.toggle('solid',y>worksTop-80)}
+addEventListener('scroll',onScroll,{passive:true});
+let lastY=scrollY,dirY=1,snapTm=null,snapping=false;
+let userScroll=false;const touchUser=()=>{userScroll=true};
+addEventListener('click',e=>{if(e.target.closest('a[href^="#"],#c-works'))userScroll=false},true);
+['wheel','touchmove'].forEach(ev=>addEventListener(ev,touchUser,{passive:true}));addEventListener('keydown',e=>{if(/Arrow|Page|Space|Home|End/.test(e.code))touchUser()});
+function restY(i){const len=i<anchors.length-1?anchors[i+1]-anchors[i]:stageSecs[i].offsetHeight;return Math.max(0,anchors[i]+len*.2-innerHeight*.35)}
+function snap(){
+  snapping=false;if(editing||!close.hidden||!anchors.length||!userScroll)return;
+  userScroll=false;
+  const y=scrollY+innerHeight*.35;if(scrollY>worksTop-innerHeight*.9)return;
+  let i=0;while(i<anchors.length-1&&y>=anchors[i+1])i++;if(i>=anchors.length-1)return;
+  const t=(y-anchors[i])/(anchors[i+1]-anchors[i]);if(t<.42)return;
+  const to=dirY>0?restY(i+1):restY(i);if(Math.abs(to-scrollY)<4)return;
+  snapping=true;scrollTo({top:to,behavior:reduce?'auto':'smooth'});
+}
+addEventListener('scroll',()=>{const y=scrollY;if(!snapping&&y!==lastY)dirY=y>lastY?1:-1;lastY=y;clearTimeout(snapTm);snapTm=setTimeout(snap,snapping?60:160)},{passive:true});
+
+/* ---------- 3D ---------- */
+const canvas=document.getElementById('scene');
+let renderer=null;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true})}catch(err){renderer=null}
+
+if(!renderer){canvas.remove();document.querySelector('.edit-link')?.remove();addEventListener('resize',measure);measure();onScroll()}
+else{
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const C=h=>new THREE.Color(h).convertSRGBToLinear();
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputEncoding=THREE.sRGBEncoding;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.0;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene();
+scene.fog=new THREE.Fog(C(0x93a983),9,16);
+const camera=new THREE.PerspectiveCamera(30,1,.05,60);
+
+const pm=new THREE.PMREMGenerator(renderer),es=new THREE.Scene();
+es.add(new THREE.Mesh(new THREE.BoxGeometry(12,12,12),new THREE.MeshBasicMaterial({color:0x5f7656,side:THREE.BackSide})));
+[[0xfff4e6,4,2.4,-4,4,3],[0xdfe8d2,2,5,5,1,-3],[0xffffff,6,1,0,5.5,0],[0xc98a62,3,1.5,0,-3,4]].forEach(([c,w,h,x,y,z])=>{
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:c,side:THREE.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);es.add(m)});
+scene.environment=pm.fromScene(es,.04).texture;
+
+/* barro cru: manchas de tom, grão, pontinhos e marcas de modelagem, tudo procedural */
+const clay=new THREE.MeshStandardMaterial({color:C(0xa8553a),roughness:.86,metalness:0,envMapIntensity:.45});
+clay.extensions={derivatives:true};
+clay.onBeforeCompile=sh=>{
+  sh.uniforms.uBump={value:.0028};
+  sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vClay;')
+    .replace('#include <begin_vertex>','#include <begin_vertex>\nvClay=position;');
+  sh.fragmentShader=sh.fragmentShader.replace('#include <common>',`#include <common>
+varying vec3 vClay;uniform float uBump;
+float hsh(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
+float vn(vec3 x){vec3 i=floor(x),f=fract(x);f=f*f*(3.-2.*f);
+ return mix(mix(mix(hsh(i),hsh(i+vec3(1,0,0)),f.x),mix(hsh(i+vec3(0,1,0)),hsh(i+vec3(1,1,0)),f.x),f.y),
+            mix(mix(hsh(i+vec3(0,0,1)),hsh(i+vec3(1,0,1)),f.x),mix(hsh(i+vec3(0,1,1)),hsh(i+vec3(1,1,1)),f.x),f.y),f.z);}
+float fb(vec3 p){float s=0.,a=.5;for(int i=0;i<4;i++){s+=a*vn(p);p=p*2.03+vec3(1.7,9.2,3.1);a*=.5;}return s;}
+float clayH(vec3 p){
+ float h=fb(p*38.)*.7+vn(p*190.)*.22+vn(p*420.)*.06;
+ float marks=smoothstep(.5,.72,fb(p*4.+3.));
+ h+=marks*.3*(sin(dot(p,vec3(.6,1.,.3))*140.+fb(p*14.)*7.)*.5+.5);
+ return h;}
+vec3 clayN(vec3 pos,vec3 n,float h){vec3 dx=dFdx(pos),dy=dFdy(pos);vec3 r1=cross(dy,n),r2=cross(n,dx);float det=dot(dx,r1);
+ vec2 dh=vec2(dFdx(h),dFdy(h))*uBump;vec3 g=sign(det)*(dh.x*r1+dh.y*r2);return normalize(abs(det)*n-g);}
+`).replace('#include <color_fragment>',`#include <color_fragment>
+ float bl=fb(vClay*7.);float gr=vn(vClay*150.);
+ vec3 tint=mix(vec3(.78,.72,.68),vec3(1.12,1.05,.97),bl);
+ tint*=.93+.14*gr;
+ tint*=1.-.3*smoothstep(.86,.95,vn(vClay*480.+11.));
+ tint=mix(tint,vec3(1.28,1.2,1.1),.55*smoothstep(.9,.97,vn(vClay*300.+4.)));
+ diffuseColor.rgb*=tint;`).replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
+ roughnessFactor=clamp(roughnessFactor+.14*(fb(vClay*20.)-.5),.6,1.);`).replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+ normal=clayN(-vViewPosition,normal,clayH(vClay));`);
+};
+const silver=new THREE.MeshStandardMaterial({color:C(0xf1ebe0),roughness:.14,metalness:1,envMapIntensity:2});
+const gold=new THREE.MeshStandardMaterial({color:C(0xe0b25a),roughness:.18,metalness:1,envMapIntensity:2});
+const MAT={ouro:gold,prata:silver};
+const plinth=new THREE.MeshStandardMaterial({color:C(0x1d3426),roughness:.92});
+
+scene.add(new THREE.HemisphereLight(C(0xfff3e4),C(0x5d7553),.5));
+const key=new THREE.DirectionalLight(C(0xfff0dc),2.4);key.position.set(-3,5,4);key.castShadow=true;
+key.shadow.mapSize.set(2048,2048);Object.assign(key.shadow.camera,{left:-2.5,right:2.5,top:3,bottom:-3,near:.5,far:15});key.shadow.bias=-.0004;key.shadow.normalBias=.02;scene.add(key);
+const rim=new THREE.DirectionalLight(C(0xf3f7e8),1.3);rim.position.set(3.5,2,-4);scene.add(rim);
+const fillL=new THREE.DirectionalLight(C(0xffffff),.45);fillL.position.set(3,0,5);scene.add(fillL);
+
+const root=new THREE.Group();scene.add(root);
+const pl=new THREE.Mesh(new THREE.CylinderGeometry(.8,.8,3,72),plinth);pl.position.set(0,-2.12,-.05);pl.receiveShadow=true;root.add(pl);
+
+/* escultura limpa (sem joias no arquivo) + joias geradas a partir dos pontos */
+const S=2.7,model=new THREE.Group();model.scale.setScalar(S);model.position.set(.038,-.62,-.12);root.add(model);
+const jewelG=new THREE.Group();model.add(jewelG);
+const UP=V(0,1,0);
+function jewelFor(p){
+  const g=new THREE.Group(),mat=MAT[p.m]||gold,t=p.t||1;
+  const P=p.pos.map(a=>({p:V(a[0],a[1],a[2]),n:V(a[3],a[4],a[5]).normalize()}));
+  let anchor=null;
+  const add=(geo,pos,q)=>{const m=new THREE.Mesh(geo,mat);m.position.copy(pos);if(q)m.quaternion.copy(q);g.add(m);return m};
+  const ball=(r,at,n,off)=>add(new THREE.SphereGeometry(r,18,12),at.clone().addScaledVector(n,off??r*.5));
+  const ring=(R,tube,at,n)=>{let ax=V(0,0,0).crossVectors(n,UP);if(ax.lengthSq()<1e-4)ax.set(1,0,0);ax.normalize();
+    return add(new THREE.TorusGeometry(R,tube,12,48),at.clone().addScaledVector(UP,-R*.75).addScaledVector(n,R*.25),new THREE.Quaternion().setFromUnitVectors(V(0,0,1),ax))};
+  if(!P.length)return {g,anchor};
+  if(p.j==='barra'&&P.length>=2){
+    const a=P[0].p.clone().addScaledVector(P[0].n,.0016),b=P[1].p.clone().addScaledVector(P[1].n,.0016);
+    const bar=add(new THREE.CylinderGeometry(.0008*t,.0008*t,a.distanceTo(b),10),a.clone().add(b).multiplyScalar(.5),new THREE.Quaternion().setFromUnitVectors(UP,b.clone().sub(a).normalize()));
+    ball(.0022*t,a,P[0].n,0);ball(.0022*t,b,P[1].n,0);
+    anchor=new THREE.Object3D();anchor.position.copy(bar.position);anchor.userData.n=P[0].n.clone().add(P[1].n).normalize();g.add(anchor);
+    return {g,anchor};
+  }
+  if(p.j==='umbigo'){
+    anchor=ring(.009*t,.0013*t,P[0].p,P[0].n);
+    add(new THREE.SphereGeometry(.0048*t,18,12),P[0].p.clone().addScaledVector(UP,-.019*t).addScaledVector(P[0].n,.004)).material=silver;
+    if(P[1])ball(.004*t,P[1].p,P[1].n);
+  }else P.forEach((q,i)=>{
+    let m;
+    if(p.j==='argola')m=ring(.0075*t,.0011*t,q.p,q.n);
+    else if(p.j==='micro'){add(new THREE.CylinderGeometry(.0034*t,.0034*t,.0007,20),q.p.clone().addScaledVector(q.n,.0003),new THREE.Quaternion().setFromUnitVectors(UP,q.n));m=ball(.0022*t,q.p,q.n,.0018)}
+    else m=ball(.0028*t,q.p,q.n);
+    if(!i)anchor=m;
+  });
+  if(anchor)anchor.userData.n=P[0].n;
+  g.userData.pid=p.id;
+  return {g,anchor};
+}
+const hsEl=document.getElementById('hs');
+let hots=[],selId=null;
+function rebuild(){
+  jewelG.traverse(o=>{if(o.geometry)o.geometry.dispose()});jewelG.clear();
+  hots.forEach(h=>h.b.remove());
+  hots=PTS.map(p=>{const {g,anchor}=jewelFor(p);jewelG.add(g);
+    const b=document.createElement('button');b.type='button';b.className='hot';b.dataset.id=p.id;b.setAttribute('aria-label','Ver '+p.n);
+    const sp=document.createElement('span');sp.textContent=p.n;b.appendChild(sp);b.tabIndex=-1;hsEl.appendChild(b);return {p,b,o:anchor}});
+  active=-1;
+}
+hooks.push(rebuild);
+
+let loaded=false;const meshes=[];
+const SRC=['escultura.glb','/_blob/1c9811a4810ce43dc67ce4aa18af9419'];
+(function load(i){new THREE.GLTFLoader().load(SRC[i],gltf=>{
+  gltf.scene.traverse(o=>{if(o.isMesh){o.material=clay;o.castShadow=true;o.receiveShadow=true;meshes.push(o)}});
+  model.add(gltf.scene);loaded=true;
+},undefined,()=>{if(i+1<SRC.length)load(i+1);else canvas.classList.add('ready')})})(0);
+
+/* câmera da rolagem: s = deslocamento lateral (fração da meia-largura) */
+const K=[
+ {p:V(0,.62,7),t:V(0,.62,0),s:0},
+ {p:V(-2.5,1.4,4.4),t:V(0,1,0),s:.42},
+ {p:V(-1.95,2.02,.72),t:V(-.06,1.6,-.09),s:-.38},
+ {p:V(1.16,1.62,2.15),t:V(.34,1.5,.03),s:-.36},
+ {p:V(.3,.1,2.9),t:V(.02,0,.68),s:-.4}
+];
+const FOCUS={tudo:0,orelha:2,rosto:3,corpo:4};
+const goalP=V(0,0,0),goalT=V(0,0,0),camP=K[0].p.clone(),camT=K[0].t.clone(),right=V(0,0,0),up=V(0,1,0);
+let active=-1,region='',W=0,H=0,mobile=false;
+function viewOffset(){
+  if(editing){if(W>760)camera.setViewOffset(W,H,190,0,W,H);else camera.setViewOffset(W,H,0,H*.24,W,H)}
+  else camera.clearViewOffset();
+  camera.updateProjectionMatrix();
+}
+function resize(){W=innerWidth;H=innerHeight;mobile=W<=640;renderer.setSize(W,H,false);camera.aspect=W/H;viewOffset();measure();onScroll()}
+addEventListener('resize',resize);resize();addEventListener('load',measure);
+rebuild();
+
+let rot=0,rotT=0,drag=null;
+addEventListener('pointerdown',e=>{if(editing||e.target.closest('a,button,.solid-sec,.close,input,.editor'))return;drag={x:e.clientX,r:rotT}});
+addEventListener('pointermove',e=>{if(drag)rotT=drag.r+(e.clientX-drag.x)*.008});
+['pointerup','pointercancel'].forEach(ev=>addEventListener(ev,()=>{drag=null}));
+document.addEventListener('mouseover',e=>{const b=e.target.closest('.pts button');hots.forEach(h=>h.b.classList.toggle('hi',!!b&&h.p.id===b.dataset.id))});
+
+const wp=V(0,0,0),wn=V(0,0,0),toCam=V(0,0,0);
+function scrollGoal(){
+  const y=scrollY+H*.35;let i=0;while(i<anchors.length-1&&y>=anchors[i+1])i++;
+  let e=0;if(i<anchors.length-1){const t=(y-anchors[i])/(anchors[i+1]-anchors[i]);e=sm(cl((t-.5)/.5,0,1))}
+  const a=K[i],b=K[Math.min(i+1,K.length-1)];
+  goalP.copy(a.p).lerp(b.p,e);goalT.copy(a.t).lerp(b.t,e);
+  if(camera.aspect<1){const f=cl((i===0?.72+.08*e:.8)/camera.aspect,1,1.85);goalP.sub(goalT).multiplyScalar(f).add(goalT)}
+  const s=a.s+(b.s-a.s)*e,dist=goalP.distanceTo(goalT),half=dist*Math.tan(THREE.MathUtils.degToRad(15));
+  if(mobile){goalT.addScaledVector(up,-half*.32*(i===0?e:1)+(i===0?half*.1*(1-e):0))}
+  else{right.subVectors(goalT,goalP).cross(up).normalize();goalT.addScaledVector(right,s*half*camera.aspect)}
+  return e<.5?i:Math.min(i+1,K.length-1);
+}
+
+/* ---------- editor de pontos (#editar) ---------- */
+const ed=document.getElementById('editor'),$=id=>document.getElementById(id);
+const orbit={t:V(0,0,0),th:0,ph:0,d:3};
+let edDrag=null;
+function focusOn(reg){const k=K[FOCUS[reg]??0];const v=k.p.clone().sub(k.t);orbit.t.copy(k.t);orbit.d=v.length()*(reg==='tudo'?1:1.15);orbit.th=Math.atan2(v.x,v.z);orbit.ph=Math.asin(cl(v.y/orbit.d,-1,1));
+  document.querySelectorAll('[data-focus]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.focus===reg))}
+function sel(){return PTS.find(p=>p.id===selId)}
+function status(t){$('ed-status').textContent=t}
+function markDirty(){dirty=true;status('Alterações não salvas.')}
+function edList(){
+  $('ed-list').innerHTML=Object.keys(REG).map(r=>`<li class="ed-grp">${REG[r]}</li>`+PTS.filter(p=>p.r===r).map(p=>`<li><button type="button" class="ed-item" data-sel="${esc(p.id)}" aria-pressed="${p.id===selId}">${esc(p.n)}<small>${p.pos.length?p.pos.length+' pos.':'sem posição'}</small></button></li>`).join('')).join('');
+}
+function edForm(){
+  const p=sel();$('ed-form').hidden=!p;if(!p)return;
+  $('ed-nome').value=p.n;$('ed-reg').value=p.r;$('ed-joia').value=p.j;$('ed-metal').value=p.m;$('ed-tam').value=p.t;$('ed-desc').value=p.d;$('ed-ig').value=p.ig?igUrl(p.ig):'';
+  $('ed-tam-v').textContent=Math.round(p.t*100)+'%';
+}
+function select(id){selId=id;edList();edForm();const p=sel();if(p)focusOn(p.r)}
+onEditPick=id=>{select(id)};
+$('ed-list').addEventListener('click',e=>{const b=e.target.closest('[data-sel]');if(b)select(b.dataset.sel)});
+document.querySelectorAll('[data-focus]').forEach(b=>b.addEventListener('click',()=>focusOn(b.dataset.focus)));
+$('ed-reg').innerHTML=Object.entries(REG).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+$('ed-joia').innerHTML=Object.entries(JOIAS).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+$('ed-metal').innerHTML=Object.entries(METAIS).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+const bind=(id,f,vis)=>$(id).addEventListener('input',e=>{const p=sel();if(!p)return;f(p,e.target.value);markDirty();if(vis)rebuild();edList();renderLists()});
+bind('ed-nome',(p,v)=>p.n=v.slice(0,40)||'Sem nome',true);
+bind('ed-reg',(p,v)=>{p.r=v;focusOn(v)});
+bind('ed-joia',(p,v)=>p.j=v,true);
+bind('ed-metal',(p,v)=>p.m=v,true);
+bind('ed-tam',(p,v)=>{p.t=+v;$('ed-tam-v').textContent=Math.round(p.t*100)+'%'},true);
+bind('ed-desc',(p,v)=>p.d=v.slice(0,400));
+bind('ed-ig',(p,v)=>p.ig=igCode(v));
+$('ed-undo').addEventListener('click',()=>{const p=sel();if(p&&p.pos.length){p.pos.pop();markDirty();rebuild();edList()}});
+$('ed-clear').addEventListener('click',()=>{const p=sel();if(p&&p.pos.length){p.pos=[];markDirty();rebuild();edList()}});
+function twoStep(btn,label,fn){let armed=false,tm;const txt=btn.textContent;btn.addEventListener('click',()=>{if(!armed){armed=true;btn.textContent=label;btn.classList.add('warn');tm=setTimeout(()=>{armed=false;btn.textContent=txt;btn.classList.remove('warn')},3500);return}
+  clearTimeout(tm);armed=false;btn.textContent=txt;btn.classList.remove('warn');fn()})}
+twoStep($('ed-del'),'Clique de novo para excluir',()=>{const p=sel();if(!p)return;setPoints(PTS.filter(x=>x!==p));selId=null;markDirty();edList();edForm()});
+twoStep($('ed-reset'),'Clique de novo para restaurar',()=>{setPoints(clone(DEF));selId=null;markDirty();edList();edForm()});
+$('ed-new').addEventListener('click',()=>{const reg=document.querySelector('[data-focus][aria-pressed="true"]')?.dataset.focus;
+  const p={id:'ponto-'+Date.now().toString(36),r:REG[reg]?reg:'orelha',n:'Novo ponto',d:'',j:'ponto',m:'ouro',t:1,pos:[]};
+  setPoints([...PTS,p]);markDirty();select(p.id);status('Clique na escultura para posicionar o novo ponto.');$('ed-nome').focus()});
+$('ed-save').addEventListener('click',async()=>{
+  if(!dbDoc){status('Este endereço não salva os pontos. Use “Copiar JSON” e cole no arquivo pontos.json do repositório, ou me mande o texto.');return}
+  $('ed-save').disabled=true;status('Salvando…');
+  try{await dbDoc.set({pontos:toDoc(PTS),atualizado:new Date().toISOString()});dirty=false;
+    status('Salvo às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+'. Quem abrir o site já vê os pontos novos.')}
+  catch(e){status(e&&e.code==='invalid_argument'?'Sua conta não tem permissão de editor neste site. Use “Copiar JSON” e me mande o texto.':'Não deu para salvar agora. Tente de novo em instantes.')}
+  $('ed-save').disabled=false;
+});
+$('ed-copy').addEventListener('click',()=>{const txt=JSON.stringify(toDoc(PTS));const ta=$('ed-json');
+  navigator.clipboard.writeText(txt).then(()=>status('JSON copiado.')).catch(()=>{ta.hidden=false;ta.value=txt;ta.select();status('Copie o texto selecionado abaixo.')})});
+$('ed-x').addEventListener('click',()=>{history.replaceState(null,'',location.pathname+location.search);setEditing(false)});
+
+const ray=new THREE.Raycaster(),ndc=new THREE.Vector2(),inv=new THREE.Matrix4();
+function pick(e){
+  if(!meshes.length)return;
+  ndc.set(e.clientX/W*2-1,-(e.clientY/H)*2+1);ray.setFromCamera(ndc,camera);
+  const hit=ray.intersectObjects(meshes,false)[0];if(!hit)return;
+  let p=sel();
+  if(!p){status('Escolha um ponto na lista ou crie um novo antes de clicar na escultura.');return}
+  if(p.pos.length>=6){status('Este ponto já tem 6 posições. Use “Desfazer posição” para trocar.');return}
+  inv.copy(model.matrixWorld).invert();
+  const lp=hit.point.clone().applyMatrix4(inv);
+  const n=hit.face.normal.clone().transformDirection(hit.object.matrixWorld).transformDirection(inv);
+  p.pos.push([lp.x,lp.y,lp.z,n.x,n.y,n.z]);markDirty();rebuild();edList();
+}
+canvas.addEventListener('pointerdown',e=>{if(!editing)return;edDrag={x:e.clientX,y:e.clientY,th:orbit.th,ph:orbit.ph,moved:false};canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!editing||!edDrag)return;const dx=e.clientX-edDrag.x,dy=e.clientY-edDrag.y;if(Math.hypot(dx,dy)>5)edDrag.moved=true;
+  if(edDrag.moved){orbit.th=edDrag.th-dx*.006;orbit.ph=cl(edDrag.ph+dy*.006,-1.2,1.3)}});
+canvas.addEventListener('pointerup',e=>{if(!editing||!edDrag)return;if(!edDrag.moved)pick(e);edDrag=null});
+canvas.addEventListener('wheel',e=>{if(!editing)return;e.preventDefault();orbit.d=cl(orbit.d*(1+e.deltaY*.0012),.35,9)},{passive:false});
+
+function setEditing(on){
+  if(on===editing)return;editing=on;document.body.classList.toggle('editing',on);ed.hidden=!on;
+  document.documentElement.style.overflow=on?'hidden':'';
+  if(on){focusOn('orelha');edList();edForm();status(dirty?'Alterações não salvas.':(dbDoc?'Pontos carregados do site.':'Pontos padrão desta prévia.'))}
+  else{measure();camP.copy(goalP)}
+  viewOffset();active=-1;
+}
+const checkHash=()=>setEditing(location.hash==='#editar');
+addEventListener('hashchange',checkHash);checkHash();
+
+let ready=false;
+function frame(now){
+  requestAnimationFrame(frame);
+  let a;
+  if(editing){
+    goalT.copy(orbit.t);goalP.set(Math.cos(orbit.ph)*Math.sin(orbit.th),Math.sin(orbit.ph),Math.cos(orbit.ph)*Math.cos(orbit.th)).multiplyScalar(orbit.d).add(orbit.t);
+    region='*';rotT=0;
+  }else{
+    if(scrollY>worksTop+40)return;
+    a=scrollGoal();
+    if(a!==active){active=a;rotT=0;const s=stageSecs[a];region=s.dataset.region||'';setWord(s.dataset.word||'');hots.forEach(h=>h.b.tabIndex=h.p.r===region?0:-1)}
+  }
+  const k=reduce||editing?(editing?.25:1):.06;camP.lerp(goalP,k);camT.lerp(goalT,k);camera.position.copy(camP);camera.lookAt(camT);
+  rot+=(rotT-rot)*(reduce?1:.08);
+  root.rotation.y=editing?0:rot+(active===0&&!reduce&&!drag?Math.sin(now*.00035)*.3:0);
+  renderer.render(scene,camera);
+  if(!ready&&loaded){ready=true;canvas.classList.add('ready')}
+  const settled=editing||camP.distanceTo(goalP)<.12;
+  for(const h of hots){let on=settled&&(region==='*'||h.p.r===region)&&h.o;
+    if(on){h.o.getWorldPosition(wp);wn.copy(h.o.userData.n).normalize().transformDirection(h.o.parent.matrixWorld);toCam.copy(camera.position).sub(wp).normalize();if(wn.dot(toCam)<.05)on=false;
+      wp.project(camera);h.b.style.transform=`translate(${(wp.x*.5+.5)*W}px,${(-wp.y*.5+.5)*H}px)`}
+    h.b.classList.toggle('on',!!on);h.b.classList.toggle('sel',editing&&h.p.id===selId)}
+}
+requestAnimationFrame(frame);
+}
+}
+</script>
+
+</body>
+</html>
