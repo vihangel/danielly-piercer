@@ -153,7 +153,11 @@ h2 em{color:var(--terra-deep)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
 .ig{background:var(--paper);border-radius:16px;overflow:hidden;border:1px solid rgba(29,52,38,.1);display:flex;flex-direction:column}
 .ig.hide{display:none}
-.ig iframe{display:block;width:100%;aspect-ratio:4/5.9;max-width:100%;border:0;background:var(--mist)}
+.ig{position:relative}
+.ig .ig-loading,.portrait .ig-loading{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);font-size:14px;color:var(--ink-soft);white-space:nowrap}
+.ig iframe{position:relative;z-index:1;display:block;width:100%;aspect-ratio:4/5.9;max-width:100%;border:0;background:transparent}
+.ig{background:var(--mist)}
+.ig a{background:var(--paper);position:relative;z-index:1}
 .ig a{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none}
 .ig a small{color:var(--ink-soft);font-weight:500}
 .ig a:hover{background:rgba(29,52,38,.05)}
@@ -190,7 +194,8 @@ h2 em{color:var(--terra-deep)}
 .dani .wall-logo{position:absolute;right:-4vw;bottom:-3vw;width:min(900px,80vw);color:rgba(243,238,228,.12);pointer-events:none}
 .dani-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center;position:relative}
 .portrait{max-width:440px;width:100%;margin:0 auto;background:var(--paper);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;padding:14px 14px 0;box-shadow:0 30px 60px rgba(0,0,0,.18)}
-.portrait iframe{display:block;width:100%;aspect-ratio:9/15;border:0;border-radius:14px;background:var(--mist)}
+.portrait{position:relative}
+.portrait iframe{position:relative;z-index:1;display:block;width:100%;aspect-ratio:9/15;border:0;border-radius:14px;background:transparent}
 .portrait a{color:var(--ink);font-weight:600;font-size:14px;text-align:center;padding:14px}
 .dani h2{font-size:clamp(44px,5.6vw,80px)}
 .dani h2 em{color:#f1d58f}
@@ -244,7 +249,12 @@ h2 em{color:var(--terra-deep)}
 .close.open{clip-path:circle(150% at var(--cx,50%) var(--cy,50%));visibility:visible;transition:clip-path .9s cubic-bezier(.7,0,.2,1)}
 .close .shot{position:relative;background:radial-gradient(80% 65% at 46% 44%,var(--c2,#c98a62),var(--c1,#6b3d27) 68%);overflow:hidden}
 .close .shot{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,3vw,40px);background:var(--mist)}
-.close .shot iframe{width:min(420px,100%);flex:1;min-height:0;max-height:640px;border:0;border-radius:14px;background:var(--paper)}
+.close .shot{position:relative}
+.close .shot .no-post-msg{display:none;max-width:30ch;text-align:center;font:400 22px/1.3 var(--display);font-variation-settings:"SOFT" 100;margin:0}
+.close .shot.no-post .no-post-msg{display:block}
+.close .shot.no-post iframe,.close .shot.no-post .ig-loading{display:none}
+.close .shot .ig-loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;color:var(--ink-soft)}
+.close .shot iframe{position:relative;z-index:1;background:transparent!important;width:min(420px,100%);flex:1;min-height:0;max-height:640px;border:0;border-radius:14px;background:var(--paper)}
 .c-iglink{margin-top:12px;font-weight:600;font-size:14px;color:var(--ink)}
 .close .shot .gem{position:absolute;left:46%;top:44%;width:64px;height:64px;margin:-32px;border-radius:50%;border:7px solid #e3c27a;box-shadow:inset 0 0 0 3px rgba(0,0,0,.15),0 6px 18px rgba(0,0,0,.3)}
 .close .shot small{position:absolute;left:20px;bottom:20px;background:rgba(29,52,38,.75);color:var(--cream);font-size:13px;padding:7px 12px;border-radius:99px}
@@ -427,7 +437,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   <section class="dani solid-sec" id="s-dani" aria-labelledby="dani-title">
     <svg class="wall-logo" viewBox="0 0 440 215" aria-hidden="true"><use href="#logo"/></svg>
     <div class="wrap dani-grid">
-      <div class="portrait"><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed" loading="lazy" title="Reel da Dani: sou piercer há quase 6 anos" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
+      <div class="portrait"><span class="ig-loading" aria-hidden="true">Carregando o reel da Dani…</span><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed/" title="Reel da Dani: sou piercer há quase 6 anos" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
       <div>
         <p class="eyebrow">Conheça a Dani</p>
         <h2 id="dani-title">Quase seis anos <em>furando Cuiabá.</em></h2>
@@ -513,7 +523,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 </aside>
 
 <div class="close" id="close" role="dialog" aria-modal="true" aria-labelledby="c-name" hidden>
-  <div class="shot" id="c-shot"><iframe id="c-ig" title="Trabalho da Dani no Instagram" loading="lazy"></iframe><a class="c-iglink" id="c-iglink" href="https://www.instagram.com/daniperfuraaqui/">Abrir no Instagram</a></div>
+  <div class="shot" id="c-shot"><p class="no-post-msg">Ainda não tem um post desse piercing no feed da Dani. Chama ela no WhatsApp para ver fotos.</p><span class="ig-loading" aria-hidden="true">Carregando post do Instagram…</span><iframe id="c-ig" title="Trabalho da Dani no Instagram" loading="lazy"></iframe><a class="c-iglink" id="c-iglink" href="https://www.instagram.com/daniperfuraaqui/">Abrir no Instagram</a></div>
   <div class="txt">
     <button class="x" id="c-x" aria-label="Fechar">×</button>
     <p class="eyebrow" id="c-region"></p>
@@ -536,31 +546,31 @@ const REG={orelha:'Orelha',rosto:'Rosto',corpo:'Corpo'};
 const JOIAS={ponto:'Ponto de luz',argola:'Argola',barra:'Barra',micro:'Microdermal',umbigo:'Umbigo com pingente'};
 const METAIS={ouro:'Ouro',prata:'Prata'};
 const DEF=[
- ['transversal','orelha','Transversal','Uma barra só que atravessa a cartilagem de cima em dois pontos. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]]],
- ['scapha','orelha','Scapha','Na canaleta entre a borda da orelha e a cartilagem interna. Fica lindo com pingente.','ponto','ouro',1.1,[[-.0844,.8489,-.0047,-.961,.102,.259]]],
- ['helix','orelha','Hélix','Borda de cima da cartilagem. Aceita argola ou ponto de luz e combina com outros furos na mesma linha.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DLkTsySMzjr'],
- ['midhelix','orelha','Midi hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]]],
- ['forward','orelha','Forward hélix','Na frente da borda, pertinho do rosto. Costuma ser feito em dupla ou trio.','ponto','ouro',.85,[[-.001,.8618,.0313,-.622,.067,.78],[-.001,.8564,.0326,-.495,.271,.826]]],
- ['rook','orelha','Rook','A dobra interna logo acima do daith. Normalmente com barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]]],
- ['daith','orelha','Daith','A dobra mais interna, acima do canal do ouvido. Clássico com argola.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]]],
- ['conch','orelha','Conch','O centro da concha. Ponto de luz ou argola abraçando a borda.','ponto','prata',1.3,[[-.0368,.827,.0088,-.634,-.228,.739]],'Dayrvd4kRJl'],
- ['tragus','orelha','Trágus','A pequena cartilagem na frente do canal do ouvido.','ponto','ouro',1,[[-.0211,.8076,.0223,-.175,-.076,.982]]],
- ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]]],
- ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]]],
- ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DJ7mylYPDiA'],
- ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.13262,.76623,.06971,-.056,-.60948,.79082]],'DLVNwIGsMWO'],
- ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DYhnv3MEZXR'],
- ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]]],
- ['sobrancelha','rosto','Supercílio','Barra curva no fim da sobrancelha (supercílio). Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]]],
- ['labio','rosto','Labret','Ponto de luz logo abaixo do lábio inferior, no centro ou mais para o lado.','ponto','prata',1.1,[[.1114,.696,.0522,.303,-.096,.948]],'Dd7O7xujjfe'],
- ['vertical','rosto','Vertical labret','Uma barra curva que atravessa o lábio inferior de cima para baixo. As duas pontas ficam à vista.','barra','ouro',1,[[.1215,.72,.0684,.019,.222,.975],[.127,.6977,.0459,.363,-.743,.563]]],
- ['angelfangs','rosto','Angel fangs','Dois vertical labrets, um de cada lado do lábio inferior, lembrando dentinhos.','ponto','prata',1,[[.1052,.7217,.0666,-.031,.559,.828],[.1335,.7211,.0618,.611,.544,.575]]],
+ ['transversal','orelha','Transversal','Uma barra só que atravessa a cartilagem de cima em dois pontos. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]],'DFiKmHFOwr-'],
+ ['scapha','orelha','Scapha','Na canaleta entre a borda da orelha e a cartilagem interna. Fica lindo com pingente.','ponto','ouro',1.1,[[-.0844,.8489,-.0047,-.961,.102,.259]],'DFiKmHFOwr-'],
+ ['helix','orelha','Hélix','Borda de cima da cartilagem. Aceita argola ou ponto de luz e combina com outros furos na mesma linha.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DByPh1auRln'],
+ ['midhelix','orelha','Midi hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]],'DFiKmHFOwr-'],
+ ['forward','orelha','Forward hélix','Na frente da borda, pertinho do rosto. Costuma ser feito em dupla ou trio.','ponto','ouro',.85,[[-.001,.8618,.0313,-.622,.067,.78],[-.001,.8564,.0326,-.495,.271,.826]],'DGmO086MHKv'],
+ ['rook','orelha','Rook','A dobra interna logo acima do daith. Normalmente com barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]],'DFiKmHFOwr-'],
+ ['daith','orelha','Daith','A dobra mais interna, acima do canal do ouvido. Clássico com argola.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]],'DFiKmHFOwr-'],
+ ['conch','orelha','Conch','O centro da concha. Ponto de luz ou argola abraçando a borda.','ponto','prata',1.3,[[-.0368,.827,.0088,-.634,-.228,.739]],'DM-tYmNufWU'],
+ ['tragus','orelha','Trágus','A pequena cartilagem na frente do canal do ouvido.','ponto','ouro',1,[[-.0211,.8076,.0223,-.175,-.076,.982]],'DIxOjpXM3Uy'],
+ ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]],'DFiKmHFOwr-'],
+ ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]],'DFiKmHFOwr-'],
+ ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DaeMSm0kUKq'],
+ ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.13262,.76623,.06971,-.056,-.60948,.79082]],'DKQVoFNvzUL'],
+ ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DOuScdvER7j'],
+ ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]],'DBdt32aJZvi'],
+ ['sobrancelha','rosto','Supercílio','Barra curva no fim da sobrancelha (supercílio). Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]],'DIyn27bM-cO'],
+ ['labio','rosto','Labret','Ponto de luz logo abaixo do lábio inferior, no centro ou mais para o lado.','ponto','prata',1.1,[[.1114,.696,.0522,.303,-.096,.948]],'DNg031fRVrb'],
+ ['vertical','rosto','Vertical labret','Uma barra curva que atravessa o lábio inferior de cima para baixo. As duas pontas ficam à vista.','barra','ouro',1,[[.1215,.72,.0684,.019,.222,.975],[.127,.6977,.0459,.363,-.743,.563]],'DY0XggEkWqN'],
+ ['angelfangs','rosto','Angel fangs','Dois vertical labrets, um de cada lado do lábio inferior, lembrando dentinhos.','ponto','prata',1,[[.1052,.7217,.0666,-.031,.559,.828],[.1335,.7211,.0618,.611,.544,.575]],'Dd7O7xujjfe'],
  ['lingua','rosto','Língua','Barra reta no centro da língua. Na escultura a boca está fechada, então esse ponto aparece só na lista.','barra','prata',1,[]],
- ['microdermal','rosto','Microdermal','A base fica sob a pele e só o topo aparece. Na maçã do rosto, fica lindo em dupla.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'Df4tSKFFkRw'],
- ['surface','corpo','Surface','Perfuração de superfície, com a barra passando por baixo da pele. Na escultura, no centro do peito.','barra','prata',1.2,[[.0149,.5666,.0865,.176,.78,.601],[.0169,.5342,.1059,.356,.203,.912]]],
- ['mamilos','corpo','Mamilos','Barra reta atravessando o mamilo, em um lado ou nos dois. Não aparece na escultura.','barra','prata',1,[]],
- ['vulva','corpo','Vulva (íntimo)','Perfurações íntimas, com atendimento reservado e todo o cuidado. Não aparece na escultura.','ponto','ouro',1,[]],
- ['umbigo','corpo','Umbigo','Barra curva na dobra de cima do umbigo, com pingente ou ponto de luz.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DaMMnvAETTa']
+ ['microdermal','rosto','Microdermal','A base fica sob a pele e só o topo aparece. Na maçã do rosto, fica lindo em dupla.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'DUmGtKnkvPE'],
+ ['surface','corpo','Surface','Perfuração de superfície, com a barra passando por baixo da pele. Na escultura, no centro do peito.','barra','prata',1.2,[[.0149,.5666,.0865,.176,.78,.601],[.0169,.5342,.1059,.356,.203,.912]],'Df4tSKFFkRw'],
+ ['mamilos','corpo','Mamilos','Barra reta atravessando o mamilo, em um lado ou nos dois. Não aparece na escultura.','barra','prata',1,[],'DXx-2bsDeOh'],
+ ['vulva','corpo','Vulva (íntimo)','Perfurações íntimas, com atendimento reservado e todo o cuidado. Não aparece na escultura.','ponto','ouro',1,[],'DXx-2bsDeOh'],
+ ['umbigo','corpo','Umbigo','Barra curva na dobra de cima do umbigo, com pingente ou ponto de luz.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DJFnqicvywQ']
 ].map(([id,r,n,d,j,m,t,pos,ig])=>({id,r,n,d,j,m,t,pos,ig:ig||''}));
 const clone=l=>l.map(p=>({...p,pos:p.pos.map(a=>a.slice())}));
 let PTS=clone(DEF),byId={};
@@ -583,10 +593,16 @@ const toDoc=l=>l.map(p=>({id:p.id,nome:p.n,regiao:p.r,desc:p.d,joia:p.j,metal:p.
 
 /* listas da página */
 const SKIN=[['#6b3d27','#c98a62'],['#4a2a1b','#9a6343'],['#8a5a3c','#e0ac84'],['#3b2418','#87563a'],['#9d6b4c','#efc3a0'],['#5a3322','#b47a55']];
-const IG=[['Dayrvd4kRJl','orelha','Composição de orelha','Composição'],['DLkTsySMzjr','orelha','Hélix','Hélix'],['DaoTz-xkdf9','orelha','Cartilagem em ouro','Cartilagem'],['DVcD1tVkuBL','orelha','Hélix com verde','Hélix'],['DJ7mylYPDiA','orelha','Alargador e cartilagem','Alargador'],
- ['DZ8fso0EcrE','rosto','Paired nostril','Nostril'],['DLVNwIGsMWO','rosto','Nostril','Nostril'],['Df4tSKFFkRw','rosto','Microdermal duplo','Microdermal'],['DYhnv3MEZXR','rosto','Septo com opalas','Septo'],['DKu6wxDPJYE','rosto','Septo','Septo'],['Dd7O7xujjfe','rosto','Labret','Labret'],
- ['DaMMnvAETTa','corpo','Umbigo','Umbigo'],['DJFnqicvywQ','corpo','Umbigo','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com barra','Umbigo']];
-const IG_DEF={orelha:'Dayrvd4kRJl',rosto:'DZ8fso0EcrE',corpo:'DJFnqicvywQ'};
+const IG=[
+ ['Dayrvd4kRJl','orelha','Composição de orelha','Composição'],['DByPh1auRln','orelha','Hélix cravejado','Hélix'],['DGmO086MHKv','orelha','Forward hélix','Hélix'],
+ ['DM-tYmNufWU','orelha','Conch','Conch'],['DIxOjpXM3Uy','orelha','Duplo lobe e trágus','Trágus'],['DaeMSm0kUKq','orelha','Trio de midi lobe','Lóbulo'],
+ ['DaoTz-xkdf9','orelha','Australianos','Australiano'],['DJ7mylYPDiA','orelha','Alargadores 16mm e 10mm','Alargador'],
+ ['DZ8fso0EcrE','rosto','Paired nostril','Nostril'],['DKQVoFNvzUL','rosto','Nostril','Nostril'],['DOuScdvER7j','rosto','Septo','Septo'],['DBdt32aJZvi','rosto','Bridge','Bridge'],
+ ['DIyn27bM-cO','rosto','Supercílio (eyebrow)','Supercílio'],['DNg031fRVrb','rosto','Labret','Labret'],['DY0XggEkWqN','rosto','Vertical labret','Labret'],['DYhnv3MEZXR','rosto','Labret horizontal','Labret'],
+ ['Dd7O7xujjfe','rosto','Angel fangs','Fangs'],['DcRyU2ilmAs','rosto','Kitty fangs','Fangs'],['DUmGtKnkvPE','rosto','Microdermal','Microdermal'],['Df4tSKFFkRw','rosto','Surface','Surface'],
+ ['DJFnqicvywQ','corpo','Umbigo','Umbigo'],['C_de0KTR7Iq','corpo','Umbigo em anatomia que se fecha','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com joia anodizada','Umbigo'],
+ ['DXx-2bsDeOh','corpo','Intensivo: vulva, mamilo e microdermal','Íntimo e mamilo']];
+const IG_DEF={orelha:'DFiKmHFOwr-',rosto:'',corpo:''};
 const igUrl=c=>'https://www.instagram.com/p/'+encodeURIComponent(c)+'/';
 const tiles=document.getElementById('tiles'),filters=document.getElementById('filters'),subf=document.getElementById('subfilters');
 let filt='todos',sub='';
@@ -594,7 +610,7 @@ function renderLists(){
   for(const ul of document.querySelectorAll('.pts'))
     ul.innerHTML=PTS.filter(p=>p.r===ul.dataset.region).map(p=>`<li><button type="button" data-id="${esc(p.id)}">${esc(p.n)}</button></li>`).join('');
   if(!tiles.dataset.done){tiles.dataset.done=1;
-    tiles.innerHTML=IG.map(([c,r,t,sb])=>`<article class="ig" data-r="${r}" data-s="${esc(sb)}"><iframe src="${igUrl(c)}embed" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
+    tiles.innerHTML=IG.map(([c,r,t,sb])=>`<article class="ig" data-r="${r}" data-s="${esc(sb)}"><span class="ig-loading" aria-hidden="true">Carregando post…</span><iframe src="${igUrl(c)}embed/" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
   tiles.querySelectorAll('.ig').forEach(x=>x.classList.toggle('hide',(filt!=='todos'&&x.dataset.r!==filt)||(sub&&x.dataset.s!==sub)));
   const subs=filt==='todos'?[]:[...new Set(IG.filter(w=>w[1]===filt).map(w=>w[3]))];
   subf.hidden=!subs.length;
@@ -602,6 +618,7 @@ function renderLists(){
   filters.innerHTML=[['todos','Tudo'],['orelha','Orelha'],['rosto','Rosto'],['corpo','Corpo']].map(([k,n])=>`<li><button type="button" data-f="${k}" aria-pressed="${k===filt}">${n}<small>${k==='todos'?IG.length:IG.filter(w=>w[1]===k).length}</small></button></li>`).join('');
 }
 function setPoints(list){PTS=list;byId=Object.fromEntries(PTS.map(p=>[p.id,p]));renderLists();hooks.forEach(f=>f())}
+document.addEventListener('load',e=>{const f=e.target;if(f.tagName==='IFRAME'&&f.src){const l=f.parentNode.querySelector('.ig-loading');if(l)l.hidden=true}},true);
 filters.addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;filt=b.dataset.f;sub='';renderLists()});
 subf.addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;sub=b.dataset.sub;renderLists()});
 setPoints(PTS);
@@ -621,7 +638,11 @@ function fill(p,s){
   const cw=document.getElementById('c-works');cw.dataset.r=p.r;cw.textContent='Ver trabalhos de '+REG[p.r].toLowerCase();
   document.getElementById('c-region').textContent=REG[p.r];
   document.getElementById('c-desc').textContent=p.d;
-  const code=p.ig||IG_DEF[p.r];document.getElementById('c-ig').src=igUrl(code)+'embed';document.getElementById('c-iglink').href=igUrl(code);
+  const code=p.ig||IG_DEF[p.r],fr=document.getElementById('c-ig'),lk=document.getElementById('c-iglink');
+  shot.classList.toggle('no-post',!code);
+  const ld=shot.querySelector('.ig-loading');if(ld)ld.hidden=!code;
+  if(code){fr.src=igUrl(code)+'embed/';lk.href=igUrl(code);lk.textContent=code==='DFiKmHFOwr-'?'Ver o Mapa das Perfurações no Instagram':'Abrir no Instagram'}
+  else{fr.removeAttribute('src');lk.href='https://www.instagram.com/daniperfuraaqui/';lk.textContent='Ver todos os trabalhos no Instagram'}
   document.getElementById('c-book').href='https://wa.me/5565992507788?text='+encodeURIComponent('Oi, Dani! Vim pelo site e quero agendar um piercing: '+p.n+'.');
 }
 function openClose(id,src){
