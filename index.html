@@ -3,8 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Danielly Paixão, body piercing em Cuiabá-MT. Perfuração, joias e cursos com hora marcada.">
-<title>Prévia Danielly Piercer</title>
+<meta name="description" content="Danielly Paixão, body piercing em Cuiabá-MT. Perfuração de orelha, rosto e corpo, venda de joias e cursos, com hora marcada de segunda a sábado.">
+<title>Danielly Piercer | Body piercing em Cuiabá-MT</title>
+<link rel="canonical" href="https://vihangel.github.io/danielly-piercer/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Danielly Paixão">
+<meta name="theme-color" content="#93a983">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="geo.region" content="BR-MT">
+<meta name="geo.placename" content="Cuiabá">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Danielly Piercer">
+<meta property="og:title" content="Danielly Piercer | Body piercing em Cuiabá-MT">
+<meta property="og:description" content="Danielly Paixão, body piercing em Cuiabá-MT. Perfuração de orelha, rosto e corpo, venda de joias e cursos, com hora marcada de segunda a sábado.">
+<meta property="og:url" content="https://vihangel.github.io/danielly-piercer/">
+<meta property="og:image" content="https://vihangel.github.io/danielly-piercer/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo gótica Danielly Piercer atrás de uma escultura de terracota de uma mulher negra com tranças.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Danielly Piercer | Body piercing em Cuiabá-MT">
+<meta name="twitter:description" content="Danielly Paixão, body piercing em Cuiabá-MT. Perfuração de orelha, rosto e corpo, venda de joias e cursos, com hora marcada de segunda a sábado.">
+<meta name="twitter:image" content="https://vihangel.github.io/danielly-piercer/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HealthAndBeautyBusiness", "@id": "https://vihangel.github.io/danielly-piercer/#negocio", "name": "Danielly Piercer", "alternateName": "Danielly Paixão Piercer", "description": "Danielly Paixão, body piercing em Cuiabá-MT. Perfuração de orelha, rosto e corpo, venda de joias e cursos, com hora marcada de segunda a sábado.", "url": "https://vihangel.github.io/danielly-piercer/", "image": "https://vihangel.github.io/danielly-piercer/og-image.png", "logo": "https://vihangel.github.io/danielly-piercer/icon-512.png", "telephone": "+55 65 99250-7788", "address": {"@type": "PostalAddress", "addressLocality": "Cuiabá", "addressRegion": "MT", "addressCountry": "BR"}, "areaServed": {"@type": "City", "name": "Cuiabá"}, "sameAs": ["https://www.instagram.com/daniperfuraaqui/"], "founder": {"@type": "Person", "name": "Danielly Paixão", "jobTitle": "Body piercer"}, "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Perfuração corporal (body piercing)"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Venda de joias para piercing"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cursos de body piercing"}}], "contactPoint": {"@type": "ContactPoint", "telephone": "+55 65 99250-7788", "contactType": "agendamento", "availableLanguage": "Portuguese"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Quicksand:wght@400;500;600&display=swap">
@@ -33,6 +60,7 @@ LAYOUT: palco 3D fixo nas primeiras dobras; depois cortinas creme e verde cobrem
   --body:"Quicksand","Avenir Next","Segoe UI",sans-serif;
 }
 *{box-sizing:border-box;min-width:0}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 html{touch-action:pan-y;scroll-behavior:smooth;scroll-padding-top:80px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--sage);color:var(--ink);font:500 17px/1.6 var(--body);overflow-x:clip;transition:background-color .8s}
@@ -103,11 +131,11 @@ h2 em{color:var(--terra-deep)}
 /* hotspots */
 .hot{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;padding:0;background:none;cursor:pointer;pointer-events:none;opacity:0;transition:opacity .35s}
 .hot.on{opacity:1;pointer-events:auto}
-.hot::before{content:"";position:absolute;inset:16px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 3px rgba(29,52,38,.55)}
+.hot::before{content:"";position:absolute;inset:13px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px rgba(19,42,29,.45),inset 0 0 0 1px rgba(19,42,29,.35)}
 .hot::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid var(--paper);animation:ring 2.2s ease-out infinite}
 .hot span{position:absolute;left:38px;top:50%;transform:translateY(-50%);white-space:nowrap;font:italic 400 19px/1 var(--display);background:var(--paper);padding:6px 10px;border-radius:99px;opacity:0;transition:opacity .2s;pointer-events:none}
 .hot:hover span,.hot:focus-visible span,.hot.hi span{opacity:1}
-.hot:hover::before,.hot.hi::before{background:var(--gold)}
+.hot:hover::before,.hot.hi::before{border-color:var(--gold);background:rgba(180,139,59,.25)}
 @keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.3);opacity:0}}
 
 /* seções sólidas */
@@ -129,6 +157,13 @@ h2 em{color:var(--terra-deep)}
 .ig a{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none}
 .ig a small{color:var(--ink-soft);font-weight:500}
 .ig a:hover{background:rgba(29,52,38,.05)}
+.subfilters{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.subfilters[hidden]{display:none}
+.subfilters button{all:unset;box-sizing:border-box;cursor:pointer;min-height:40px;padding:0 14px;display:inline-flex;align-items:center;gap:8px;border-radius:99px;border:1px solid rgba(19,42,29,.25);font-weight:600;font-size:14px}
+.subfilters button small{font-weight:500;color:var(--ink-soft)}
+.subfilters button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.subfilters button[aria-pressed="true"] small{color:var(--mist)}
+.subfilters button:hover{border-color:var(--ink)}
 .swipe-hint{display:none;font-size:13px;color:var(--ink-soft);margin:10px 0 0}
 .ig-more{display:inline-flex;margin-top:22px;font-weight:600;color:var(--leaf)}
 .tile{all:unset;box-sizing:border-box;cursor:pointer;position:relative;aspect-ratio:4/5;max-width:100%;border-radius:14px;overflow:hidden;background:var(--c1);transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s}
@@ -154,7 +189,7 @@ h2 em{color:var(--terra-deep)}
 .dani{background:var(--leaf);color:var(--cream);padding-block:clamp(80px,11vw,150px);position:relative;overflow:hidden}
 .dani .wall-logo{position:absolute;right:-4vw;bottom:-3vw;width:min(900px,80vw);color:rgba(243,238,228,.12);pointer-events:none}
 .dani-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center;position:relative}
-.portrait{max-width:440px;width:100%;margin:0 auto;background:var(--paper);border-radius:220px 220px 22px 22px;overflow:hidden;display:flex;flex-direction:column;padding:26px 14px 0;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.portrait{max-width:440px;width:100%;margin:0 auto;background:var(--paper);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;padding:14px 14px 0;box-shadow:0 30px 60px rgba(0,0,0,.18)}
 .portrait iframe{display:block;width:100%;aspect-ratio:9/15;border:0;border-radius:14px;background:var(--mist)}
 .portrait a{color:var(--ink);font-weight:600;font-size:14px;text-align:center;padding:14px}
 .dani h2{font-size:clamp(44px,5.6vw,80px)}
@@ -192,9 +227,13 @@ h2 em{color:var(--terra-deep)}
 .btn.light{background:transparent;color:var(--ink);border:1px solid rgba(29,52,38,.35)}
 .btn.light:hover{background:rgba(29,52,38,.08)}
 .row{display:flex;flex-wrap:wrap;gap:10px}
-.foot-logo{margin-top:clamp(60px,9vw,120px);color:var(--ink);padding-bottom:8px}
+.site-foot{background:var(--sage);position:relative;z-index:5;padding-bottom:env(safe-area-inset-bottom,0px)}
+.foot-logo{padding-top:clamp(48px,8vw,110px);color:var(--ink);padding-bottom:8px}
+.foot-row address{font-style:normal}
+.foot-row a{color:var(--ink)}
+.noscript{position:relative;z-index:6;background:var(--cream);padding:16px 24px;margin:0}
 .foot-logo svg{display:block;width:100%;height:auto}
-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft);padding-block:18px 28px;border-top:1px solid rgba(29,52,38,.2)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft);padding-block:18px 28px;border-top:1px solid rgba(19,42,29,.25)}
 
 .wa{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:35;width:58px;height:58px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;box-shadow:0 8px 24px rgba(29,52,38,.3);transition:transform .2s}
 .wa:hover{transform:scale(1.06)}
@@ -222,9 +261,9 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 .flip{position:fixed;z-index:49;border-radius:14px;overflow:hidden;pointer-events:none;transition:all .65s cubic-bezier(.7,0,.2,1)}
 
 /* editor de pontos */
-.editing main,.editing .hero-logo,.editing .ghost,.editing header nav,.editing .wa,.editing header .brand{display:none}
+.editing main,.editing .site-foot,.editing .hero-logo,.editing .ghost,.editing header nav,.editing .wa,.editing header .brand{display:none}
 .editing .hot span{opacity:1;font-size:15px;padding:4px 8px}
-.editing .hot.sel::before{background:var(--gold);inset:13px}
+.editing .hot.sel::before{border-color:var(--gold);background:rgba(180,139,59,.3);inset:11px}
 .editor{position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);z-index:45;background:var(--paper);border-left:1px solid rgba(29,52,38,.12);display:flex;flex-direction:column;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 18px) max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 18px) 18px;overflow:auto;font-size:15px}
 .editor[hidden],.ed-form[hidden]{display:none}
 .editor>*{flex-shrink:0}
@@ -279,6 +318,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   .offer-grid,.facts{grid-template-columns:minmax(0,1fr)}
   .close{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
   .card{min-height:280px}
+  .foot-row{padding-bottom:96px}
   .card svg.deco{width:120px;height:120px;right:-24px;top:-24px;opacity:.55}
   .tiles{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-24px;padding:4px 24px 8px;scrollbar-width:none}
   .tiles::-webkit-scrollbar{display:none}
@@ -302,9 +342,9 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 <canvas id="scene" aria-label="Escultura de terracota de uma mulher negra com tranças nagô, com piercings na orelha, no rosto e no umbigo. Arraste para girar."></canvas>
 <div id="hs"></div>
 
-<header id="top">
+<header id="top" role="banner">
   <a class="brand" href="#s-hero"><svg viewBox="0 0 440 215" role="img" aria-label="Danielly Piercer"><use href="#logo"/></svg></a>
-  <nav>
+  <nav aria-label="Principal">
     <a href="#s-orelha">Mapa das perfurações</a>
     <a href="#s-trabalhos">Trabalhos</a>
     <a href="#s-dani">A Dani</a>
@@ -314,18 +354,18 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 </header>
 
 <main>
-  <section class="hero" id="s-hero" data-k="0">
-    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Danielly Piercer, body piercing em Cuiabá-MT</h1>
+  <section class="hero" id="s-hero" data-k="0" aria-labelledby="hero-title">
+    <h1 class="sr-only" id="hero-title">Danielly Piercer, body piercing em Cuiabá-MT</h1>
     <div class="hero-meta">
       <p><strong>Danielly Paixão</strong><br>Body piercing em Cuiabá-MT.<br>Perfuração, joias e cursos.</p>
       <div class="scroll-cue"><span>Role para explorar<br>ou arraste a peça</span><i></i></div>
     </div>
   </section>
 
-  <section class="stage right" id="s-exp" data-k="1">
+  <section class="stage right" id="s-exp" data-k="1" aria-labelledby="exp-title">
     <div class="wrap"><div class="pin">
       <p class="eyebrow">O jeito da Dani</p>
-      <h2>Mais que perfurações, <em>experiências.</em></h2>
+      <h2 id="exp-title">Mais que perfurações, <em>experiências.</em></h2>
       <ul class="principles">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg><span>A joia, o ângulo, a anatomia e o cuidado fazem toda a diferença.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19 19 5M8 5h11v11"/></svg><span>Nem toda perfuração combina com toda anatomia. Às vezes o cuidado é dizer não.</span></li>
@@ -334,40 +374,41 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     </div></div>
   </section>
 
-  <section class="stage" id="s-orelha" data-k="2" data-region="orelha" data-word="orelha">
+  <section class="stage" id="s-orelha" data-k="2" data-region="orelha" data-word="orelha" aria-labelledby="orelha-title">
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
-      <h2>Orelha</h2>
+      <h2 id="orelha-title">Orelha</h2>
       <p>Cartilagem e lóbulo pedem joias e ângulos diferentes. Toque num ponto da peça para ver um trabalho da Dani.</p>
       <ul class="pts" data-region="orelha"></ul>
     </div></div>
   </section>
 
-  <section class="stage" id="s-rosto" data-k="3" data-region="rosto" data-word="rosto">
+  <section class="stage" id="s-rosto" data-k="3" data-region="rosto" data-word="rosto" aria-labelledby="rosto-title">
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
-      <h2>Rosto</h2>
+      <h2 id="rosto-title">Rosto</h2>
       <p>Nariz, boca e sobrancelha mudam a expressão. A posição certa segue o desenho de cada rosto.</p>
       <ul class="pts" data-region="rosto"></ul>
     </div></div>
   </section>
 
-  <section class="stage" id="s-umbigo" data-k="4" data-region="corpo" data-word="umbigo">
+  <section class="stage" id="s-umbigo" data-k="4" data-region="corpo" data-word="corpo" aria-labelledby="corpo-title">
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
-      <h2>Umbigo</h2>
-      <p>Todo corpo tem o seu umbigo. A Dani avalia o formato antes e escolhe a joia com você.</p>
+      <h2 id="corpo-title">Corpo</h2>
+      <p>Umbigo, surface e perfurações íntimas. A Dani avalia o formato de cada corpo antes e escolhe a joia com você.</p>
       <ul class="pts" data-region="corpo"></ul>
       <p class="tiny">Ela também faz microdermal, alargador e íntimo.</p>
     </div></div>
   </section>
 
-  <section class="works solid-sec" id="s-trabalhos">
+  <section class="works solid-sec" id="s-trabalhos" aria-labelledby="works-title">
     <div class="wrap works-grid">
       <div class="works-side">
-        <h2>Trabalhos</h2>
+        <h2 id="works-title">Trabalhos</h2>
         <p>Trabalhos direto do Instagram da Dani. Escolha a região e toque num post para abrir no perfil dela.</p>
-        <ul class="filters" id="filters"></ul>
+        <ul class="filters" id="filters" aria-label="Filtrar por região"></ul>
+        <ul class="subfilters" id="subfilters" aria-label="Filtrar por tipo de piercing" hidden></ul>
       </div>
       <div>
         <div class="tiles" id="tiles"></div>
@@ -380,16 +421,16 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   <section class="voices solid-sec" aria-labelledby="v-title">
     <div class="wrap"><h2 id="v-title">Quem passou <em>pela agulha</em></h2></div>
     <div class="marquee" id="marquee"></div>
-    <div class="wrap"><p class="ph-note">Comentários públicos no Instagram da Dani. Confirmar o uso com cada pessoa.</p></div>
+    <div class="wrap"><p class="ph-note">Comentários públicos no Instagram da Dani.</p></div>
   </section>
 
-  <section class="dani solid-sec" id="s-dani">
+  <section class="dani solid-sec" id="s-dani" aria-labelledby="dani-title">
     <svg class="wall-logo" viewBox="0 0 440 215" aria-hidden="true"><use href="#logo"/></svg>
     <div class="wrap dani-grid">
       <div class="portrait"><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed" loading="lazy" title="Reel da Dani: sou piercer há quase 6 anos" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
       <div>
         <p class="eyebrow">Conheça a Dani</p>
-        <h2>Quase seis anos <em>furando Cuiabá.</em></h2>
+        <h2 id="dani-title">Quase seis anos <em>furando Cuiabá.</em></h2>
         <p>Danielly Paixão é piercer em Cuiabá-MT. Atende com hora marcada, explica cada etapa e só fura quando a anatomia ajuda. Também vende joias e ensina o ofício em cursos.</p>
         <p>Em 2026 ela esteve no Congresso Colab Piercing, trocando técnica com piercers do país inteiro.</p>
         <div class="facts">
@@ -401,7 +442,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     </div>
   </section>
 
-  <section class="offer solid-sec" id="s-cursos">
+  <section class="offer solid-sec" id="s-cursos" aria-label="Joias e cursos">
     <div class="wrap offer-grid">
       <article class="card j">
         <svg class="deco" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="70" fill="none" stroke="#d9b261" stroke-width="10"/><circle cx="110" cy="40" r="12" fill="#f1d58f"/></svg>
@@ -416,10 +457,10 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     </div>
   </section>
 
-  <section class="book solid-sec" id="s-agenda">
+  <section class="book solid-sec" id="s-agenda" aria-labelledby="agenda-title">
     <div class="wrap">
       <div class="book-grid">
-        <h2>Vamos viver novas <em>experiências?</em></h2>
+        <h2 id="agenda-title">Vamos fazer <em>novos furos?</em></h2>
         <div class="book-info">
           <dl>
             <dt>Onde</dt><dd>Cuiabá-MT</dd>
@@ -430,11 +471,20 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
           <div class="row"><a class="btn" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Agendar pelo WhatsApp</a><a class="btn light" href="https://www.instagram.com/daniperfuraaqui/">Instagram</a></div>
         </div>
       </div>
-      <div class="foot-logo"><svg viewBox="0 0 440 215" role="img" aria-label="Danielly Piercer"><use href="#logo"/></svg></div>
-      <footer><span>Danielly Paixão · Danielly Piercer · Cuiabá-MT</span><span>Prévia de estudo. Textos, fotos e posições das joias a confirmar com a Dani. <a class="edit-link" href="#editar">Editar pontos do mapa</a></span></footer>
+
     </div>
   </section>
 </main>
+<footer class="site-foot" role="contentinfo">
+  <div class="wrap">
+    <div class="foot-logo"><svg viewBox="0 0 440 215" role="img" aria-label="Danielly Piercer"><use href="#logo"/></svg></div>
+    <div class="foot-row">
+      <address>Danielly Paixão · Body piercing em Cuiabá-MT · <a href="https://wa.me/5565992507788">(65) 99250-7788</a> · <a href="https://www.instagram.com/daniperfuraaqui/">@daniperfuraaqui</a></address>
+      <span>© 2026 Danielly Piercer · <a class="edit-link" href="#editar">Editar pontos do mapa</a></span>
+    </div>
+  </div>
+</footer>
+<noscript><p class="noscript">Este site usa JavaScript para mostrar a escultura 3D. Para agendar, chame no WhatsApp (65) 99250-7788 ou no Instagram @daniperfuraaqui.</p></noscript>
 
 <a class="wa" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing." aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
 
@@ -497,8 +547,8 @@ const DEF=[
  ['tragus','orelha','Trágus','A pequena cartilagem na frente do canal do ouvido.','ponto','ouro',1,[[-.0211,.8076,.0223,-.175,-.076,.982]]],
  ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]]],
  ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]]],
- ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1.2,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DJ7mylYPDiA'],
- ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.1632,.767,.0599,.732,.055,.679]],'DLVNwIGsMWO'],
+ ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DJ7mylYPDiA'],
+ ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.13262,.76623,.06971,-.056,-.60948,.79082]],'DLVNwIGsMWO'],
  ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DYhnv3MEZXR'],
  ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]]],
  ['sobrancelha','rosto','Supercílio','Barra curva no fim da sobrancelha (supercílio). Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]]],
@@ -533,23 +583,27 @@ const toDoc=l=>l.map(p=>({id:p.id,nome:p.n,regiao:p.r,desc:p.d,joia:p.j,metal:p.
 
 /* listas da página */
 const SKIN=[['#6b3d27','#c98a62'],['#4a2a1b','#9a6343'],['#8a5a3c','#e0ac84'],['#3b2418','#87563a'],['#9d6b4c','#efc3a0'],['#5a3322','#b47a55']];
-const IG=[['Dayrvd4kRJl','orelha','Composição de orelha'],['DLkTsySMzjr','orelha','Hélix'],['DaoTz-xkdf9','orelha','Cartilagem em ouro'],['DVcD1tVkuBL','orelha','Hélix com verde'],['DJ7mylYPDiA','orelha','Alargador e cartilagem'],
- ['DZ8fso0EcrE','rosto','Paired nostril'],['DLVNwIGsMWO','rosto','Narina'],['Df4tSKFFkRw','rosto','Microdermal duplo'],['DYhnv3MEZXR','rosto','Septo com opalas'],['DKu6wxDPJYE','rosto','Septo'],['Dd7O7xujjfe','rosto','Lábio'],
- ['DaMMnvAETTa','corpo','Umbigo'],['DJFnqicvywQ','corpo','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com barra']];
+const IG=[['Dayrvd4kRJl','orelha','Composição de orelha','Composição'],['DLkTsySMzjr','orelha','Hélix','Hélix'],['DaoTz-xkdf9','orelha','Cartilagem em ouro','Cartilagem'],['DVcD1tVkuBL','orelha','Hélix com verde','Hélix'],['DJ7mylYPDiA','orelha','Alargador e cartilagem','Alargador'],
+ ['DZ8fso0EcrE','rosto','Paired nostril','Nostril'],['DLVNwIGsMWO','rosto','Nostril','Nostril'],['Df4tSKFFkRw','rosto','Microdermal duplo','Microdermal'],['DYhnv3MEZXR','rosto','Septo com opalas','Septo'],['DKu6wxDPJYE','rosto','Septo','Septo'],['Dd7O7xujjfe','rosto','Labret','Labret'],
+ ['DaMMnvAETTa','corpo','Umbigo','Umbigo'],['DJFnqicvywQ','corpo','Umbigo','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com barra','Umbigo']];
 const IG_DEF={orelha:'Dayrvd4kRJl',rosto:'DZ8fso0EcrE',corpo:'DJFnqicvywQ'};
 const igUrl=c=>'https://www.instagram.com/p/'+encodeURIComponent(c)+'/';
-const tiles=document.getElementById('tiles'),filters=document.getElementById('filters');
-let filt='todos';
+const tiles=document.getElementById('tiles'),filters=document.getElementById('filters'),subf=document.getElementById('subfilters');
+let filt='todos',sub='';
 function renderLists(){
   for(const ul of document.querySelectorAll('.pts'))
     ul.innerHTML=PTS.filter(p=>p.r===ul.dataset.region).map(p=>`<li><button type="button" data-id="${esc(p.id)}">${esc(p.n)}</button></li>`).join('');
   if(!tiles.dataset.done){tiles.dataset.done=1;
-    tiles.innerHTML=IG.map(([c,r,t])=>`<article class="ig" data-r="${r}"><iframe src="${igUrl(c)}embed" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
-  tiles.querySelectorAll('.ig').forEach(x=>x.classList.toggle('hide',filt!=='todos'&&x.dataset.r!==filt));
+    tiles.innerHTML=IG.map(([c,r,t,sb])=>`<article class="ig" data-r="${r}" data-s="${esc(sb)}"><iframe src="${igUrl(c)}embed" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
+  tiles.querySelectorAll('.ig').forEach(x=>x.classList.toggle('hide',(filt!=='todos'&&x.dataset.r!==filt)||(sub&&x.dataset.s!==sub)));
+  const subs=filt==='todos'?[]:[...new Set(IG.filter(w=>w[1]===filt).map(w=>w[3]))];
+  subf.hidden=!subs.length;
+  subf.innerHTML=subs.length?['',...subs].map(x=>`<li><button type="button" data-sub="${esc(x)}" aria-pressed="${x===sub}">${x?esc(x):'Todas'}<small>${IG.filter(w=>w[1]===filt&&(!x||w[3]===x)).length}</small></button></li>`).join(''):'';
   filters.innerHTML=[['todos','Tudo'],['orelha','Orelha'],['rosto','Rosto'],['corpo','Corpo']].map(([k,n])=>`<li><button type="button" data-f="${k}" aria-pressed="${k===filt}">${n}<small>${k==='todos'?IG.length:IG.filter(w=>w[1]===k).length}</small></button></li>`).join('');
 }
 function setPoints(list){PTS=list;byId=Object.fromEntries(PTS.map(p=>[p.id,p]));renderLists();hooks.forEach(f=>f())}
-filters.addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;filt=b.dataset.f;renderLists()});
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;filt=b.dataset.f;sub='';renderLists()});
+subf.addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;sub=b.dataset.sub;renderLists()});
 setPoints(PTS);
 
 /* depoimentos reais (comentários públicos) */
@@ -597,7 +651,7 @@ function shut(){
 document.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b||close.contains(b))return;
   if(editing){if(onEditPick)onEditPick(b.dataset.id);return}openClose(b.dataset.id,b)});
 document.getElementById('c-x').addEventListener('click',shut);
-document.getElementById('c-works').addEventListener('click',e=>{filt=e.currentTarget.dataset.r||'todos';renderLists();shut();
+document.getElementById('c-works').addEventListener('click',e=>{filt=e.currentTarget.dataset.r||'todos';sub='';renderLists();shut();
   setTimeout(()=>document.getElementById('s-trabalhos').scrollIntoView({behavior:reduce?'auto':'smooth'}),reduce?0:300)});
 const atPoint=(x,y)=>({getBoundingClientRect:()=>({left:x,top:y,width:0,height:0}),classList:{contains:()=>false}});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&close.classList.contains('open'))shut()});
@@ -719,26 +773,35 @@ function jewelFor(p){
   const P=p.pos.map(a=>({p:V(a[0],a[1],a[2]),n:V(a[3],a[4],a[5]).normalize()}));
   let anchor=null;
   const add=(geo,pos,q)=>{const m=new THREE.Mesh(geo,mat);m.position.copy(pos);if(q)m.quaternion.copy(q);g.add(m);return m};
-  const ball=(r,at,n,off)=>add(new THREE.SphereGeometry(r,18,12),at.clone().addScaledVector(n,off??r*.5));
-  const ring=(R,tube,at,n)=>{let ax=V(0,0,0).crossVectors(n,UP);if(ax.lengthSq()<1e-4)ax.set(1,0,0);ax.normalize();
-    return add(new THREE.TorusGeometry(R,tube,12,48),at.clone().addScaledVector(UP,-R*.75).addScaledVector(n,R*.25),new THREE.Quaternion().setFromUnitVectors(V(0,0,1),ax))};
+  const ball=(r,at,n,off)=>add(new THREE.SphereGeometry(r,18,12),at.clone().addScaledVector(n,off??r*.3));
+  const down=n=>{const d=V(0,-1,0).addScaledVector(n,n.y);if(d.lengthSq()<1e-5)d.set(1,0,0).addScaledVector(n,-n.x);return d.normalize()};
+  // a argola atravessa o tecido na direção T (orelha: de lado; rosto e corpo: de frente) e abraça a borda e
+  const T0=p.r==='orelha'?V(-1,0,0):(p.id==='septo'?V(1,0,0):V(0,0,1));
+  const ring=(R,tube,at,n)=>{
+    let e=n.clone().addScaledVector(T0,-n.dot(T0));
+    if(e.lengthSq()<.06)e=V(0,1,0).addScaledVector(T0,-T0.y);
+    e.normalize();const b=V(0,0,0).crossVectors(T0,e).normalize();
+    const T=T0.clone().multiplyScalar(Math.cos(.6)).addScaledVector(b,Math.sin(.6)).normalize();
+    const ax=V(0,0,0).crossVectors(e,T).normalize();
+    const q=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(e,T,ax));
+    return add(new THREE.TorusGeometry(R,tube,12,48),at.clone().addScaledVector(e,-R*.72),q)};
   if(!P.length)return {g,anchor};
   if(p.j==='barra'&&P.length>=2){
-    const a=P[0].p.clone().addScaledVector(P[0].n,.0016),b=P[1].p.clone().addScaledVector(P[1].n,.0016);
+    const a=P[0].p.clone().addScaledVector(P[0].n,.0009),b=P[1].p.clone().addScaledVector(P[1].n,.0009);
     const bar=add(new THREE.CylinderGeometry(.0008*t,.0008*t,a.distanceTo(b),10),a.clone().add(b).multiplyScalar(.5),new THREE.Quaternion().setFromUnitVectors(UP,b.clone().sub(a).normalize()));
-    ball(.0022*t,a,P[0].n,0);ball(.0022*t,b,P[1].n,0);
+    ball(.002*t,a,P[0].n,0);ball(.002*t,b,P[1].n,0);
     anchor=new THREE.Object3D();anchor.position.copy(bar.position);anchor.userData.n=P[0].n.clone().add(P[1].n).normalize();g.add(anchor);
     return {g,anchor};
   }
   if(p.j==='umbigo'){
-    anchor=ring(.009*t,.0013*t,P[0].p,P[0].n);
-    add(new THREE.SphereGeometry(.0048*t,18,12),P[0].p.clone().addScaledVector(UP,-.019*t).addScaledVector(P[0].n,.004)).material=silver;
+    anchor=ring(.008*t,.0012*t,P[0].p,P[0].n);
+    add(new THREE.SphereGeometry(.0042*t,18,12),P[0].p.clone().addScaledVector(down(P[0].n),.016*t).addScaledVector(P[0].n,.002)).material=silver;
     if(P[1])ball(.004*t,P[1].p,P[1].n);
   }else P.forEach((q,i)=>{
     let m;
-    if(p.j==='argola')m=ring(.0075*t,.0011*t,q.p,q.n);
-    else if(p.j==='micro'){add(new THREE.CylinderGeometry(.0034*t,.0034*t,.0007,20),q.p.clone().addScaledVector(q.n,.0003),new THREE.Quaternion().setFromUnitVectors(UP,q.n));m=ball(.0022*t,q.p,q.n,.0018)}
-    else m=ball(.0028*t,q.p,q.n);
+    if(p.j==='argola')m=ring(.0062*t,.00095*t,q.p,q.n);
+    else if(p.j==='micro'){add(new THREE.CylinderGeometry(.003*t,.003*t,.0006,20),q.p.clone().addScaledVector(q.n,.0001),new THREE.Quaternion().setFromUnitVectors(UP,q.n));m=ball(.002*t,q.p,q.n,.0012)}
+    else m=ball(.0025*t,q.p,q.n);
     if(!i)anchor=m;
   });
   if(anchor)anchor.userData.n=P[0].n;
