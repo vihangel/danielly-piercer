@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Quicksand:wght@400;500;600&display=swap">
 <style>
 /*
-VOICE: carinhosa, didática e segura, como as legendas da Dani ("mais que perfurações, experiências").
+VOICE: direta, com descrições de localização, joia e atendimento.
 IDEA: o estúdio dela: parede verde com a logo gótica pintada, e uma escultura de terracota no centro, como no Monolith.
 PICTURE: logo gigante no topo, busto 3D na frente; a rolagem percorre o Mapa das Perfurações (orelha, rosto, umbigo).
 COLOUR and TYPE: sálvia dos carrosséis, creme, verde-folha da parede, tinta verde-escura da logo, terracota e ouro das joias; Fraunces macia + Quicksand.
@@ -126,7 +126,6 @@ h2 em{color:var(--terra-deep)}
 .pts{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .pts button{all:unset;box-sizing:border-box;cursor:pointer;min-height:44px;padding:0 18px;display:inline-flex;align-items:center;border-radius:99px;background:rgba(251,248,242,.55);border:1px solid rgba(29,52,38,.18);font-weight:600;font-size:15px;transition:background .2s,color .2s,transform .2s}
 .pts button:hover,.pts button:focus-visible{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
-.tiny{font-size:13px;color:var(--ink-soft);margin-top:16px}
 
 /* hotspots */
 .hot{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;padding:0;background:none;cursor:pointer;pointer-events:none;opacity:0;transition:opacity .35s}
@@ -179,7 +178,6 @@ h2 em{color:var(--terra-deep)}
 .tile .cap small{font-size:12px;opacity:.85}
 .tile:hover{transform:translateY(-4px)}
 .tile.hide{display:none}
-.ph-note{font-size:13px;color:var(--ink-soft);margin:14px 0 0}
 
 .voices{background:var(--cream);padding-block:0 clamp(72px,10vw,140px);overflow:hidden}
 .voices h2{font-size:clamp(36px,4.4vw,56px);margin-bottom:28px}
@@ -200,10 +198,6 @@ h2 em{color:var(--terra-deep)}
 .dani h2{font-size:clamp(44px,5.6vw,80px)}
 .dani h2 em{color:#f1d58f}
 .dani p{color:var(--cream);max-width:46ch}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
-.fact{border-top:1px solid rgba(243,238,228,.5);padding-top:14px}
-.fact b{display:block;font:400 40px/1 var(--display);font-variation-settings:"SOFT" 100}
-.fact span{font-size:14px;color:var(--cream)}
 
 .offer{background:var(--cream);padding-block:clamp(72px,10vw,130px)}
 .offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -325,7 +319,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   .hero-logo{top:calc(env(safe-area-inset-top,0px) + 78px)}
   .hero-meta{top:calc(100vh - 128px);font-size:14px}
   .scroll-cue{display:none}
-  .offer-grid,.facts{grid-template-columns:minmax(0,1fr)}
+  .offer-grid{grid-template-columns:minmax(0,1fr)}
   .close{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
   .card{min-height:280px}
   .foot-row{padding-bottom:96px}
@@ -368,18 +362,17 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <h1 class="sr-only" id="hero-title">Danielly Piercer, body piercing em Cuiabá-MT</h1>
     <div class="hero-meta">
       <p><strong>Danielly Paixão</strong><br>Body piercing em Cuiabá-MT.<br>Perfuração, joias e cursos.</p>
-      <div class="scroll-cue"><span>Role para explorar<br>ou arraste a peça</span><i></i></div>
+      <div class="scroll-cue"><span>Role para ver os piercings<br>ou arraste para girar</span><i></i></div>
     </div>
   </section>
 
   <section class="stage right" id="s-exp" data-k="1" aria-labelledby="exp-title">
     <div class="wrap"><div class="pin">
-      <p class="eyebrow">O jeito da Dani</p>
-      <h2 id="exp-title">Mais que perfurações, <em>experiências.</em></h2>
+      <h2 id="exp-title">Como funciona <em>a perfuração</em></h2>
       <ul class="principles">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg><span>A joia, o ângulo, a anatomia e o cuidado fazem toda a diferença.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19 19 5M8 5h11v11"/></svg><span>Nem toda perfuração combina com toda anatomia. Às vezes o cuidado é dizer não.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Biossegurança em cada etapa, do material à joia.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg><span>A Dani avalia a região e define a posição e o ângulo do furo.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19 19 5M8 5h11v11"/></svg><span>Vocês escolhem o formato e o tamanho da joia para o local.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>O atendimento segue cuidados de biossegurança no preparo do material e da joia.</span></li>
       </ul>
     </div></div>
   </section>
@@ -388,7 +381,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
       <h2 id="orelha-title">Orelha</h2>
-      <p>Cartilagem e lóbulo pedem joias e ângulos diferentes. Toque num ponto da peça para ver um trabalho da Dani.</p>
+      <p>Toque num ponto da escultura ou escolha um nome na lista para ver onde fica o piercing.</p>
       <ul class="pts" data-region="orelha"></ul>
     </div></div>
   </section>
@@ -397,7 +390,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
       <h2 id="rosto-title">Rosto</h2>
-      <p>Nariz, boca e sobrancelha mudam a expressão. A posição certa segue o desenho de cada rosto.</p>
+      <p>Veja onde ficam as perfurações no nariz, nos lábios e na sobrancelha. A língua aparece na lista.</p>
       <ul class="pts" data-region="rosto"></ul>
     </div></div>
   </section>
@@ -406,9 +399,8 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
       <h2 id="corpo-title">Corpo</h2>
-      <p>Umbigo, surface e perfurações íntimas. A Dani avalia o formato de cada corpo antes e escolhe a joia com você.</p>
+      <p>A escultura mostra o umbigo e um surface no peito. A lista também inclui mamilos e perfurações íntimas.</p>
       <ul class="pts" data-region="corpo"></ul>
-      <p class="tiny">Ela também faz microdermal, alargador e íntimo.</p>
     </div></div>
   </section>
 
@@ -416,7 +408,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <div class="wrap works-grid">
       <div class="works-side">
         <h2 id="works-title">Trabalhos</h2>
-        <p>Trabalhos direto do Instagram da Dani. Escolha a região e toque num post para abrir no perfil dela.</p>
+        <p>Filtre por região e tipo de piercing. Cada trabalho abre no Instagram.</p>
         <ul class="filters" id="filters" aria-label="Filtrar por região"></ul>
         <ul class="subfilters" id="subfilters" aria-label="Filtrar por tipo de piercing" hidden></ul>
       </div>
@@ -429,25 +421,19 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   </section>
 
   <section class="voices solid-sec" aria-labelledby="v-title">
-    <div class="wrap"><h2 id="v-title">Quem passou <em>pela agulha</em></h2></div>
+    <div class="wrap"><h2 id="v-title">Comentários <em>no Instagram</em></h2></div>
     <div class="marquee" id="marquee"></div>
-    <div class="wrap"><p class="ph-note">Comentários públicos no Instagram da Dani.</p></div>
   </section>
 
   <section class="dani solid-sec" id="s-dani" aria-labelledby="dani-title">
     <svg class="wall-logo" viewBox="0 0 440 215" aria-hidden="true"><use href="#logo"/></svg>
     <div class="wrap dani-grid">
-      <div class="portrait"><span class="ig-loading" aria-hidden="true">Carregando o reel da Dani…</span><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed/" title="Reel da Dani: sou piercer há quase 6 anos" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
+      <div class="portrait"><span class="ig-loading" aria-hidden="true">Carregando o reel da Dani…</span><iframe src="https://www.instagram.com/reel/DfGP3WvRlzM/embed/" title="Danielly Paixão fala sobre seu trabalho como piercer" allowtransparency="true"></iframe><a href="https://www.instagram.com/reel/DfGP3WvRlzM/">Ver o reel no Instagram</a></div>
       <div>
         <p class="eyebrow">Conheça a Dani</p>
-        <h2 id="dani-title">Quase seis anos <em>furando Cuiabá.</em></h2>
-        <p>Danielly Paixão é piercer em Cuiabá-MT. Atende com hora marcada, explica cada etapa e só fura quando a anatomia ajuda. Também vende joias e ensina o ofício em cursos.</p>
-        <p>Em 2026 ela esteve no Congresso Colab Piercing, trocando técnica com piercers do país inteiro.</p>
-        <div class="facts">
-          <div class="fact"><b>~6</b><span>anos como piercer</span></div>
-          <div class="fact"><b>8</b><span>regiões no destaque do perfil</span></div>
-          <div class="fact"><b>seg–sáb</b><span>por agendamento</span></div>
-        </div>
+        <h2 id="dani-title">Danielly <em>Paixão</em></h2>
+        <p>Danielly Paixão atende em Cuiabá de segunda a sábado, com hora marcada.</p>
+        <p>Em 2026, participou do Congresso Colab Piercing.</p>
       </div>
     </div>
   </section>
@@ -456,13 +442,13 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <div class="wrap offer-grid">
       <article class="card j">
         <svg class="deco" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="70" fill="none" stroke="#d9b261" stroke-width="10"/><circle cx="110" cy="40" r="12" fill="#f1d58f"/></svg>
-        <div><h3>Joias</h3><p>Pontos de luz, argolas e peças para composição. A Dani ajuda a escolher pelo furo e pelo seu estilo.</p></div>
-        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20das%20joias%20dispon%C3%ADveis.">Perguntar das joias</a>
+        <div><h3>Joias</h3><p>Pontos de luz, argolas e peças para composição. Consulte os modelos e os tamanhos disponíveis para o seu piercing.</p></div>
+        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20das%20joias%20dispon%C3%ADveis.">Consultar joias</a>
       </article>
       <article class="card c">
         <svg class="deco" viewBox="0 0 220 220" aria-hidden="true"><path d="M40 180 180 40" stroke="#1d3426" stroke-width="6" stroke-linecap="round"/><path d="M170 50l14-14" stroke="#b48b3b" stroke-width="10" stroke-linecap="round"/><circle cx="60" cy="160" r="8" fill="#1d3426"/></svg>
-        <div><h3>Cursos</h3><p>Para quem quer começar ou se aprimorar em body piercing, com prática e biossegurança.</p></div>
-        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20dos%20cursos%20de%20body%20piercing.">Quero saber dos cursos</a>
+        <div><h3>Cursos</h3><p>Cursos de body piercing com prática de perfuração e biossegurança.</p><p><a href="https://www.instagram.com/p/DXx-2bsDeOh/">Ver o intensivo de vulva, mamilo e microdermal</a></p></div>
+        <a class="go" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20saber%20dos%20cursos%20de%20body%20piercing.">Consultar turmas</a>
       </article>
     </div>
   </section>
@@ -470,7 +456,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
   <section class="book solid-sec" id="s-agenda" aria-labelledby="agenda-title">
     <div class="wrap">
       <div class="book-grid">
-        <h2 id="agenda-title">Vamos fazer <em>novos furos?</em></h2>
+        <h2 id="agenda-title">Agende <em>seu piercing</em></h2>
         <div class="book-info">
           <dl>
             <dt>Onde</dt><dd>Cuiabá-MT</dd>
@@ -510,7 +496,7 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
     <label for="ed-tam">Tamanho da joia <span id="ed-tam-v"></span></label><input type="range" id="ed-tam" min=".5" max="2" step=".05">
     <label for="ed-ig">Post do Instagram (link)</label><input id="ed-ig" placeholder="https://www.instagram.com/p/...">
     <label for="ed-desc">Descrição</label><textarea id="ed-desc" rows="3" maxlength="400"></textarea>
-    <p class="ed-hint">Clique na escultura para adicionar uma posição a este ponto. Barra usa duas posições. Arraste para girar e use a roda do mouse para aproximar.</p>
+    <p class="ed-hint">Clique na escultura para adicionar uma posição a este ponto. Marque as duas pontas de cada barra. Para angel fangs, marque primeiro a bolinha e depois o cone de cada lado. Arraste para girar e use a roda do mouse para aproximar.</p>
     <div class="ed-2"><button type="button" class="ed-btn" id="ed-undo">Desfazer posição</button><button type="button" class="ed-btn" id="ed-clear">Limpar posições</button></div>
     <button type="button" class="ed-btn ed-del" id="ed-del">Excluir ponto</button>
   </div>
@@ -523,14 +509,14 @@ button.btn.light{border:1px solid rgba(29,52,38,.35)}
 </aside>
 
 <div class="close" id="close" role="dialog" aria-modal="true" aria-labelledby="c-name" hidden>
-  <div class="shot" id="c-shot"><p class="no-post-msg">Ainda não tem um post desse piercing no feed da Dani. Chama ela no WhatsApp para ver fotos.</p><span class="ig-loading" aria-hidden="true">Carregando post do Instagram…</span><iframe id="c-ig" title="Trabalho da Dani no Instagram" loading="lazy"></iframe><a class="c-iglink" id="c-iglink" href="https://www.instagram.com/daniperfuraaqui/">Abrir no Instagram</a></div>
+  <div class="shot" id="c-shot"><p class="no-post-msg">Peça fotos desse piercing pelo WhatsApp.</p><span class="ig-loading" aria-hidden="true">Carregando post do Instagram…</span><iframe id="c-ig" title="Trabalho da Dani no Instagram" loading="lazy"></iframe><a class="c-iglink" id="c-iglink" href="https://www.instagram.com/daniperfuraaqui/">Abrir no Instagram</a></div>
   <div class="txt">
     <button class="x" id="c-x" aria-label="Fechar">×</button>
     <p class="eyebrow" id="c-region"></p>
     <h3 id="c-name"></h3>
     <p id="c-desc"></p>
     <p class="c-jewel" id="c-jewel"></p>
-    <div class="row c-act"><a class="btn" id="c-book" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Quero esse, bora agendar</a><button type="button" class="btn light" id="c-works">Ver trabalhos</button></div>
+    <div class="row c-act"><a class="btn" id="c-book" href="https://wa.me/5565992507788?text=Oi%2C%20Dani%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20piercing.">Agendar este piercing</a><button type="button" class="btn light" id="c-works">Ver trabalhos</button></div>
   </div>
 </div>
 
@@ -543,34 +529,34 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 
 /* ---------- pontos de piercing: dados (posições em coordenadas do modelo) ---------- */
 const REG={orelha:'Orelha',rosto:'Rosto',corpo:'Corpo'};
-const JOIAS={ponto:'Ponto de luz',argola:'Argola',barra:'Barra',micro:'Microdermal',umbigo:'Umbigo com pingente'};
+const JOIAS={ponto:'Ponto de luz',argola:'Argola',barra:'Barra',fangs:'Par de barras com pontas cônicas',micro:'Microdermal',umbigo:'Umbigo com pingente'};
 const METAIS={ouro:'Ouro',prata:'Prata'};
 const DEF=[
- ['transversal','orelha','Transversal','Uma barra só que atravessa a cartilagem de cima em dois pontos. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]],'DFiKmHFOwr-'],
- ['scapha','orelha','Scapha','Na canaleta entre a borda da orelha e a cartilagem interna. Fica lindo com pingente.','ponto','ouro',1.1,[[-.0844,.8489,-.0047,-.961,.102,.259]],'DFiKmHFOwr-'],
- ['helix','orelha','Hélix','Borda de cima da cartilagem. Aceita argola ou ponto de luz e combina com outros furos na mesma linha.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DByPh1auRln'],
- ['midhelix','orelha','Midi hélix','No meio da borda, na altura do conch. Bom para continuar uma linha com o hélix.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]],'DFiKmHFOwr-'],
- ['forward','orelha','Forward hélix','Na frente da borda, pertinho do rosto. Costuma ser feito em dupla ou trio.','ponto','ouro',.85,[[-.001,.8618,.0313,-.622,.067,.78],[-.001,.8564,.0326,-.495,.271,.826]],'DGmO086MHKv'],
- ['rook','orelha','Rook','A dobra interna logo acima do daith. Normalmente com barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]],'DFiKmHFOwr-'],
- ['daith','orelha','Daith','A dobra mais interna, acima do canal do ouvido. Clássico com argola.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]],'DFiKmHFOwr-'],
- ['conch','orelha','Conch','O centro da concha. Ponto de luz ou argola abraçando a borda.','ponto','prata',1.3,[[-.0368,.827,.0088,-.634,-.228,.739]],'DM-tYmNufWU'],
+ ['transversal','orelha','Transversal','Dois furos na cartilagem superior, ligados por uma barra reta. Também chamado de industrial.','barra','prata',1,[[-.0392,.88,.0287,-.5,-.066,.863],[-.0766,.8719,-.0069,-.721,.599,-.348]],'DFiKmHFOwr-'],
+ ['scapha','orelha','Scapha','Fica no sulco entre a borda externa da orelha e a dobra da cartilagem interna.','ponto','ouro',1.1,[[-.06686,.84742,-.00327,-.76802,.1985,.60889]],'DFiKmHFOwr-'],
+ ['helix','orelha','Hélix','Fica na borda superior da orelha. A escultura mostra duas argolas nessa região.','argola','ouro',1,[[-.0716,.88,.0013,-.683,.729,-.04],[-.0748,.8746,-.0056,-.617,.686,-.386]],'DByPh1auRln'],
+ ['midhelix','orelha','Midi hélix','Fica na altura do conch, no meio da borda externa da orelha.','ponto','ouro',1,[[-.0843,.8382,-.0099,-.916,-.043,-.399]],'DFiKmHFOwr-'],
+ ['forward','orelha','Forward hélix','Fica na parte da borda superior que se junta ao rosto.','ponto','ouro',.85,[[-.03537,.8602,.0231,-.987,-.0614,-.14851],[-.03531,.85651,.02272,-.99113,.01866,-.13157]],'DGmO086MHKv'],
+ ['rook','orelha','Rook','Fica na dobra interna de cartilagem acima do daith. A joia costuma ser uma barra curva.','ponto','prata',1,[[-.0463,.8457,.0099,-.451,.288,.845]],'DFiKmHFOwr-'],
+ ['daith','orelha','Daith','Fica na dobra de cartilagem logo acima da entrada do canal auditivo.','argola','ouro',.8,[[-.0313,.8254,.0189,-.198,.77,.606]],'DFiKmHFOwr-'],
+ ['conch','orelha','Conch','Fica na concavidade central da orelha. Uma argola pode contornar a borda externa.','ponto','prata',1.3,[[-.0368,.827,.0088,-.634,-.228,.739]],'DM-tYmNufWU'],
  ['tragus','orelha','Trágus','A pequena cartilagem na frente do canal do ouvido.','ponto','ouro',1,[[-.0211,.8076,.0223,-.175,-.076,.982]],'DIxOjpXM3Uy'],
- ['antitragus','orelha','Anti trágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]],'DFiKmHFOwr-'],
- ['floating','orelha','Floating','Ponto na parte de baixo da cartilagem, perto do lóbulo, como no mapa da Dani.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]],'DFiKmHFOwr-'],
- ['lobulo','orelha','Lóbulo','O furo de partida para montar composições: argolas, pontos e alargadores.','argola','ouro',1,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DaeMSm0kUKq'],
- ['narina','rosto','Nostril','Ponto de luz ou argola na asa do nariz. Também dá para fazer em par, o paired nostril.','ponto','ouro',1.1,[[.13262,.76623,.06971,-.056,-.60948,.79082]],'DKQVoFNvzUL'],
- ['septo','rosto','Septo','Atravessa a parte macia entre as narinas. Dá para virar a joia para dentro quando quiser.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DOuScdvER7j'],
+ ['antitragus','orelha','Antitrágus','A cartilagem do lado oposto ao trágus, logo acima do lóbulo.','ponto','prata',1,[[-.0487,.8018,.0081,-.465,.038,.884]],'DFiKmHFOwr-'],
+ ['floating','orelha','Floating','No mapa, o ponto fica na parte baixa da cartilagem, perto do lóbulo.','ponto','ouro',.9,[[-.0746,.8093,.0013,-.816,-.337,.469]],'DFiKmHFOwr-'],
+ ['lobulo','orelha','Lóbulo','Fica na parte macia inferior da orelha. A escultura mostra três argolas no lóbulo.','argola','ouro',1,[[-.0566,.7874,.006,-.653,-.633,.415],[-.0619,.7917,.0013,-.695,-.719,-.031],[-.0653,.7964,-.0026,-.61,-.648,-.456]],'DaeMSm0kUKq'],
+ ['narina','rosto','Nostril','Fica na lateral de uma narina. A versão em par é chamada de paired nostril.','ponto','ouro',1.1,[[.13262,.76623,.06971,-.056,-.60948,.79082]],'DKQVoFNvzUL'],
+ ['septo','rosto','Septo','Fica na parte macia entre as narinas, abaixo da cartilagem do septo.','argola','ouro',1,[[.1488,.752,.0548,-.146,-.919,.367]],'DOuScdvER7j'],
  ['bridge','rosto','Bridge','Barra na horizontal, na ponte do nariz, entre os olhos.','barra','prata',1,[[.1353,.8214,.047,-.304,-.514,.802],[.1562,.8243,.0436,.523,-.376,.765]],'DBdt32aJZvi'],
- ['sobrancelha','rosto','Supercílio','Barra curva no fim da sobrancelha (supercílio). Dá para fazer mais de uma.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]],'DIyn27bM-cO'],
- ['labio','rosto','Labret','Ponto de luz logo abaixo do lábio inferior, no centro ou mais para o lado.','ponto','prata',1.1,[[.1114,.696,.0522,.303,-.096,.948]],'DNg031fRVrb'],
- ['vertical','rosto','Vertical labret','Uma barra curva que atravessa o lábio inferior de cima para baixo. As duas pontas ficam à vista.','barra','ouro',1,[[.1215,.72,.0684,.019,.222,.975],[.127,.6977,.0459,.363,-.743,.563]],'DY0XggEkWqN'],
- ['angelfangs','rosto','Angel fangs','Dois vertical labrets, um de cada lado do lábio inferior, lembrando dentinhos.','ponto','prata',1,[[.1052,.7217,.0666,-.031,.559,.828],[.1335,.7211,.0618,.611,.544,.575]],'Dd7O7xujjfe'],
- ['lingua','rosto','Língua','Barra reta no centro da língua. Na escultura a boca está fechada, então esse ponto aparece só na lista.','barra','prata',1,[]],
- ['microdermal','rosto','Microdermal','A base fica sob a pele e só o topo aparece. Na maçã do rosto, fica lindo em dupla.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'DUmGtKnkvPE'],
- ['surface','corpo','Surface','Perfuração de superfície, com a barra passando por baixo da pele. Na escultura, no centro do peito.','barra','prata',1.2,[[.0149,.5666,.0865,.176,.78,.601],[.0169,.5342,.1059,.356,.203,.912]],'Df4tSKFFkRw'],
- ['mamilos','corpo','Mamilos','Barra reta atravessando o mamilo, em um lado ou nos dois. Não aparece na escultura.','barra','prata',1,[],'DXx-2bsDeOh'],
- ['vulva','corpo','Vulva (íntimo)','Perfurações íntimas, com atendimento reservado e todo o cuidado. Não aparece na escultura.','ponto','ouro',1,[],'DXx-2bsDeOh'],
- ['umbigo','corpo','Umbigo','Barra curva na dobra de cima do umbigo, com pingente ou ponto de luz.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DJFnqicvywQ']
+ ['sobrancelha','rosto','Supercílio','Fica na região da sobrancelha. Aqui, a joia aparece junto à extremidade externa.','barra','prata',1,[[.1788,.8348,.0256,.758,-.222,.614],[.1812,.8264,.0186,.787,-.162,.595]],'DIyn27bM-cO'],
+ ['labio','rosto','Labret','Fica abaixo do lábio inferior, no centro ou de um lado. Uma ponta da joia fica dentro da boca.','ponto','prata',1.1,[[.1114,.696,.0522,.303,-.096,.948]],'DNg031fRVrb'],
+ ['vertical','rosto','Vertical labret','Fica no lábio inferior. Uma ponta da barra curva aparece no lábio e a outra, logo abaixo.','barra','ouro',1,[[.1215,.72,.0684,.019,.222,.975],[.127,.6977,.0459,.363,-.743,.563]],'DY0XggEkWqN'],
+ ['angelfangs','rosto','Angel fangs','Duas perfurações verticais no lábio superior, uma de cada lado do sulco abaixo do nariz. As pontas cônicas ficam junto à boca.','fangs','prata',1,[[.1172,.73819,.07433,.34032,-.63893,.68989],[.11545,.72911,.06832,.19117,-.7678,.61151],[.14718,.73524,.06248,.77399,.4671,.4275],[.14528,.7239,.05816,.41309,-.69363,.59012]],'Dd7O7xujjfe'],
+ ['lingua','rosto','Língua','Uma barra reta atravessa o centro da língua.','barra','prata',1,[]],
+ ['microdermal','rosto','Microdermal','Cada joia tem uma base sob a pele e um topo visível. A escultura mostra duas na maçã do rosto.','micro','prata',1,[[.0505,.7857,.067,-.344,-.158,.926],[.0624,.784,.0694,-.142,-.073,.987]],'DUmGtKnkvPE'],
+ ['surface','corpo','Surface no peito','As duas pontas da joia aparecem na mesma superfície da pele. No mapa, o exemplo fica no centro do peito.','barra','prata',1.2,[[.0149,.5666,.0865,.176,.78,.601],[.0169,.5342,.1059,.356,.203,.912]]],
+ ['mamilos','corpo','Mamilos','Uma barra reta atravessa a base do mamilo. Pode ser feito em um lado ou nos dois.','barra','prata',1,[]],
+ ['vulva','corpo','Vulva (íntimo)','A posição e o tipo de joia variam conforme a região da vulva e a anatomia.','ponto','ouro',1,[]],
+ ['umbigo','corpo','Umbigo','Fica na dobra de pele acima do umbigo. A escultura mostra uma joia com pingente.','umbigo','ouro',1,[[-.0071,.2157,.2848,0,0,1],[-.0071,.2307,.2976,.081,.119,.99]],'DJFnqicvywQ']
 ].map(([id,r,n,d,j,m,t,pos,ig])=>({id,r,n,d,j,m,t,pos,ig:ig||''}));
 const clone=l=>l.map(p=>({...p,pos:p.pos.map(a=>a.slice())}));
 let PTS=clone(DEF),byId={};
@@ -594,14 +580,13 @@ const toDoc=l=>l.map(p=>({id:p.id,nome:p.n,regiao:p.r,desc:p.d,joia:p.j,metal:p.
 /* listas da página */
 const SKIN=[['#6b3d27','#c98a62'],['#4a2a1b','#9a6343'],['#8a5a3c','#e0ac84'],['#3b2418','#87563a'],['#9d6b4c','#efc3a0'],['#5a3322','#b47a55']];
 const IG=[
- ['Dayrvd4kRJl','orelha','Composição de orelha','Composição'],['DByPh1auRln','orelha','Hélix cravejado','Hélix'],['DGmO086MHKv','orelha','Forward hélix','Hélix'],
- ['DM-tYmNufWU','orelha','Conch','Conch'],['DIxOjpXM3Uy','orelha','Duplo lobe e trágus','Trágus'],['DaeMSm0kUKq','orelha','Trio de midi lobe','Lóbulo'],
- ['DaoTz-xkdf9','orelha','Australianos','Australiano'],['DJ7mylYPDiA','orelha','Alargadores 16mm e 10mm','Alargador'],
+ ['Dayrvd4kRJl','orelha','Composição de orelha','Composição'],['DByPh1auRln','orelha','Hélix cravejado','Hélix'],['DGmO086MHKv','orelha','Forward hélix','Forward hélix','Hélix'],
+ ['DM-tYmNufWU','orelha','Conch','Conch'],['DIxOjpXM3Uy','orelha','Dois furos no lóbulo e um no trágus','Trágus','Lóbulo'],['DaeMSm0kUKq','orelha','Três piercings no alto do lóbulo','Lóbulo'],
+ ['DaoTz-xkdf9','orelha','Australianos','Australiano'],['DJ7mylYPDiA','orelha','Alargadores de 16 mm e 10 mm','Alargador'],
  ['DZ8fso0EcrE','rosto','Paired nostril','Nostril'],['DKQVoFNvzUL','rosto','Nostril','Nostril'],['DOuScdvER7j','rosto','Septo','Septo'],['DBdt32aJZvi','rosto','Bridge','Bridge'],
- ['DIyn27bM-cO','rosto','Supercílio (eyebrow)','Supercílio'],['DNg031fRVrb','rosto','Labret','Labret'],['DY0XggEkWqN','rosto','Vertical labret','Labret'],['DYhnv3MEZXR','rosto','Labret horizontal','Labret'],
- ['Dd7O7xujjfe','rosto','Angel fangs','Fangs'],['DcRyU2ilmAs','rosto','Kitty fangs','Fangs'],['DUmGtKnkvPE','rosto','Microdermal','Microdermal'],['Df4tSKFFkRw','rosto','Surface','Surface'],
- ['DJFnqicvywQ','corpo','Umbigo','Umbigo'],['C_de0KTR7Iq','corpo','Umbigo em anatomia que se fecha','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com joia anodizada','Umbigo'],
- ['DXx-2bsDeOh','corpo','Intensivo: vulva, mamilo e microdermal','Íntimo e mamilo']];
+ ['DIyn27bM-cO','rosto','Piercing na sobrancelha','Supercílio'],['DNg031fRVrb','rosto','Labret','Labret'],['DY0XggEkWqN','rosto','Vertical labret','Labret'],['DYhnv3MEZXR','rosto','Labret horizontal','Labret'],
+ ['Dd7O7xujjfe','rosto','Angel fangs','Fangs'],['DcRyU2ilmAs','rosto','Kitty fangs','Fangs'],['DUmGtKnkvPE','rosto','Microdermal','Microdermal'],['Df4tSKFFkRw','rosto','Surface no rosto','Surface'],
+ ['DJFnqicvywQ','corpo','Umbigo','Umbigo'],['C_de0KTR7Iq','corpo','Umbigo em anatomia que se fecha','Umbigo'],['DL4rU_kM1C5','corpo','Umbigo com joia anodizada','Umbigo']].map(([c,r,t,...types])=>({c,r,t,types}));
 const IG_DEF={orelha:'DFiKmHFOwr-',rosto:'',corpo:''};
 const igUrl=c=>'https://www.instagram.com/p/'+encodeURIComponent(c)+'/';
 const tiles=document.getElementById('tiles'),filters=document.getElementById('filters'),subf=document.getElementById('subfilters');
@@ -610,12 +595,14 @@ function renderLists(){
   for(const ul of document.querySelectorAll('.pts'))
     ul.innerHTML=PTS.filter(p=>p.r===ul.dataset.region).map(p=>`<li><button type="button" data-id="${esc(p.id)}">${esc(p.n)}</button></li>`).join('');
   if(!tiles.dataset.done){tiles.dataset.done=1;
-    tiles.innerHTML=IG.map(([c,r,t,sb])=>`<article class="ig" data-r="${r}" data-s="${esc(sb)}"><span class="ig-loading" aria-hidden="true">Carregando post…</span><iframe src="${igUrl(c)}embed/" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
-  tiles.querySelectorAll('.ig').forEach(x=>x.classList.toggle('hide',(filt!=='todos'&&x.dataset.r!==filt)||(sub&&x.dataset.s!==sub)));
-  const subs=filt==='todos'?[]:[...new Set(IG.filter(w=>w[1]===filt).map(w=>w[3]))];
+    tiles.innerHTML=IG.map(({c,r,t})=>`<article class="ig" data-post="${c}"><span class="ig-loading" aria-hidden="true">Carregando post…</span><iframe src="${igUrl(c)}embed/" loading="lazy" title="${esc(t)}, post da Dani no Instagram" allowtransparency="true"></iframe><a href="${igUrl(c)}"><span>${esc(t)}</span><small>${REG[r]} · abrir no Instagram</small></a></article>`).join('')}
+  const regionPosts=IG.filter(post=>filt==='todos'||post.r===filt);
+  const visiblePosts=new Set(regionPosts.filter(post=>!sub||post.types.includes(sub)).map(post=>post.c));
+  tiles.querySelectorAll('.ig').forEach(tile=>tile.classList.toggle('hide',!visiblePosts.has(tile.dataset.post)));
+  const subs=filt==='todos'?[]:[...new Set(regionPosts.flatMap(post=>post.types))];
   subf.hidden=!subs.length;
-  subf.innerHTML=subs.length?['',...subs].map(x=>`<li><button type="button" data-sub="${esc(x)}" aria-pressed="${x===sub}">${x?esc(x):'Todas'}<small>${IG.filter(w=>w[1]===filt&&(!x||w[3]===x)).length}</small></button></li>`).join(''):'';
-  filters.innerHTML=[['todos','Tudo'],['orelha','Orelha'],['rosto','Rosto'],['corpo','Corpo']].map(([k,n])=>`<li><button type="button" data-f="${k}" aria-pressed="${k===filt}">${n}<small>${k==='todos'?IG.length:IG.filter(w=>w[1]===k).length}</small></button></li>`).join('');
+  subf.innerHTML=subs.length?['',...subs].map(x=>`<li><button type="button" data-sub="${esc(x)}" aria-pressed="${x===sub}">${x?esc(x):'Todas'}<small>${regionPosts.filter(post=>!x||post.types.includes(x)).length}</small></button></li>`).join(''):'';
+  filters.innerHTML=[['todos','Tudo'],['orelha','Orelha'],['rosto','Rosto'],['corpo','Corpo']].map(([k,n])=>`<li><button type="button" data-f="${k}" aria-pressed="${k===filt}">${n}<small>${k==='todos'?IG.length:IG.filter(post=>post.r===k).length}</small></button></li>`).join('');
 }
 function setPoints(list){PTS=list;byId=Object.fromEntries(PTS.map(p=>[p.id,p]));renderLists();hooks.forEach(f=>f())}
 document.addEventListener('load',e=>{const f=e.target;if(f.tagName==='IFRAME'&&f.src){const l=f.parentNode.querySelector('.ig-loading');if(l)l.hidden=true}},true);
@@ -634,7 +621,7 @@ const close=document.getElementById('close'),shot=document.getElementById('c-sho
 let lastFocus=null,editing=false,onEditPick=null;
 function fill(p,s){
   document.getElementById('c-name').textContent=p.n;
-  document.getElementById('c-jewel').textContent=!p.pos.length?'Este ponto não aparece na escultura.':'Na escultura: '+JOIAS[p.j].toLowerCase()+' de '+METAIS[p.m].toLowerCase()+(p.pos.length>1&&p.j!=='barra'&&p.j!=='umbigo'?' ('+p.pos.length+' furos)':'')+'.';
+  document.getElementById('c-jewel').textContent=!p.pos.length?'Este ponto não aparece na escultura.':'Na escultura: '+JOIAS[p.j].toLowerCase()+' em tom de '+METAIS[p.m].toLowerCase()+(p.pos.length>1&&p.j!=='barra'&&p.j!=='umbigo'&&p.j!=='fangs'?' ('+p.pos.length+' furos)':'')+'.';
   const cw=document.getElementById('c-works');cw.dataset.r=p.r;cw.textContent='Ver trabalhos de '+REG[p.r].toLowerCase();
   document.getElementById('c-region').textContent=REG[p.r];
   document.getElementById('c-desc').textContent=p.d;
@@ -821,7 +808,10 @@ function jewelFor(p){
   }else P.forEach((q,i)=>{
     let m;
     if(p.j==='argola')m=ring(.0062*t,.00095*t,q.p,q.n);
-    else if(p.j==='micro'){add(new THREE.CylinderGeometry(.003*t,.003*t,.0006,20),q.p.clone().addScaledVector(q.n,.0001),new THREE.Quaternion().setFromUnitVectors(UP,q.n));m=ball(.002*t,q.p,q.n,.0012)}
+    else if(p.j==='fangs'&&i%2===1){
+      const d=down(q.n).addScaledVector(q.n,.45).normalize();
+      m=add(new THREE.ConeGeometry(.0019*t,.005*t,18),q.p.clone().addScaledVector(q.n,.0014*t).addScaledVector(d,.0018*t),new THREE.Quaternion().setFromUnitVectors(UP,d));
+    }else if(p.j==='micro'){add(new THREE.CylinderGeometry(.003*t,.003*t,.0006,20),q.p.clone().addScaledVector(q.n,.0001),new THREE.Quaternion().setFromUnitVectors(UP,q.n));m=ball(.002*t,q.p,q.n,.0012)}
     else m=ball(.0025*t,q.p,q.n);
     if(!i)anchor=m;
   });
@@ -854,7 +844,7 @@ const K=[
  {p:V(-2.5,1.4,4.4),t:V(0,1,0),s:.42},
  {p:V(-1.95,2.02,.72),t:V(-.06,1.6,-.09),s:-.38},
  {p:V(1.16,1.62,2.15),t:V(.34,1.5,.03),s:-.36},
- {p:V(.3,.1,2.9),t:V(.02,0,.68),s:-.4}
+ {p:V(.3,.53,4.05),t:V(.02,.44,.56),s:-.4}
 ];
 const FOCUS={tudo:0,orelha:2,rosto:3,corpo:4};
 const goalP=V(0,0,0),goalT=V(0,0,0),camP=K[0].p.clone(),camT=K[0].t.clone(),right=V(0,0,0),up=V(0,1,0);
@@ -929,11 +919,11 @@ $('ed-new').addEventListener('click',()=>{const reg=document.querySelector('[dat
   const p={id:'ponto-'+Date.now().toString(36),r:REG[reg]?reg:'orelha',n:'Novo ponto',d:'',j:'ponto',m:'ouro',t:1,pos:[]};
   setPoints([...PTS,p]);markDirty();select(p.id);status('Clique na escultura para posicionar o novo ponto.');$('ed-nome').focus()});
 $('ed-save').addEventListener('click',async()=>{
-  if(!dbDoc){status('Este endereço não salva os pontos. Use “Copiar JSON” e cole no arquivo pontos.json do repositório, ou me mande o texto.');return}
+  if(!dbDoc){status('Use “Copiar JSON” para exportar os pontos. Neste endereço, o salvamento está indisponível.');return}
   $('ed-save').disabled=true;status('Salvando…');
   try{await dbDoc.set({pontos:toDoc(PTS),atualizado:new Date().toISOString()});dirty=false;
     status('Salvo às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+'. Quem abrir o site já vê os pontos novos.')}
-  catch(e){status(e&&e.code==='invalid_argument'?'Sua conta não tem permissão de editor neste site. Use “Copiar JSON” e me mande o texto.':'Não deu para salvar agora. Tente de novo em instantes.')}
+  catch(e){status(e&&e.code==='invalid_argument'?'Sua conta não tem permissão para salvar aqui. Use “Copiar JSON” para exportar os pontos.':'Não deu para salvar agora. Tente de novo em instantes.')}
   $('ed-save').disabled=false;
 });
 $('ed-copy').addEventListener('click',()=>{const txt=JSON.stringify(toDoc(PTS));const ta=$('ed-json');
