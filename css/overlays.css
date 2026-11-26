@@ -16,10 +16,11 @@
   clip-path:circle(0 at var(--cx,50%) var(--cy,50%));visibility:hidden;transition:clip-path .8s var(--ease-inout),visibility 0s .8s}
 .detail[hidden]{display:none}
 .detail.is-open{clip-path:circle(150% at var(--cx,50%) var(--cy,50%));visibility:visible;transition:clip-path .9s var(--ease-inout)}
-.detail__media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,3vw,40px);background:var(--mist);overflow:hidden}
-.detail__media .embed{width:min(420px,100%);flex:1;min-height:0;max-height:640px;border-radius:14px;overflow:hidden;background:transparent}
+.detail__media{position:relative;display:flex;flex-direction:column;align-items:center;padding:clamp(16px,3vw,40px);background:var(--mist);overflow-y:auto;overscroll-behavior:contain}
+.detail__media .embed{width:min(420px,100%);flex:none;aspect-ratio:4/6;margin-top:auto;border-radius:14px;overflow:hidden;background:transparent}
+.detail__media .detail__link{margin-bottom:auto}
 .detail__media.is-empty .embed{display:none}
-.detail__empty{display:none;max-width:30ch;text-align:center;font:400 22px/1.3 var(--font-display);font-variation-settings:"SOFT" 100;margin:0}
+.detail__empty{display:none;margin-block:auto!important;max-width:30ch;text-align:center;font:400 22px/1.3 var(--font-display);font-variation-settings:"SOFT" 100;margin:0}
 .detail__media.is-empty .detail__empty{display:block}
 .detail__link{margin-top:12px;font-weight:600;font-size:14px;color:var(--color-text)}
 .detail__text{padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;gap:14px;overflow:auto}
@@ -31,7 +32,16 @@
 .detail__actions{margin-top:auto}
 
 @media (max-width:640px){
-  .detail{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
+  /* celular: nome e detalhes primeiro, post do Instagram embaixo, uma rolagem só */
+  .detail{display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain}
+  .detail__text{order:1;flex:none;overflow:visible;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 24px) var(--gutter-r) 8px var(--gutter-l)}
+  .detail__text h3{font-size:clamp(44px,13vw,64px);padding-right:56px}
+  .detail__actions{margin-top:8px}
+  .detail__close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:max(14px,env(safe-area-inset-right,0px));z-index:2;background:var(--color-surface)}
+  .detail__media{order:2;flex:none;overflow:visible;padding:20px var(--gutter-r) calc(env(safe-area-inset-bottom,0px) + 32px) var(--gutter-l)}
+  .detail__media .embed{margin-top:0}
+  .detail__media .detail__link{margin-bottom:0}
+  .detail__media.is-empty{padding-block:28px}
   /* no celular o close abre com fade, mais leve que o recorte circular */
   .detail{clip-path:none;opacity:0;transition:opacity .35s,visibility 0s .35s}
   .detail.is-open{clip-path:none;opacity:1;transition:opacity .35s}

@@ -2,6 +2,9 @@
 // chega perto da tela; até lá, o quadro mostra o texto de data-loading.
 //
 // Uso no HTML: <div class="embed" data-embed="URL" data-title="..." data-loading="Carregando…"></div>
+//
+// O post do Instagram avisa a própria altura (mensagem MEASURE). O quadro cresce até
+// essa altura, então o iframe não precisa de rolagem interna.
 
 const observer = 'IntersectionObserver' in window
   ? new IntersectionObserver((entries) => {
@@ -17,15 +20,36 @@ function mount(el) {
   const src = el.dataset.embed;
   if (!src || el.dataset.mounted === src) return;
   el.querySelector('iframe')?.remove();
-  el.classList.remove('is-loaded');
+  el.classList.remove('is-loaded', 'is-measured');
   el.dataset.mounted = src;
   const frame = document.createElement('iframe');
   frame.src = src;
   frame.title = el.dataset.title || 'Post do Instagram';
   frame.setAttribute('allowtransparency', 'true');
+  frame.setAttribute('scrolling', 'no');
   frame.addEventListener('load', () => el.classList.add('is-loaded'), { once: true });
   el.append(frame);
 }
+
+function isInstagram(origin) {
+  try { return /(^|\.)instagram\.com$/.test(new URL(origin).hostname); } catch { return false; }
+}
+
+addEventListener('message', (event) => {
+  if (!isInstagram(event.origin)) return;
+  let data = event.data;
+  if (typeof data === 'string') {
+    try { data = JSON.parse(data); } catch { return; }
+  }
+  const height = data?.type === 'MEASURE' ? Number(data.details?.height) : 0;
+  if (!height) return;
+  for (const frame of document.querySelectorAll('.embed iframe')) {
+    if (frame.contentWindow !== event.source) continue;
+    frame.style.height = `${Math.ceil(height)}px`;
+    frame.parentElement.classList.add('is-measured');
+    break;
+  }
+});
 
 /** Observa o quadro e cria o iframe quando ele se aproxima da tela. */
 export function lazyEmbed(el) {
@@ -45,7 +69,7 @@ export function setEmbed(el, src, title, { immediate = false } = {}) {
 export function clearEmbed(el) {
   observer?.unobserve(el);
   el.querySelector('iframe')?.remove();
-  el.classList.remove('is-loaded');
+  el.classList.remove('is-loaded', 'is-measured');
   delete el.dataset.mounted;
 }
 

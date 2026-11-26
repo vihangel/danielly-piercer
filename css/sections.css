@@ -72,12 +72,15 @@ main a,main button,main ul,main input,main label,.solid{pointer-events:auto}
 .work-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--color-line);display:flex;flex-direction:column;background:var(--mist)}
 .work-card[hidden]{display:none}
 .work-card .embed{aspect-ratio:4/5.9}
-.work-card a{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none;background:var(--color-raised)}
-.work-card a small{color:var(--color-text-muted);font-weight:500}
-.work-card a:hover{background:var(--color-hover)}
+.work-card__link{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none;background:var(--color-raised)}
+.work-card__link small{color:var(--color-text-muted);font-weight:500}
+.work-card__link:hover{background:var(--color-hover)}
 .works-more{margin-top:18px}
 .works-more[hidden]{display:none}
-.swipe-hint{display:none;font-size:var(--text-sm);color:var(--color-text-muted);margin:10px 0 0}
+.work-card{position:relative}
+.work-card__tap{display:none;background:transparent}
+.work-nav{display:none}
+.swipe-hint{font-size:var(--text-sm);color:var(--color-text-muted)}
 .works-profile{display:inline-flex;margin-top:22px;font-weight:600;color:var(--leaf)}
 
 /* ---------- comentários ---------- */
@@ -167,8 +170,18 @@ main a,main button,main ul,main input,main label,.solid{pointer-events:auto}
   .card__deco{width:120px;height:120px;right:-24px;top:-24px;opacity:.55}
   .work-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-24px;padding:4px 24px 8px;scrollbar-width:none;overscroll-behavior-x:contain}
   .work-grid::-webkit-scrollbar{display:none}
+  .work-grid{align-items:flex-start}
   .work-card{flex:0 0 82%;scroll-snap-align:center}
-  .swipe-hint{display:block}
+  /* no celular o dedo arrasta o carrossel, não o post: a camada cobre o iframe e o toque abre o post no Instagram */
+  .work-card__tap{display:block;position:absolute;left:0;right:0;top:0;bottom:46px;z-index:2}
+  .work-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+  .work-nav__btn{all:unset;box-sizing:border-box;cursor:pointer;width:var(--tap);height:var(--tap);display:grid;place-items:center;border-radius:50%;border:1px solid var(--color-line-strong);font-size:26px;line-height:1}
+  .work-nav__btn:disabled{opacity:.35;cursor:default}
+  /* comentários: lista simples, sem animação nem arrastar */
+  .marquee{animation:none;flex-direction:column;width:auto;padding-inline:var(--gutter-l) var(--gutter-r);gap:12px}
+  .quote{width:auto;padding:18px}
+  .quote q{font-size:20px}
+  .quote[aria-hidden="true"],.quote:nth-child(n+5){display:none}
   .portrait{max-width:330px}
   .foot-row{padding-bottom:96px}
 }

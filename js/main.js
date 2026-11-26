@@ -37,6 +37,7 @@ const works = createWorks({
   filters: byId('works-filters'),
   types: byId('works-types'),
   more: byId('works-more'),
+  nav: byId('works-nav'),
 }, worksJson);
 
 renderVoices(byId('voices'), voicesJson);

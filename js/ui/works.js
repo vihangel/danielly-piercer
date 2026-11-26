@@ -10,11 +10,12 @@ import { lazyEmbed } from './embeds.js';
 function cardHtml(post) {
   return `<article class="work-card" data-post="${escapeHtml(post.post)}" hidden>
     <div class="embed" data-embed="${igEmbedUrl(post.post)}" data-title="${escapeHtml(post.titulo)}, post da Dani no Instagram" data-loading="Carregando post…"></div>
-    <a href="${igUrl(post.post)}"><span>${escapeHtml(post.titulo)}</span><small>${REGIONS[post.regiao] || ''} · abrir no Instagram</small></a>
+    <a class="work-card__tap" href="${igUrl(post.post)}" tabindex="-1" aria-hidden="true"></a>
+    <a class="work-card__link" href="${igUrl(post.post)}"><span>${escapeHtml(post.titulo)}</span><small>${REGIONS[post.regiao] || ''} · abrir no Instagram</small></a>
   </article>`;
 }
 
-export function createWorks({ grid, filters, types, more }, posts) {
+export function createWorks({ grid, filters, types, more, nav }, posts) {
   let region = 'todos';
   let type = '';
   let limit = WORKS_PAGE_SIZE;
@@ -38,9 +39,11 @@ export function createWorks({ grid, filters, types, more }, posts) {
       }
     }
 
+    grid.scrollLeft = 0;
     const remaining = matching.length - limit;
     more.hidden = remaining <= 0;
     more.textContent = `Ver mais trabalhos (${remaining})`;
+    requestAnimationFrame(() => syncNav?.());
 
     filters.innerHTML = [['todos', 'Tudo'], ...Object.entries(REGIONS)]
       .map(([key, label]) => `<li><button type="button" data-region="${key}" aria-pressed="${key === region}">${label}<small>${countIn(key)}</small></button></li>`)
@@ -75,7 +78,25 @@ export function createWorks({ grid, filters, types, more }, posts) {
     render();
   });
 
+  // setas do carrossel (celular): andam um cartão por vez
+  const step = (direction) => {
+    const card = cards.find((c) => !c.hidden);
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 12;
+    grid.scrollBy({ left: direction * ((card?.offsetWidth || grid.clientWidth) + gap), behavior: 'smooth' });
+  };
+  const syncNav = () => {
+    const [prev, next] = nav.querySelectorAll('[data-step]');
+    prev.disabled = grid.scrollLeft <= 4;
+    next.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+  };
+  nav.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-step]');
+    if (button) step(Number(button.dataset.step));
+  });
+  grid.addEventListener('scroll', () => requestAnimationFrame(syncNav), { passive: true });
+
   render();
+  syncNav();
 
   return {
     /** Abre a grade já filtrada por uma região (usado pelo close). */
