@@ -1,0 +1,38 @@
+/* Camadas por cima da página: pontos clicáveis na escultura e o close de cada piercing. */
+
+/* ---------- pontos na escultura ---------- */
+.hot{position:absolute;left:0;top:0;width:var(--tap);height:var(--tap);margin:-22px 0 0 -22px;border:0;padding:0;background:none;cursor:pointer;pointer-events:none;opacity:0;transition:opacity .35s}
+.hot.is-on{opacity:1;pointer-events:auto}
+.hot::before{content:"";position:absolute;inset:13px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px rgba(19,42,29,.45),inset 0 0 0 1px rgba(19,42,29,.35)}
+.hot::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid var(--paper);animation:ring 2.2s ease-out infinite}
+.hot span{position:absolute;left:38px;top:50%;transform:translateY(-50%);white-space:nowrap;font:italic 400 19px/1 var(--font-display);background:var(--paper);padding:6px 10px;border-radius:var(--radius-pill);opacity:0;transition:opacity .2s;pointer-events:none}
+.hot:hover span,.hot:focus-visible span,.hot.is-hi span{opacity:1}
+.hot:hover::before,.hot.is-hi::before{border-color:var(--gold);background:rgba(180,139,59,.25)}
+@keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.3);opacity:0}}
+@media (pointer:coarse){.hot::after{animation:none;opacity:.6}}
+
+/* ---------- close do piercing ---------- */
+.detail{position:fixed;inset:0;z-index:var(--z-detail);background:var(--color-surface);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+  clip-path:circle(0 at var(--cx,50%) var(--cy,50%));visibility:hidden;transition:clip-path .8s var(--ease-inout),visibility 0s .8s}
+.detail[hidden]{display:none}
+.detail.is-open{clip-path:circle(150% at var(--cx,50%) var(--cy,50%));visibility:visible;transition:clip-path .9s var(--ease-inout)}
+.detail__media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,3vw,40px);background:var(--mist);overflow:hidden}
+.detail__media .embed{width:min(420px,100%);flex:1;min-height:0;max-height:640px;border-radius:14px;overflow:hidden;background:transparent}
+.detail__media.is-empty .embed{display:none}
+.detail__empty{display:none;max-width:30ch;text-align:center;font:400 22px/1.3 var(--font-display);font-variation-settings:"SOFT" 100;margin:0}
+.detail__media.is-empty .detail__empty{display:block}
+.detail__link{margin-top:12px;font-weight:600;font-size:14px;color:var(--color-text)}
+.detail__text{padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;gap:14px;overflow:auto}
+.detail__text h3{font-size:clamp(56px,7vw,104px);line-height:.95;font-style:italic}
+.detail__text p{margin:0;color:var(--color-text-muted);max-width:42ch}
+.detail__text .detail__jewel{font-weight:600;color:var(--color-text)}
+.detail__close{all:unset;cursor:pointer;align-self:flex-end;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--color-line-strong);font-size:22px}
+.detail__close:hover{background:var(--color-text);color:var(--color-on-dark)}
+.detail__actions{margin-top:auto}
+
+@media (max-width:640px){
+  .detail{grid-template-columns:minmax(0,1fr);grid-template-rows:42vh minmax(0,1fr)}
+  /* no celular o close abre com fade, mais leve que o recorte circular */
+  .detail{clip-path:none;opacity:0;transition:opacity .35s,visibility 0s .35s}
+  .detail.is-open{clip-path:none;opacity:1;transition:opacity .35s}
+}

@@ -1,0 +1,78 @@
+/*
+  Tema do site. Toda cor, fonte, medida e camada sai daqui.
+  Para mudar a identidade visual, edite só este arquivo.
+
+  Ideia: o estúdio da Dani. Parede verde com a logo gótica pintada e uma
+  escultura de terracota no centro. Sálvia dos carrosséis, creme, verde-folha,
+  tinta verde-escura da logo, terracota e ouro das joias.
+*/
+:root{
+  color-scheme:light;
+
+  /* paleta da marca */
+  --sage:#93a983;
+  --sage-deep:#7d9670;
+  --mist:#c9d3bc;
+  --cream:#f3eee4;
+  --paper:#fbf8f2;
+  --ink:#132a1d;
+  --ink-soft:#26392d;
+  --leaf:#30642a;
+  --terra-deep:#5c2410;
+  --gold:#b48b3b;
+  --gold-soft:#f1d58f;
+  --gold-ring:#d9b261;
+  --danger:#a8321c;
+
+  /* papéis: use estes nos componentes */
+  --color-bg:var(--sage);
+  --color-surface:var(--cream);
+  --color-raised:var(--paper);
+  --color-text:var(--ink);
+  --color-text-muted:var(--ink-soft);
+  --color-accent:var(--terra-deep);
+  --color-on-dark:var(--cream);
+  --color-line:rgba(19,42,29,.15);
+  --color-line-strong:rgba(19,42,29,.3);
+  --color-hover:rgba(19,42,29,.07);
+  --color-glass:rgba(243,238,228,.92);
+  --shadow-soft:0 8px 24px rgba(19,42,29,.25);
+
+  /* cores da escultura 3D (lidas pelo JavaScript em js/scene/theme.js) */
+  --scene-fog:#93a983;
+  --scene-clay:#a8553a;
+  --scene-gold:#e0b25a;
+  --scene-silver:#f1ebe0;
+  --scene-plinth:#1d3426;
+
+  /* tipografia */
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Quicksand","Avenir Next","Segoe UI",sans-serif;
+  --text-sm:13px;
+  --text-ui:15px;
+  --text-body:17px;
+  --text-h2:clamp(40px,5vw,64px);
+
+  /* espaço e forma */
+  --gutter-l:max(24px,env(safe-area-inset-left,0px));
+  --gutter-r:max(24px,env(safe-area-inset-right,0px));
+  --content:1240px;
+  --radius:16px;
+  --radius-card:24px;
+  --radius-pill:99px;
+  --tap:44px;
+
+  /* camadas */
+  --z-scene:1;
+  --z-hotspots:3;
+  --z-main:4;
+  --z-solid:5;
+  --z-header:30;
+  --z-wa:35;
+  --z-editor:45;
+  --z-detail:50;
+
+  /* movimento */
+  --ease-out:cubic-bezier(.2,.7,.2,1);
+  --ease-inout:cubic-bezier(.7,0,.2,1);
+}
