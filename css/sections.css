@@ -33,10 +33,16 @@ main a,main button,main ul,main input,main label,.solid{pointer-events:auto}
 .hero-meta{position:absolute;top:calc(100vh - 150px);left:var(--gutter-l);right:var(--gutter-r);display:flex;justify-content:space-between;align-items:end;gap:20px;font-size:var(--text-ui);line-height:1.45}
 .hero-meta p{margin:0;max-width:24ch}
 .hero-meta strong{font-weight:600}
-.scroll-cue{display:flex;align-items:center;gap:10px;text-align:right}
-.scroll-cue i{display:block;width:1px;height:38px;background:var(--color-text);position:relative;overflow:hidden}
-.scroll-cue i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--color-surface);animation:drip 1.8s ease-in-out infinite}
-@keyframes drip{to{top:100%}}
+/* seta do início: deixa claro que a página continua para baixo */
+.scroll-cue{all:unset;box-sizing:border-box;cursor:pointer;pointer-events:auto;position:absolute;left:50%;top:calc(100vh - 92px);top:calc(100svh - 92px);transform:translateX(-50%);
+  display:flex;align-items:center;gap:12px;padding:8px 8px 8px 20px;border-radius:var(--radius-pill);background:var(--color-glass);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(19,42,29,.12);font-size:var(--text-ui);font-weight:600;line-height:1.2;white-space:nowrap;transition:opacity .4s,transform .4s}
+.scroll-cue small{display:block;font-weight:500;font-size:13px;color:var(--color-text-muted)}
+.scroll-cue i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--color-text);color:var(--color-on-dark)}
+.scroll-cue svg{width:20px;height:20px;animation:nudge 1.6s var(--ease-inout) infinite}
+.scroll-cue:hover i{background:var(--leaf)}
+.is-scrolled .scroll-cue{opacity:0;transform:translate(-50%,12px);pointer-events:none}
+@keyframes nudge{0%,100%{transform:translateY(-3px)}50%{transform:translateY(4px)}}
 
 /* ---------- blocos sobre a escultura ---------- */
 .stage{min-height:140vh;position:relative;display:flex;flex-direction:column}
@@ -149,7 +155,6 @@ main a,main button,main ul,main input,main label,.solid{pointer-events:auto}
   .stage--right .pin{margin-left:calc(-1 * var(--gutter-l))}
   .point-list{max-width:560px}
   .hero-meta p{background:var(--color-glass);padding:10px 14px;border-radius:14px}
-  .scroll-cue{display:none}
   .site-nav a:not(.site-nav__cta){display:none}
   .works-grid,.dani-grid,.book-grid{grid-template-columns:minmax(0,1fr)}
   .works-side{position:static}
@@ -164,7 +169,10 @@ main a,main button,main ul,main input,main label,.solid{pointer-events:auto}
 @media (max-width:640px){
   body{font-size:16px}
   .hero-logo{top:calc(env(safe-area-inset-top,0px) + 78px)}
-  .hero-meta{top:calc(100vh - 128px);font-size:14px}
+  .hero-meta{top:calc(100vh - 204px);top:calc(100svh - 204px);font-size:14px}
+  /* no celular a seta fica à esquerda, abaixo do texto e longe do botão do WhatsApp */
+  .scroll-cue{left:var(--gutter-l);transform:none;padding-left:16px;top:calc(100vh - 100px);top:calc(100svh - 100px)}
+  .is-scrolled .scroll-cue{transform:translateY(12px)}
   .offer-grid{grid-template-columns:minmax(0,1fr)}
   .card{min-height:280px}
   .card__deco{width:120px;height:120px;right:-24px;top:-24px;opacity:.55}

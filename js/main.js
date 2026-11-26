@@ -2,13 +2,14 @@
 // 1. HTML e CSS: texto, menu e logo aparecem na hora.
 // 2. Dados (data/*.json): listas de piercing, trabalhos e comentários.
 // 3. Escultura 3D: three.js e o modelo só baixam quando o navegador fica livre.
-// 4. Posts do Instagram: cada iframe só nasce quando o quadro chega perto da tela.
+// 4. Posts do Instagram: o que está perto da tela carrega primeiro; depois da
+//    escultura, os outros vão carregando em segundo plano, um por vez.
 // 5. Editor: só baixa se alguém abrir #editar.
 import { DATA } from './config.js';
 import { byId, centerOf, fetchJson, isLowPower, prefersReducedMotion, whatsappUrl, whenIdle } from './util.js';
 import { fromJson, initPoints, onPointsChange } from './store.js';
 import { initScroll } from './ui/scroll.js';
-import { initEmbeds } from './ui/embeds.js';
+import { initEmbeds, startBackgroundEmbeds } from './ui/embeds.js';
 import { renderPointLists, initPointHover } from './ui/point-lists.js';
 import { createWorks } from './ui/works.js';
 import { renderVoices } from './ui/voices.js';
@@ -83,6 +84,9 @@ const scene = new Promise((resolve) => {
     }
   });
 });
+
+// posts em segundo plano só depois da escultura, para não disputar a rede com ela
+scene.then(() => setTimeout(startBackgroundEmbeds, 1500));
 
 // ---------- editor (#editar) ----------
 let editor = null;

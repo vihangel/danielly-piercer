@@ -35,14 +35,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="dns-prefetch" href="https://www.instagram.com">
+<link rel="dns-prefetch" href="https://static.cdninstagram.com">
+<link rel="dns-prefetch" href="https://scontent.cdninstagram.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Quicksand:wght@400;500;600&display=swap">
 <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml">
-<link rel="stylesheet" href="css/tokens.css?v=5">
-<link rel="stylesheet" href="css/base.css?v=5">
-<link rel="stylesheet" href="css/sections.css?v=5">
-<link rel="stylesheet" href="css/overlays.css?v=5">
+<link rel="stylesheet" href="css/tokens.css?v=6">
+<link rel="stylesheet" href="css/base.css?v=6">
+<link rel="stylesheet" href="css/sections.css?v=6">
+<link rel="stylesheet" href="css/overlays.css?v=6">
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/"}}</script>
-<script type="module" src="js/main.js?v=5"></script>
+<script type="module" src="js/main.js?v=6"></script>
 </head>
 <body>
 
@@ -70,8 +73,12 @@
     <h1 class="sr-only" id="hero-title">Danielly Piercer, body piercing em Cuiabá-MT</h1>
     <div class="hero-meta">
       <p><strong>Danielly Paixão</strong><br>Body piercing em Cuiabá-MT.<br>Perfuração, joias e cursos.</p>
-      <div class="scroll-cue"><span>Role para ver os piercings<br>ou arraste para girar</span><i></i></div>
+      
     </div>
+    <button class="scroll-cue" type="button" data-next-stage>
+      <span>Role para baixo<small>e veja onde fica cada piercing</small></span>
+      <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 12l6 6 6-6"/></svg></i>
+    </button>
   </section>
 
   <section class="stage stage--right" id="como-funciona" data-stage="1" aria-labelledby="exp-title">
@@ -111,7 +118,7 @@
     <div class="wrap"><div class="pin">
       <p class="eyebrow">Mapa das perfurações</p>
       <h2 id="corpo-title">Corpo</h2>
-      <p>A escultura mostra o umbigo e um surface no peito. A lista também inclui mamilos e perfurações íntimas.</p>
+      <p>Veja onde ficam o umbigo e o surface no peito. A lista também inclui mamilos e perfurações íntimas.</p>
       <ul class="point-list" data-region="corpo"></ul>
     </div></div>
   </section>
@@ -213,7 +220,6 @@
     <p class="eyebrow" id="detail-region"></p>
     <h3 id="detail-name"></h3>
     <p id="detail-desc"></p>
-    <p class="detail__jewel" id="detail-jewel"></p>
     <div class="row detail__actions"><a class="btn" id="detail-book" href="https://wa.me/5565992507788">Agendar este piercing</a><button type="button" class="btn btn--light" id="detail-works">Ver trabalhos</button></div>
   </div>
 </div>

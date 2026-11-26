@@ -46,6 +46,12 @@ export function stageState() {
 
 export const stageSection = (i) => stages[i];
 
+/** Leva a página até a parada i da escultura (usado pela seta do início). */
+export function scrollToStage(i) {
+  if (!stages[i]) return;
+  scrollTo({ top: restY(i), behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+}
+
 /** A escultura só precisa desenhar enquanto alguma seção dela está na tela. */
 export const sceneInView = () => scrollY <= worksTop + 40;
 
@@ -67,6 +73,7 @@ function setGhostWord(word) {
 function update() {
   const y = scrollY;
   header.classList.toggle('is-past', y > innerHeight * 0.35);
+  document.body.classList.toggle('is-scrolled', y > 40);
   header.classList.toggle('is-solid', y >= worksTop - 90);
   if (!anchors.length) return;
   const { index } = stageState();
@@ -127,6 +134,8 @@ function initPointerSnap() {
 }
 
 export function initScroll() {
+  // seta do início: desce até a primeira parada
+  document.querySelector('[data-next-stage]')?.addEventListener('click', () => scrollToStage(1));
   measure();
   update();
   addEventListener('scroll', onScroll, { passive: true });

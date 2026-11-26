@@ -1,16 +1,9 @@
 // Close de cada piercing. No computador abre num círculo a partir de onde a pessoa
 // tocou; no celular abre com fade (ver css/overlays.css).
-import { REGIONS, JEWELS, METALS, REGION_POST, MAP_POST, INSTAGRAM } from '../config.js';
+import { REGIONS, REGION_POST, MAP_POST, INSTAGRAM } from '../config.js';
 import { getPoint } from '../store.js';
 import { byId, igUrl, igEmbedUrl, whatsappUrl, prefersReducedMotion } from '../util.js';
 import { setEmbed, clearEmbed } from './embeds.js';
-
-function jewelText(point) {
-  if (!point.positions.length) return 'Este ponto não aparece na escultura.';
-  const showCount = point.positions.length > 1 && !['barra', 'umbigo', 'fangs'].includes(point.jewel);
-  const count = showCount ? ` (${point.positions.length} furos)` : '';
-  return `Na escultura: ${JEWELS[point.jewel].toLowerCase()} em tom de ${METALS[point.metal].toLowerCase()}${count}.`;
-}
 
 export function createDetail({ onShowWorks }) {
   const root = byId('detail');
@@ -25,7 +18,6 @@ export function createDetail({ onShowWorks }) {
     byId('detail-name').textContent = point.name;
     byId('detail-region').textContent = region;
     byId('detail-desc').textContent = point.description;
-    byId('detail-jewel').textContent = jewelText(point);
     byId('detail-works').textContent = `Ver trabalhos de ${region.toLowerCase()}`;
     byId('detail-book').href = whatsappUrl(`Oi, Dani! Vim pelo site e quero agendar um piercing: ${point.name}.`);
 

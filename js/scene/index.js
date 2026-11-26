@@ -8,7 +8,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { MODELS, DRACO_DECODER } from '../config.js';
 import { clamp, prefersReducedMotion } from '../util.js';
 import { getPoints, onPointsChange } from '../store.js';
-import { stageState, stageSection, sceneInView, onStageChange } from '../ui/scroll.js';
+import { stageState, stageSection, sceneInView, onStageChange, scrollToStage } from '../ui/scroll.js';
 import { sceneColors } from './theme.js';
 import { createClayMaterial } from './clay.js';
 import { createJewelry } from './jewelry.js';
@@ -224,6 +224,8 @@ export async function startScene({ canvas, hotspotLayer, loader, lowPower, onPoi
     if (moved || editing) return;
     const id = jewelAt(event.clientX, event.clientY);
     if (id) onPointClick(id, { x: event.clientX, y: event.clientY });
+    // no início, tocar na escultura fora das joias desce para a próxima parada
+    else if (stageState().index === 0 && scrollY < innerHeight * 0.3) scrollToStage(1);
   });
   addEventListener('pointercancel', () => { press = null; });
 
